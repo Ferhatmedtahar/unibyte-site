@@ -24,8 +24,25 @@
   --font-roboto: "Roboto", sans-serif;
   --font-spacegrotest: "Space Grotesk", sans-serif;
   --font-serif: "DM Serif Text", serif;
-
-  --color-primary-50: hsl(314, 92%, 95%);
+  --color-primary-50: hsl(
+    285,
+    40%,
+    75%
+  ); /* A muted, yet clearly purple start */
+  --color-primary-100: hsl(285, 45%, 65%);
+  --color-primary-200: hsl(285, 50%, 55%);
+  --color-primary-300: hsl(285, 60%, 45%);
+  --color-primary-400: hsl(285, 70%, 35%); /* Already quite deep and rich */
+  --color-primary-500: #580454; /* Your chosen primary, now fitting perfectly */
+  --color-primary-600: hsl(285, 95%, 25%); /* Slightly lighter than before */
+  --color-primary-700: hsl(285, 95%, 20%); /* Noticeably lighter */
+  --color-primary-800: hsl(285, 95%, 15%);
+  --color-primary-900: hsl(
+    285,
+    95%,
+    10%
+  ); /* Almost black, but with purple undertones */
+  /* --color-primary-50: hsl(314, 92%, 95%);
   --color-primary-100: #f86df2;
   --color-primary-200: #f759f0;
   --color-primary-300: #f40be9;
@@ -35,6 +52,7 @@
   --color-primary-700: #580454;
   --color-primary-800: hsl(314, 92%, 20%);
   --color-primary-900: hsl(314, 92%, 15%);
+   */
 }
 html,
 body {
@@ -62,9 +80,10 @@ body {
     to bottom,
     var(--color-primary-200) 0%,
     /* Light tint */ var(--color-primary-400) 40%,
-    /* Mid-tone */ var(--color-primary-700) 100% /* Main rich dark */
+    /* Mid-tone */ var(--color-primary-600) 100% /* Main rich dark */
   );
   -webkit-background-clip: text;
+
   background-clip: text;
   color: transparent;
 }

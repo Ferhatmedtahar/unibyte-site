@@ -54,13 +54,13 @@ export const HoverEffect = ({
           <Card>
             <motion.div initial={{ scale: 1 }} transition={{ duration: 0.2 }}>
               <CardIcon>
-                <div className="w-16 h-16 bg-gradient-to-br from-primary-200 to-primary-300 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-primary-300/50 transition-all duration-300">
+                <div className="w-16 h-16 bg-gradient-to-br from-primary-300 to-primary-400 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-primary-300/50 transition-all duration-300">
                   <Image
                     src={item?.link}
-                    width={32}
-                    height={32}
+                    width={40}
+                    height={40}
                     alt={item.title}
-                    className="filter group-hover:brightness-110 transition-all duration-300"
+                    className=" filter group-hover:brightness-110 transition-all duration-300"
                   />
                 </div>
               </CardIcon>
@@ -89,7 +89,7 @@ export const Card = ({
   return (
     <div
       className={cn(
-        "rounded-3xl h-full w-full p-6 overflow-hidden bg-white/80 backdrop-blur-sm border-2 border-primary-400/60 group-hover:border-primary-400/80 relative z-20 shadow-lg group-hover:shadow-xl transition-all duration-300 min-h-[260px]",
+        "rounded-3xl h-full w-full p-6 overflow-hidden bg-[#fafafacc] backdrop-blur-sm border-2 border-primary-400/60 group-hover:border-primary-400/80 relative z-20 shadow-lg group-hover:shadow-xl transition-all duration-300 min-h-[260px]",
         className
       )}
     >
@@ -118,7 +118,7 @@ export const CardTitle = ({
   return (
     <h4
       className={cn(
-        "text-primary-800 group-hover:text-primary-200 font-bold text-xl tracking-wide mb-4 transition-colors duration-300",
+        "text-primary-800 group-hover:text-primary-400 font-bold text-xl tracking-wide mb-4 transition-colors duration-300",
         className
       )}
     >
@@ -137,7 +137,7 @@ export const CardDescription = ({
   return (
     <p
       className={cn(
-        "text-primary-600/90 group-hover:text-primary-100/90 tracking-wide leading-relaxed text-sm flex-grow transition-colors duration-300",
+        "text-primary-600/90 group-hover:text-primary-300/90 tracking-wide leading-relaxed text-sm flex-grow transition-colors duration-300",
         className
       )}
     >

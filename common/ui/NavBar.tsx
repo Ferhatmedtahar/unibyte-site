@@ -95,7 +95,7 @@ export default function NavBar() {
         </div>
       </nav>
       <div
-        className={`fixed top-0 left-[70%] right-0 bottom-0 bg-primary-900 z-40 transition-all duration-500 ease-out ${
+        className={`fixed top-0 left-[70%] right-0 bottom-0 bg-primary-800/90 z-40 transition-all duration-500 ease-out ${
           isOpen ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
       >

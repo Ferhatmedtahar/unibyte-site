@@ -50,7 +50,40 @@ export const activities = [
   {
     title: "Project Building",
     description: "Work on real-world projects to build your portfolio.",
-    link: "/icons/dsa.png",
+    link: "/icons/project-manager.png",
+  },
+];
+
+export const faqData = [
+  {
+    question: "What is the Computer Science Club?",
+    answer:
+      "The Computer Science Club is a student organization at our university dedicated to bringing together students passionate about technology, programming, and computer science. We provide a platform for learning, collaboration, and professional development in the field of computer science.",
+  },
+  {
+    question: "What kind of workshops do you organize?",
+    answer:
+      "We organize a variety of hands-on workshops covering topics like web development, mobile app development, data science, machine learning, cybersecurity, game development, and emerging technologies. Our workshops are designed for all skill levels, from beginners to advanced programmers.",
+  },
+  {
+    question: "What events does the club participate in or organize?",
+    answer:
+      "We organize hackathons, coding competitions, tech talks with industry professionals, career fairs, project showcases, and networking events. We also participate in inter-university competitions and collaborate with tech companies for guest lectures and internship opportunities.",
+  },
+  {
+    question: "Do I need to be a Computer Science major to join?",
+    answer:
+      "Not at all! While we focus on computer science topics, we welcome students from all majors who have an interest in technology and programming. Whether you're studying engineering, business, design, or any other field, you're welcome to join and learn with us.",
+  },
+  {
+    question: "What skills will I gain by joining the club?",
+    answer:
+      "You'll develop technical skills through our workshops and projects, gain leadership experience by organizing events, improve your teamwork and communication skills, build a professional network, and enhance your resume with practical experience that employers value.",
+  },
+  {
+    question: "How can I join the Computer Science Club?",
+    answer:
+      "Joining is easy! Simply visit our contact page at /contact and fill out the membership form. We welcome new members throughout the academic year, and there are no prerequisites or fees required to join.",
   },
 ];
 

@@ -51,13 +51,34 @@ function Hero() {
       stagger: 0.05,
       delay: 1,
     });
-    gsap.from(".right-leaf ,.left-leaf", {
+    gsap.from(".left-image ,.lamp-hero", {
       y: 100,
       opacity: 0,
       duration: 1.5,
       ease: "expo.out",
       delay: 1.5,
     });
+
+    // Alternative: Animate transform and opacity for floating effect
+    gsap.to(".blob-bg", {
+      x: 10,
+      y: 10,
+      rotation: 0.5,
+      duration: 20,
+      repeat: -1,
+      yoyo: true,
+      ease: "sine.inOut",
+    });
+
+    // Add subtle scale animation
+    gsap.to(".blob-bg", {
+      scale: 1.02,
+      duration: 15,
+      repeat: -1,
+      yoyo: true,
+      ease: "power1.inOut",
+    });
+
     gsap
       .timeline({
         scrollTrigger: {
@@ -73,21 +94,23 @@ function Hero() {
 
   return (
     <section id="hero" className="relative">
-      <div className="min-h-screen w-full bg-gradient-to-br from-primary-50 to-white relative overflow-hidden">
-        {/* Enhanced Gradient Overlay with Primary Colors */}
+      <div className="min-h-screen w-full bg-gradient-to-br from-primary-50/50 via-white to-white relative overflow-hidden">
+        {/* Enhanced Gradient Overlay with Animated Blobs */}
         <div
-          className="absolute inset-0 z-0"
-          style={{
-            backgroundImage: `
-              linear-gradient(to right, rgba(127, 6, 121, 0.08) 1px, transparent 1px),
-              linear-gradient(to bottom, rgba(127, 6, 121, 0.08) 1px, transparent 1px),
-              radial-gradient(circle 600px at 20% 20%, rgba(244, 11, 233, 0.15), transparent),
-              radial-gradient(circle 500px at 80% 80%, rgba(127, 6, 121, 0.12), transparent),
-              radial-gradient(circle 400px at 60% 40%, rgba(248, 109, 242, 0.08), transparent)
+          className="absolute inset-0 z-0 blob-bg"
+          style={
+            {
+              backgroundImage: `
+              linear-gradient(to right, rgba(127, 6, 121, 0.09) 1px, transparent 1px),
+              linear-gradient(to bottom, rgba(127, 6, 121, 0.09) 1px, transparent 1px),
+              radial-gradient(circle 300px at 20% 20%, rgba(127, 6, 121, 0.15), transparent),
+              radial-gradient(circle 500px at 80% 80%, rgba(127, 6, 121, 0.15), transparent),
+              radial-gradient(circle 400px at 100% 40%, rgba(248, 109, 242, 0.05), transparent)
             `,
-            backgroundSize:
-              "60px 60px, 60px 60px, 100% 100%, 100% 100%, 100% 100%",
-          }}
+              backgroundSize:
+                "60px 60px, 60px 60px, 100% 100%, 100% 100%, 100% 100%",
+            } as React.CSSProperties
+          }
         />
 
         <Image
