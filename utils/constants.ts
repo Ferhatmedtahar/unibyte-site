@@ -18,6 +18,42 @@ const NAVBAR_ITEMS = [
     title: "Contact us",
   },
 ];
+
+export const activities = [
+  {
+    title: "Web Development",
+    description: "Build beautiful and responsive websites with modern tools.",
+    link: "/icons/web-dev.png",
+  },
+  {
+    title: "UI/UX Design",
+    description: "Design intuitive user experiences and clean interfaces.",
+    link: "/icons/ui-ux.png",
+  },
+  {
+    title: "Data Structures & Algorithms",
+    description:
+      "Sharpen your problem-solving skills and ace coding interviews.",
+    link: "/icons/dsa.png",
+  },
+  {
+    title: "Photography",
+    description:
+      "Create high-performance mobile applications for iOS and Android.",
+    link: "/icons/photography.png",
+  },
+  {
+    title: "Technical Talks",
+    description: "Learn from experts through talks and tech discussions.",
+    link: "/icons/voice.png",
+  },
+  {
+    title: "Project Building",
+    description: "Work on real-world projects to build your portfolio.",
+    link: "/icons/dsa.png",
+  },
+];
+
 const featureLists = [
   "Active Noise Cancellation",
   "Adaptive Transparency Mode",
