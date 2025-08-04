@@ -54,40 +54,39 @@ export default function NavBar() {
 
   return (
     <>
-      <nav className="navbar fixed top-0 left-0 right-0 z-50 px-6 lg:px-12 py-6">
+      <nav className="navbar fixed top-0 left-0 right-0 z-50 px-6 lg:px-12 py-4">
         <div className="flex justify-between items-center">
           <Link href="/" className="flex items-center gap-3 group">
             <Image
               alt="logo"
               width={40}
               height={40}
-              src="/images/logo.webp"
+              src="/logo.svg"
               className="w-10 h-10 rounded-full"
             />
             <span className="text-xl font-bold text-primary-600 font-roboto">
               Unibyte
             </span>
           </Link>
-
           <button
             onClick={handleMenuToggle}
             className="flex items-center gap-3 text-primary-600 hover:text-primary-500 transition-colors duration-300 font-medium hover:cursor-pointer"
           >
             <span className="text-lg font-roboto">Menu</span>
-            <div className="w-6 h-6 flex flex-col justify-center items-center">
+            <div className="w-6 h-6 flex flex-col justify-center items-center relative">
               <div
-                className={`w-6 h-0.5 bg-current transform transition-all duration-300 ${
-                  isOpen ? "rotate-45 translate-y-0.5" : "-translate-y-1"
+                className={`w-6 h-0.5 bg-primary-500 transform transition-all duration-300 absolute ${
+                  isOpen ? "rotate-45" : "-translate-y-1.5"
                 }`}
               ></div>
               <div
-                className={`w-6 h-0.5 bg-current transition-all duration-300 ${
+                className={`w-6 h-0.5 bg-primary-500 transform transition-all duration-300 absolute ${
                   isOpen ? "opacity-0" : "opacity-100"
                 }`}
               ></div>
               <div
-                className={`w-6 h-0.5 bg-current transform transition-all duration-300 ${
-                  isOpen ? "-rotate-45 -translate-y-0.5" : "translate-y-1"
+                className={`w-6 h-0.5 bg-primary-500 transform transition-all duration-300 absolute ${
+                  isOpen ? "-rotate-45" : "translate-y-1.5"
                 }`}
               ></div>
             </div>
@@ -95,18 +94,18 @@ export default function NavBar() {
         </div>
       </nav>
       <div
-        className={`fixed top-0 left-[70%] right-0 bottom-0 bg-primary-800/90 z-40 transition-all duration-500 ease-out ${
+        className={`fixed top-0 left-[0%] md:left-[55%] lg:left-[58%] xl:left-[65%] 2xl:left-[70%] right-0 bottom-0 bg-primary-800/90 z-40 transition-all duration-500 ease-out ${
           isOpen ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
       >
-        <div className="flex   flex-col justify-center items-start h-full px-6 lg:px-12 max-w-2xl">
-          <nav className="mb-16 mt-10 ">
+        <div className="flex   flex-col justify-center items-center w-full md:items-start h-full px-6 lg:px-12 max-w-2xl">
+          <nav className="mb-16 mt-12 pt-4">
             {NAVBAR_ITEMS.map((item, index) => (
-              <div key={item.id} className="menu-item overflow-hidden">
+              <div key={item.id} className="menu-item overflow-hidden ">
                 <Link
                   href={`/#${item.id}`}
                   onClick={handleLinkClick}
-                  className="z-20  block text-white hover:text-primary-200 transition-colors duration-300 py-4 text-5xl lg:text-7xl font-bold font-roboto leading-tight"
+                  className="z-20  block text-white hover:text-primary-200 transition-colors duration-300 py-3 text-5xl lg:text-7xl font-bold font-roboto leading-tight text-center md:text-start"
                 >
                   {item.title}
                 </Link>

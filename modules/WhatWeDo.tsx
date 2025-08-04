@@ -55,7 +55,7 @@ export default function WhatWeDo() {
         </div>
         <h2
           ref={titleRef}
-          className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-primary-600 via-primary-500 to-primary-700 bg-clip-text text-transparent mb-4"
+          className="text-4xl md:text-6xl pb-4 text-gradient font-bold bg-gradient-to-r from-primary-600 via-primary-400 to-primary-500 bg-clip-text text-transparent mb-4"
         >
           What We Do
         </h2>

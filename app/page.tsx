@@ -14,10 +14,6 @@ export default function Home() {
       <Events />
       <Community />
       <Faq />
-      {/* <Art /> */}
-      {/* <Art />
-      <Slider />
-      <Contact /> */}
     </main>
   );
 }

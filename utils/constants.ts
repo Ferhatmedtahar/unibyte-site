@@ -1,8 +1,4 @@
-const NAVBAR_ITEMS = [
-  // {
-  //   id: "home",
-  //   title: "home",
-  // },
+export const NAVBAR_ITEMS = [
   {
     id: "about",
     title: "About Us",
@@ -53,6 +49,77 @@ export const activities = [
     link: "/icons/project-manager.png",
   },
 ];
+export const pastEvents = [
+  {
+    id: 1,
+    title: "Linux Workshop",
+    date: "March 15, 2024",
+    participants: "70+",
+    duration: "4 hours",
+    location: "Entrepreneurship Center Lab 1",
+    description: `The Linux Worrkshop was specifically presented to the first year computer science engineering students 
+to help them set up the system and slove the problems they encoutred.`,
+    image: "/workshops/linux.jpg",
+    gradient: "from-blue-400 to-cyan-400",
+  },
+  {
+    id: 2,
+    title: "Software Development Workshop",
+    date: "February 28, 2024",
+    participants: "60+",
+    duration: "4 hours",
+    location: "Entrepreneurship Center",
+    description: `A workshop where students learn the basics of software devlopement 
+starting from the front-end to everything related to the back-end .`,
+    image: "/workshops/SoftwareWorkshop.jpg",
+    gradient: "from-emerald-400 to-teal-400",
+  },
+  {
+    id: 3,
+    title: "Web Development Basics Workshop",
+    date: "January 20, 2024",
+    participants: "20+",
+    duration: "3 hours",
+    location: "Remote",
+    description: `Hands-on workshop on web development basics. presented for the discord commmunity to discover all the tips and tricks 
+of HTML, CSS, JavaScript, Tailwind A11y and front-end devlopement in general.`,
+    image: "/workshops/basicweb.jpg",
+    gradient: "from-purple-400 to-pink-400",
+  },
+  {
+    id: 4,
+    title: "Coding Master 2024/2025",
+    date: "December 10, 2023",
+    participants: "120+",
+    duration: "6 hours",
+    location: "Conference Hall",
+    description: `The club participated in organizing both the second and third editions of the Coding Master Competition both locally and nationally ,with a well-deserved fourth place.`,
+    image: "/workshops/coding-master.jpg",
+    gradient: "from-indigo-400 to-blue-400",
+  },
+  {
+    id: 5,
+    title: "PAIS 2025",
+    date: "November 25, 2023",
+    participants: "150+",
+    duration: "5 hours",
+    location: "Conference Hall",
+    description: `Unibyte helped in organizing The 7th IEEE I nternational Conference on Pattern Analysis and Intelligent Systems with the presence of expert lecturers.`,
+    image: "/workshops/IMG_20250423_234016_581.png",
+    gradient: "from-red-400 to-orange-400",
+  },
+  {
+    id: 6,
+    title: "Nvidia Workshop",
+    date: "November 25, 2023",
+    participants: "150+",
+    duration: "5 hours",
+    location: "Entrepreneurship Center",
+    description: `Unibyte was honered to help organize this wondeful event presented by expert trainers  exclusively to the verifiable academic sttudents.`,
+    image: "/workshops/Nvidia.jpg",
+    gradient: "from-green-400 to-lime-400",
+  },
+];
 
 export const faqData = [
   {
@@ -87,19 +154,6 @@ export const faqData = [
   },
 ];
 
-const featureLists = [
-  "Active Noise Cancellation",
-  "Adaptive Transparency Mode",
-  "Spatial Audio with Dynamic Head Tracking",
-  "Customizable Silicone Ear Tips",
-];
-const goodLists = [
-  "Apple-designed H2 chip for smarter noise control",
-  "Up to 6 hours of listening time on a single charge",
-  "MagSafe Charging Case with Precision Finding",
-  "Sweat and Water Resistance (IPX4)",
-];
-
 const storeInfo = {
   heading: "Where to Find Us",
   address: "Algeria, Laghouat",
@@ -107,73 +161,4 @@ const storeInfo = {
     phone: "+(213) 712345678",
     email: "ferhattaher00@gmail.com",
   },
-};
-
-const openingHours = [
-  { day: "Mon–Thu", time: "11:00am – 12am" },
-  { day: "Fri", time: "11:00am – 2am" },
-  { day: "Sat", time: "9:00am – 2am" },
-  { day: "Sun", time: "9:00am – 1am" },
-];
-
-const socials = [
-  {
-    name: "Instagram",
-    icon: "/images/insta.png",
-    url: "#",
-  },
-  {
-    name: "X (Twitter)",
-    icon: "/images/x.png",
-    url: "#",
-  },
-  {
-    name: "Facebook",
-    icon: "/images/fb.png",
-    url: "#",
-  },
-];
-const sliderLists = [
-  {
-    id: 1,
-    name: "Apple AirPods Pro - White",
-    image: "/images/product1.png",
-    title: "Iconic Sound. Pure White Elegance.",
-    description:
-      "Experience immersive sound and active noise cancellation in a sleek white finish. Perfect for those who appreciate classic, minimalist design.",
-  },
-  {
-    id: 2,
-    name: "Apple AirPods Pro - Black",
-    image: "/images/product2.png",
-    title: "Bold. Sleek. Powerful.",
-    description:
-      "A stealthy matte black design with the same crystal-clear audio and adaptive transparency you love. Make a statement without saying a word.",
-  },
-  {
-    id: 3,
-    name: "Apple AirPods Pro Neon - Orange",
-    image: "/images/product3.png",
-    title: "Turn Up the Volume in Neon Orange.",
-    description:
-      "Vibrant and energetic, this limited edition brings fun to function. Eye-catching style meets signature AirPods Pro performance.",
-  },
-  {
-    id: 4,
-    name: "Apple AirPods Pro - Violet",
-    image: "/images/product4.png",
-    title: "Style Meets Serenity in Violet.",
-    description:
-      "A calm and elegant take on wireless audio. The violet finish adds personality while delivering the high-fidelity sound AirPods Pro are known for.",
-  },
-];
-
-export {
-  featureLists,
-  goodLists,
-  NAVBAR_ITEMS,
-  openingHours,
-  sliderLists,
-  socials,
-  storeInfo,
 };

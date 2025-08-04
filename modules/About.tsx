@@ -192,7 +192,7 @@ const About = () => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-12">
             {/* Left Side - Text */}
             <div className="flex-1">
-              <h2 className="join-title text-4xl md:text-5xl font-bold text-primary-500 mb-4">
+              <h2 className="join-title text-4xl md:text-5xl font-bold text-primary-500 mb-4 md:text-start text-center ">
                 JOINS US NOW AND BE ONE
                 <br />
                 OF OUR BRILLIANT BYTES
@@ -207,16 +207,40 @@ const About = () => {
 
             {/* Center - Arrows */}
             <div className="arrow-container flex items-center">
-              <div className="flex space-x-2">
-                <div className="w-0 h-0 border-l-[30px] border-l-primary-400/95 border-t-[15px] border-t-transparent border-b-[15px] border-b-transparent"></div>
-                <div className="w-0 h-0 border-l-[30px] border-l-primary-300 border-t-[15px] border-t-transparent border-b-[15px] border-b-transparent"></div>
-                <div className="w-0 h-0 border-l-[30px] border-l-primary-100 border-t-[15px] border-t-transparent border-b-[15px] border-b-transparent"></div>
+              <div className="flex space-x-2 md:space-x-0">
+                <div
+                  className="w-0 h-0 
+  border-l-[15px] border-l-transparent 
+  border-r-[15px] border-r-transparent 
+  border-t-[30px] border-t-primary-400/95 
+  md:border-t-0 md:border-b-[15px] md:border-b-transparent 
+  md:border-t-[15px] md:border-t-transparent 
+  md:border-l-[30px] md:border-l-primary-400/95"
+                ></div>
+                <div
+                  className="w-0 h-0 
+  border-l-[15px] border-l-transparent 
+  border-r-[15px] border-r-transparent 
+  border-t-[30px] border-t-primary-400/95 
+  md:border-t-0 md:border-b-[15px] md:border-b-transparent 
+  md:border-t-[15px] md:border-t-transparent 
+  md:border-l-[30px] md:border-l-primary-400/95"
+                ></div>
+                <div
+                  className="w-0 h-0 
+  border-l-[15px] border-l-transparent 
+  border-r-[15px] border-r-transparent 
+  border-t-[30px] border-t-primary-400/95 
+  md:border-t-0 md:border-b-[15px] md:border-b-transparent 
+  md:border-t-[15px] md:border-t-transparent 
+  md:border-l-[30px] md:border-l-primary-400/95"
+                ></div>{" "}
               </div>
             </div>
 
             {/* Right Side - QR Code */}
             <div className="qr-container">
-              <div className="w-48 h-48 bg-yellow/80 rounded-3xl p-4">
+              <div className="w-48 h-48 bg-yellow/75 rounded-3xl p-4">
                 <Image
                   src="/images/QR code.png"
                   alt="UniByte QR Code"

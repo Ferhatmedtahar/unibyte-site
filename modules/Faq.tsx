@@ -11,15 +11,15 @@ function Faq() {
   };
 
   return (
-    <div className="container mx-auto max-w-4xl px-4 mt-20">
+    <div className="container mx-auto max-w-5xl px-4 mt-20">
       <div className="space-y-6">
         <h2 className="text-3xl font-bold text-center mb-8 text-gradient">
           Frequently Asked Questions
         </h2>
 
-        <div className="divide-y divide-primary-200">
+        <div className="divide-y divide-primary-200 px-16">
           {faqData.map((item, index) => (
-            <div key={index} className="py-2">
+            <div key={index} className="py-2 ">
               <button
                 onClick={() => toggleQuestion(index)}
                 className="w-full py-4 text-left flex items-start justify-between gap-4 hover:bg-gray-50 transition-colors duration-200 focus:outline-none focus:bg-gray-50"
