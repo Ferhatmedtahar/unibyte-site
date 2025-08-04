@@ -51,12 +51,31 @@ function Hero() {
       stagger: 0.05,
       delay: 1,
     });
+
     gsap.from(".left-image ,.lamp-hero", {
       y: 100,
       opacity: 0,
       duration: 1.5,
       ease: "expo.out",
       delay: 1.5,
+    });
+
+    // Button animations
+    gsap.from(".hero-buttons", {
+      y: 50,
+      opacity: 0,
+      duration: 1.2,
+      ease: "expo.out",
+      delay: 1.8,
+    });
+
+    gsap.to(".hero-button", {
+      // boxShadow: "0 0 20px rgba(127, 6, 121, 0.3)",
+      duration: 2,
+      repeat: -1,
+      yoyo: true,
+      ease: "sine.inOut",
+      stagger: 0.2,
     });
 
     // Alternative: Animate transform and opacity for floating effect
@@ -88,13 +107,13 @@ function Hero() {
           scrub: true,
         },
       })
-      .to(".right-airpod", { y: 200 }, 0)
-      .to(".left-airpod", { y: -200 }, 0);
+      .to(".lamp-hero", { y: 200 }, 0)
+      .to(".left-image", { y: -200 }, 0);
   }, [isMobile]);
 
   return (
     <section id="hero" className="relative">
-      <div className="min-h-screen w-full bg-gradient-to-br from-primary-50/50 via-white to-white relative overflow-hidden">
+      <div className="min-h-screen  w-full bg-gradient-to-br from-primary-50/50 via-white to-white  overflow-hidden flex items-center justify-center">
         {/* Enhanced Gradient Overlay with Animated Blobs */}
         <div
           className="absolute inset-0 z-0 blob-bg"
@@ -116,35 +135,39 @@ function Hero() {
         <Image
           src={`/images/hand-hero.svg`}
           alt="hand-hero"
-          width={400}
-          height={400}
-          className={`left-image filter drop-shadow-lg select-none`}
+          width={200}
+          height={200}
+          className={`left-image filter drop-shadow-lg select-none absolute left-0 hidden md:block lg:bottom-0 lg:left-0 md:h-[400px] lg:h-[500px] xl:h-auto  z-0`}
         />
         <Image
           src={`/images/lamp-hero.png`}
           alt="lamp-hero"
-          width={100}
-          height={100}
-          className={`lamp-hero filter drop-shadow-md select-none`}
+          width={80}
+          height={80}
+          className={`lamp-hero filter drop-shadow-md select-none absolute right-0 md:right-1 lg:right-8 top-20  lg:top-[15%]  z-0`}
         />
 
-        <div className="flex flex-col items-center gap-8 z-10 relative">
-          <h1 className="title bg-gradient-to-r from-primary-600 via-primary-400 to-primary-500 bg-clip-text text-transparent">
+        <div className="flex flex-col items-center gap-8 z-10 relative px-4 text-center max-w-4xl mx-auto w-full">
+          <h1 className="title bg-gradient-to-r from-primary-600 via-primary-400 to-primary-500 bg-clip-text text-transparent text-6xl md:text-8xl font-bold">
             Unibyte
           </h1>
 
-          <div className="flex flex-col items-center gap-3">
-            <p className="yellow-subtitle font-inter text-2xl text-primary-800 max-w-xl font-semibold tracking-tight">
+          <div className="flex flex-col items-center gap-2">
+            <p className="yellow-subtitle font-inter text-2xl md:text-3xl text-primary-800 max-w-3xl font-semibold tracking-tight">
               WHERE THE POWER OF 0s AND 1s UNITE !
             </p>
-            <p className="yellow-subtitle text-yellow font-inter text-lg max-w-xl font-medium text-center">
+            <p className="subtitle text-yellow font-inter text-lg md:text-xl max-w-2xl font-medium text-center leading-relaxed">
               To embrace the future with a community of thinkers and creators.
             </p>
           </div>
 
-          <div className="flex items-center gap-6 mt-4">
-            <Button variant="primary">Learn More</Button>
-            <Button variant="secondary">Join Us</Button>
+          <div className="hero-buttons flex items-center gap-4 ">
+            <div className="hero-button">
+              <Button variant="primary">Learn More</Button>
+            </div>
+            <div className="hero-button">
+              <Button variant="secondary">Join Us</Button>
+            </div>
           </div>
         </div>
 

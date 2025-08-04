@@ -14,9 +14,9 @@ function Button({
 
   const variantStyles = {
     primary:
-      "bg-gradient-to-r from-primary-600 to-primary-500 text-white shadow-lg hover:from-primary-700 hover:to-primary-600 hover:shadow-xl group relative",
+      "border border-primary-700 bg-gradient-to-r from-primary-500 to-primary-400 text-white shadow-lg hover:from-primary-600 hover:to-primary-500 hover:shadow-xl group relative",
     secondary:
-      "border-2 border-primary-600 text-primary-600 shadow-md hover:bg-primary-600 hover:text-white hover:shadow-lg",
+      "border-2 border-primary-600 text-primary-600 shadow-md hover:bg-primary-500 hover:text-white hover:shadow-lg",
     ghost:
       "border border-white text-white rounded-full font-medium hover:bg-white hover:text-gray-900",
   };

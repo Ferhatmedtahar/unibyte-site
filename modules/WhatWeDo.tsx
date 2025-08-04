@@ -48,7 +48,7 @@ export default function WhatWeDo() {
 
   return (
     <div ref={containerRef} className="max-w-6xl mx-auto px-8 py-20">
-      <div className="text-center mb-16">
+      <div className="text-center mb-8">
         <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-primary-100/80 to-primary-200/80 text-primary-800 text-sm font-medium mb-6">
           <div className="w-2 h-2 bg-primary-500 rounded-full mr-2 animate-pulse"></div>
           Our Activities

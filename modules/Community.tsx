@@ -115,7 +115,7 @@ function Community() {
 
           {/* Third Column for larger screens - Optional */}
           <div className="hidden lg:block space-y-6">
-            <div className="h-48 bg-white rounded-3xl p-8 flex flex-col justify-center shadow-sm border border-primary-100 transition-all duration-500 ease-out hover:shadow-2xl hover:bg-gradient-to-br hover:from-purple-50 hover:to-pink-100 cursor-pointer group">
+            <div className="h-48 bg-white rounded-3xl p-8 flex flex-col justify-center shadow-sm border border-primary-100 transition-all duration-500 ease-out hover:shadow-lg hover:shadow-primary-500/20 hover:bg-gradient-to-br hover:from-purple-50 hover:to-pink-100 cursor-pointer group">
               <Link href="/community" className="text-center">
                 <div className="text-3xl font-bold text-primary-500 mb-2 transition-colors duration-300 group-hover:text-primary-600">
                   Check Out
@@ -125,7 +125,7 @@ function Community() {
                 </div>
               </Link>
             </div>
-            <div className="h-64 bg-white rounded-3xl p-8 flex flex-col justify-center shadow-sm border border-primary-100 transition-all duration-500 ease-out hover:shadow-2xl hover:bg-gradient-to-br hover:from-yellow-100 hover:to-orange-200 cursor-pointer group">
+            <div className="h-64 bg-white rounded-3xl p-8 flex flex-col justify-center shadow-sm border border-primary-100 transition-all duration-500 ease-out hover:shadow-lg hover:shadow-yellow/40  hover:bg-gradient-to-br hover:from-yellow-100 hover:to-orange-200 cursor-pointer group">
               <Link href="/contact" className="text-center">
                 <div className="text-3xl font-bold text-primary-600 mb-2 transition-colors duration-200 group-hover:text-yellow">
                   Get Involved

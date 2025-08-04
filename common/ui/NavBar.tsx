@@ -100,21 +100,23 @@ export default function NavBar() {
         }`}
       >
         <div className="flex   flex-col justify-center items-start h-full px-6 lg:px-12 max-w-2xl">
-          <nav className="mb-16">
+          <nav className="mb-16 mt-10 ">
             {NAVBAR_ITEMS.map((item, index) => (
               <div key={item.id} className="menu-item overflow-hidden">
                 <Link
                   href={`/#${item.id}`}
                   onClick={handleLinkClick}
-                  className="z-20  block text-white hover:text-primary-300 transition-colors duration-300 py-4 text-5xl lg:text-7xl font-bold font-roboto leading-tight"
+                  className="z-20  block text-white hover:text-primary-200 transition-colors duration-300 py-4 text-5xl lg:text-7xl font-bold font-roboto leading-tight"
                 >
                   {item.title}
                 </Link>
+                <div className="max-h-[1px]  h-[1px] bg-gradient-to-r from-transparent via-primary-200 to-transparent"></div>
               </div>
             ))}
           </nav>
 
           <div className="menu-footer">
+            {/*REVIEW here goes the links not the join us */}
             <div className="flex gap-4 mb-6">
               <Button variant="primary">Join Us</Button>
               <Button variant="ghost">Learn More</Button>
