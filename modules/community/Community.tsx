@@ -49,7 +49,7 @@ function Community() {
   });
 
   return (
-    <div className=" w-full bg-gray-50 p-6">
+    <section id="community" className=" w-full bg-gray-50 p-6">
       <div className="max-w-6xl mx-auto">
         {/* Masonry Layout using CSS Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-min">
@@ -132,7 +132,7 @@ function Community() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

@@ -11,9 +11,9 @@ function Faq() {
   };
 
   return (
-    <div className="container mx-auto max-w-5xl px-4 mt-20">
+    <section id="faq" className="container mx-auto max-w-5xl px-4 mt-20">
       <div className="space-y-6">
-        <h2 className="text-3xl font-bold text-center mb-8 text-gradient">
+        <h2 className="text-center text-4xl md:text-6xl pb-4 text-gradient font-bold bg-gradient-to-r from-primary-600 via-primary-400 to-primary-500 bg-clip-text text-transparent mb-4">
           Frequently Asked Questions
         </h2>
 
@@ -54,23 +54,8 @@ function Faq() {
             </div>
           ))}
         </div>
-
-        <div className="mt-12 text-center bg-gray-50 rounded-lg p-8">
-          <h3 className="text-xl font-semibold text-gray-800 mb-3">
-            Ready to Join Us?
-          </h3>
-          <p className="text-gray-600 mb-6">
-            Still have questions or want to become a member?
-          </p>
-          <a
-            href="/contact"
-            className="inline-flex items-center justify-center px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 shadow-lg hover:shadow-xl"
-          >
-            Contact Us to Join
-          </a>
-        </div>
       </div>
-    </div>
+    </section>
   );
 }
 

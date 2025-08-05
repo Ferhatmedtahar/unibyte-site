@@ -4,6 +4,10 @@ export const NAVBAR_ITEMS = [
     title: "About Us",
   },
   {
+    id: "activities",
+    title: "Activities",
+  },
+  {
     id: "events",
     title: "Events",
   },
@@ -161,11 +165,95 @@ export const faqData = [
   },
 ];
 
-const storeInfo = {
+export const clubInfo = {
   heading: "Where to Find Us",
   address: "Ammar Telidji University, Laghouat, Algeria",
   contact: {
-    phone: "+(213) 712345678",
-    email: "ferhattaher00@gmail.com",
+    facebook: "https://www.facebook.com/unibyte.cs",
+    instagram: "https://www.instagram.com/unibyte.cs",
+    email: "unibyte@lagh-univ.dz",
   },
 };
+
+export const teamMembers = [
+  {
+    name: "Sarah Johnson",
+    role: "Lead Developer",
+  },
+  {
+    name: "Michael Chen",
+    role: "UI/UX Designer",
+  },
+  {
+    name: "Emily Davis",
+    role: "Product Manager",
+  },
+  {
+    name: "James Wilson",
+    role: "Data Scientist",
+  },
+  {
+    name: "Lisa Rodriguez",
+    role: "Marketing Lead",
+  },
+  {
+    name: "Alex Thompson",
+    role: "DevOps Engineer",
+  },
+  {
+    name: "Maria Garcia",
+    role: "QA Specialist",
+  },
+  {
+    name: "David Kim",
+    role: "Frontend Developer",
+  },
+  {
+    name: "Rachel Brown",
+    role: "Backend Developer",
+  },
+  {
+    name: "Tom Anderson",
+    role: "Technical Lead",
+  },
+  {
+    name: "Jessica Lee",
+    role: "Business Analyst",
+  },
+  {
+    name: "Mark Taylor",
+    role: "Software Architect",
+  },
+  {
+    name: "Amy White",
+    role: "Scrum Master",
+  },
+  {
+    name: "Chris Johnson",
+    role: "Security Expert",
+  },
+  {
+    name: "Nina Patel",
+    role: "Mobile Developer",
+  },
+  {
+    name: "Ryan Miller",
+    role: "Cloud Engineer",
+  },
+  {
+    name: "Sophie Turner",
+    role: "Content Strategist",
+  },
+  {
+    name: "Daniel Lee",
+    role: "AI Specialist",
+  },
+  {
+    name: "Kate Wilson",
+    role: "Project Coordinator",
+  },
+  {
+    name: "Ben Clarke",
+    role: "Full Stack Developer",
+  },
+];

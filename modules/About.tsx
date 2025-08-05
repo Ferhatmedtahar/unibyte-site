@@ -101,7 +101,7 @@ const About = () => {
   }, []);
 
   return (
-    <div className="min-h-screen  text-primary-500">
+    <section id="about" className="min-h-screen  text-primary-500">
       <div ref={containerRef} className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
           {/* First Image and Text Section */}
@@ -252,7 +252,7 @@ const About = () => {
           </div>
         </div>
       </section>
-    </div>
+    </section>
   );
 };
 
