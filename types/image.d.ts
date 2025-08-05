@@ -1,5 +1,5 @@
 // images.d.ts
-declare module "*.svg" {
+declare module "*.png" {
   const src: string;
   const height: number;
   const width: number;
