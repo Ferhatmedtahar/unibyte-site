@@ -55,7 +55,7 @@ export default function TeamTestimonials() {
         }
       `}</style>
 
-      <div id="team" className="py-12 sm:py-24 px-4">
+      <div id="team" className="py-12 sm:py-24 px-4 w-screen">
         <div className="mx-auto max-w-7xl">
           {/* Header */}
           <div className="text-center mb-12 sm:mb-10">
@@ -66,7 +66,7 @@ export default function TeamTestimonials() {
               Discover the talented individuals who make our success possible
             </p>
           </div>
-          <div className="space-y-2 sm:space-y-4">
+          <div className="space-y-2 sm:space-y-4 ">
             <MarqueeRow members={firstRow} direction="left" />
             <MarqueeRow members={secondRow} direction="right" />
           </div>

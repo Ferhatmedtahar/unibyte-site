@@ -58,7 +58,7 @@ function Footer() {
       </div>
 
       <div className="mt-6 flex flex-col md:flex-row gap-4 justify-between items-start md:items-center">
-        <div className="flex flex-col sm:flex-row gap-4">
+        <div className="flex flex-row gap-4">
           <Link
             className="flex items-center gap-2 hover:text-red-300 transition-all duration-200"
             href={`mailto:${clubInfo.contact.email}`}

@@ -52,9 +52,9 @@ function Community() {
     <section id="community" className=" w-full bg-gray-50 p-6">
       <div className="max-w-6xl mx-auto">
         {/* Masonry Layout using CSS Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-min">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-min mx-2">
           {/* Left Column - Stacked */}
-          <div className="space-y-6">
+          <div className="space-y-4">
             {cards.slice(0, 2).map((card, index) => (
               <div
                 key={index}
@@ -81,7 +81,7 @@ function Community() {
           </div>
 
           {/* Right Column - Stacked */}
-          <div className="space-y-6">
+          <div className="space-y-4">
             {cards.slice(2, 4).map((card, index) => (
               <div
                 key={index + 2}
@@ -108,7 +108,7 @@ function Community() {
           </div>
 
           {/* Third Column for larger screens - Optional */}
-          <div className="hidden lg:block space-y-6">
+          <div className="hidden lg:block space-y-4">
             <div className="h-48 bg-white rounded-3xl p-8 flex flex-col justify-center shadow-sm border border-primary-100 transition-all duration-500 ease-out hover:shadow-lg hover:shadow-primary-500/20 hover:bg-gradient-to-br hover:from-purple-50 hover:to-pink-100 cursor-pointer group">
               <Link href="#team" className="text-center">
                 <div className="text-3xl font-bold text-primary-500 mb-2 transition-colors duration-300 group-hover:text-primary-600">

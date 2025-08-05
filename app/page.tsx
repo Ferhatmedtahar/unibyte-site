@@ -9,7 +9,7 @@ import WhatWeDo from "@/modules/WhatWeDo";
 
 export default function Home() {
   return (
-    <main>
+    <main className="overflow-hidden">
       <Hero />
       <About />
       <WhatWeDo />

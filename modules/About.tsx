@@ -127,25 +127,8 @@ const About = () => {
                   <div className="w-2 h-2 bg-purple-500 rounded-full mr-2 animate-pulse"></div>
                   Innovation Hub
                 </div>
-                {/* <p className="main-text text-xl leading-relaxed text-gray-700 font-medium">
-                  Whether you're passionate about{" "}
-                  <span className="text-purple-600 font-semibold">coding</span>,
-                  <span className="text-pink-600 font-semibold">
-                    {" "}
-                    designing
-                  </span>
-                  ,
-                  <span className="text-yellow-600 font-semibold">
-                    {" "}
-                    photography
-                  </span>
-                  , or any tech frontier,
-                  <span className="font-bold text-purple-800"> UniByte</span> is
-                  your launchpad for ideas, innovation, and impact! We bring
-                  together creative minds to explore the endless possibilities
-                  of technology and digital innovation.
-                </p> */}
-                <p className="main-text text-xl leading-relaxed text-gray-700 font-medium">
+
+                <p className="main-text text-center sm:text-start text-xl leading-relaxed text-gray-700 font-medium">
                   <span className="font-bold text-purple-800">UniByte</span> is
                   a student-led tech club at Ammar Telidji University. Whether
                   you're passionate about{" "}
@@ -187,7 +170,7 @@ const About = () => {
                   <div className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse"></div>
                   Community Driven
                 </div>
-                <p className="main-text text-xl leading-relaxed text-gray-700 font-medium">
+                <p className="text-center sm:text-start  main-text text-xl leading-relaxed text-gray-700 font-medium">
                   Join our community of{" "}
                   <span className="text-purple-600 font-semibold">
                     brilliant minds

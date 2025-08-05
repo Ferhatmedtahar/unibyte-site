@@ -36,7 +36,7 @@ function Faq() {
           Frequently Asked Questions
         </h2>
 
-        <div className="divide-y divide-primary-200 px-16">
+        <div className="divide-y divide-primary-200 px-4">
           {faqData.map((item, index) => (
             <div key={index} className="py-2 ">
               <button
