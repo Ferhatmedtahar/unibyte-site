@@ -121,6 +121,13 @@ of HTML, CSS, JavaScript, Tailwind A11y and front-end devlopement in general.`,
   },
 ];
 
+export const cards = [
+  { title: "Events", count: 20, height: "h-64" },
+  { title: "Members", count: 110, height: "h-80" },
+  { title: "Workshops", count: 10, height: "h-72" },
+  { title: "Partners", count: 10, height: "h-56" },
+];
+
 export const faqData = [
   {
     question: "What is the Computer Science Club?",
@@ -156,7 +163,7 @@ export const faqData = [
 
 const storeInfo = {
   heading: "Where to Find Us",
-  address: "Algeria, Laghouat",
+  address: "Ammar Telidji University, Laghouat, Algeria",
   contact: {
     phone: "+(213) 712345678",
     email: "ferhattaher00@gmail.com",

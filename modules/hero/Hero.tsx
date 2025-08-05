@@ -147,17 +147,17 @@ function Hero() {
           className={`lamp-hero filter drop-shadow-md select-none absolute right-0 md:right-1 lg:right-8 top-20  lg:top-[15%]  z-0`}
         />
 
-        <div className="flex flex-col items-center gap-8 z-10 relative px-4 text-center max-w-4xl mx-auto w-full mb-32">
-          <h1 className="title bg-gradient-to-r from-primary-600 via-primary-400 to-primary-500 bg-clip-text text-transparent text-7xl md:text-[13vw] lg:text-[10vw]  font-bold">
+        <div className="flex flex-col items-center gap-4 z-10 relative px-4 text-center max-w-4xl mx-auto w-full mb-32">
+          <h1 className="title  text-7xl md:text-[13vw] lg:text-[10vw]  font-bold">
             Unibyte
           </h1>
 
-          <div className="flex flex-col items-center gap-2">
-            <p className="yellow-subtitle font-inter text-lg sm:text-xl md:text-2xl lg:text-3xl text-primary-800 max-w-3xl font-semibold tracking-tight">
+          <div className="flex flex-col items-center gap-2 -mt-4">
+            <p className=" max-w-sm sm:max-w-md md:max-w-lg lg:max-w-4xl yellow-subtitle font-inter text-lg sm:text-xl md:text-2xl lg:text-3xl text-primary-600  font-semibold tracking-tight">
               WHERE THE POWER OF 0s AND 1s UNITE !
             </p>
-            <p className="subtitle text-yellow font-inter text-base md:text-lg lg:text-xl max-w-2xl font-medium text-center leading-relaxed">
-              To embrace the future with a community of thinkers and creators.
+            <p className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-3xl subtitle text-yellow font-inter text-base md:text-lg lg:text-xl  font-medium text-center leading-relaxed">
+              To embrace the future with a community of thinkers and creators
             </p>
           </div>
 

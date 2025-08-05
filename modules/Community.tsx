@@ -1,4 +1,5 @@
 "use client";
+import { cards } from "@/utils/constants";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -10,13 +11,6 @@ gsap.registerPlugin(ScrollTrigger);
 function Community() {
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
   const numbersRef = useRef<(HTMLDivElement | null)[]>([]);
-
-  const cards = [
-    { title: "Events", count: 20, height: "h-64" },
-    { title: "Members", count: 150, height: "h-80" },
-    { title: "Workshops", count: 10, height: "h-72" },
-    { title: "Partners", count: 10, height: "h-56" },
-  ];
 
   const formatNumber = (num: number, index: number) => {
     if (index === 1) {
@@ -67,7 +61,7 @@ function Community() {
                 ref={(el) => {
                   cardsRef.current[index] = el;
                 }}
-                className={`${card.height} bg-white rounded-3xl p-8 flex flex-col justify-center shadow-sm border border-primary-100 transition-all duration-500 ease-out hover:shadow-lg hover:shadow-primary-500/20 hover:bg-gradient-to-br hover:from-primary-50 hover:to-indigo-100 cursor-pointer group`}
+                className={`${card.height} bg-white rounded-3xl p-8 flex flex-col justify-center shadow-sm border border-primary-100 transition-all duration-500 ease-out hover:shadow-lg hover:shadow-primary-500/20 hover:bg-gradient-to-br hover:from-primary-50 hover:to-indigo-100 cursor-default group`}
               >
                 <div className="text-center">
                   <div
@@ -94,7 +88,7 @@ function Community() {
                 ref={(el) => {
                   cardsRef.current[index + 2] = el;
                 }}
-                className={`${card.height} bg-white rounded-3xl p-8 flex flex-col justify-center shadow-sm border border-primary-100 transition-all duration-500 ease-out hover:shadow-lg hover:shadow-primary-500/20 hover:bg-gradient-to-br hover:from-primary-50 hover:to-indigo-100 cursor-pointer group`}
+                className={`${card.height} bg-white rounded-3xl p-8 flex flex-col justify-center shadow-sm border border-primary-100 transition-all duration-500 ease-out hover:shadow-lg hover:shadow-primary-500/20 hover:bg-gradient-to-br hover:from-primary-50 hover:to-indigo-100 cursor-default group`}
               >
                 <div className="text-center">
                   <div

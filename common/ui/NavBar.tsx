@@ -94,7 +94,7 @@ export default function NavBar() {
         </div>
       </nav>
       <div
-        className={`fixed top-0 left-[0%] md:left-[55%] lg:left-[58%] xl:left-[65%] 2xl:left-[70%] right-0 bottom-0 bg-primary-800/90 z-40 transition-all duration-500 ease-out ${
+        className={`fixed top-0 left-[0%] md:left-[55%] lg:left-[58%] xl:left-[65%] 2xl:left-[70%] right-0 bottom-0 bg-primary-800/85 z-40 transition-all duration-500 ease-out ${
           isOpen ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
       >
@@ -105,7 +105,7 @@ export default function NavBar() {
                 <Link
                   href={`/#${item.id}`}
                   onClick={handleLinkClick}
-                  className="z-20  block text-white hover:text-primary-200 transition-colors duration-300 py-3 text-5xl lg:text-7xl font-bold font-roboto leading-tight text-center md:text-start"
+                  className="z-20  block text-white hover:text-[#8f109f]  transition-colors duration-300 py-3 text-5xl lg:text-7xl font-bold font-roboto leading-tight text-center md:text-start"
                 >
                   {item.title}
                 </Link>
@@ -120,7 +120,7 @@ export default function NavBar() {
               <Button variant="primary">Join Us</Button>
               <Button variant="ghost">Learn More</Button>
             </div>
-            <p className="text-gray-400 text-sm font-inter">
+            <p className="text-yellow text-sm font-inter">
               Where the power of 0s and 1s unite
             </p>
           </div>
