@@ -101,158 +101,120 @@ const About = () => {
   }, []);
 
   return (
-    <section id="about" className="min-h-screen  text-primary-500">
-      <div ref={containerRef} className="py-20 px-6">
-        <div className="max-w-6xl mx-auto">
-          {/* First Image and Text Section */}
-          <div className="flex flex-col lg:flex-row items-center gap-12 mb-20">
-            <div className="image-1 lg:w-1/2">
-              <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-purple-100 to-pink-100 p-6 shadow-2xl">
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-3xl"></div>
-                <Image
-                  src="/images/about-2.png"
-                  alt="UniByte Community Event"
-                  width={500}
-                  height={400}
-                  className="w-full h-80 object-cover rounded-2xl relative z-10 shadow-lg"
-                />
-                <div className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full opacity-20"></div>
-                <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-400 rounded-full opacity-20"></div>
+    <div className="relative">
+      <section id="about" className="min-h-screen  text-primary-500  ">
+        <div ref={containerRef} className="py-20 px-6">
+          <div className="max-w-6xl mx-auto">
+            {/* First Image and Text Section */}
+            <div className="flex flex-col lg:flex-row items-center gap-12 mb-20">
+              <div className="image-1 lg:w-1/2">
+                <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-purple-100 to-pink-100 p-6 shadow-2xl">
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-3xl"></div>
+                  <Image
+                    src="/images/about-2.png"
+                    alt="UniByte Community Event"
+                    width={500}
+                    height={400}
+                    className="w-full h-80 object-cover rounded-2xl relative z-10 shadow-lg"
+                  />
+                  <div className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full opacity-20"></div>
+                  <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-400 rounded-full opacity-20"></div>
+                </div>
               </div>
-            </div>
 
-            <div className="lg:w-1/2">
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-purple-100 to-pink-100 text-purple-800 text-sm font-medium mb-6">
-                <div className="w-2 h-2 bg-purple-500 rounded-full mr-2 animate-pulse"></div>
-                Innovation Hub
-              </div>
-              <p className="main-text text-xl leading-relaxed text-gray-700 font-medium">
-                Whether you're passionate about{" "}
-                <span className="text-purple-600 font-semibold">coding</span>,
-                <span className="text-pink-600 font-semibold"> designing</span>,
-                <span className="text-yellow-600 font-semibold">
-                  {" "}
-                  photography
-                </span>
-                , or any tech frontier,
-                <span className="font-bold text-purple-800"> UniByte</span> is
-                your launchpad for ideas, innovation, and impact! We bring
-                together creative minds to explore the endless possibilities of
-                technology and digital innovation.
-              </p>
-            </div>
-          </div>
-
-          {/* Second Image and Text Section */}
-          <div className="flex flex-col lg:flex-row-reverse items-center gap-12">
-            <div className="image-2 lg:w-1/2">
-              <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-blue-100 to-purple-100 p-6 shadow-2xl">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-3xl"></div>
-                <Image
-                  src="/images/about-1.png"
-                  alt="UniByte Team Collaboration"
-                  width={500}
-                  height={400}
-                  className="w-full h-80 object-cover rounded-2xl relative z-10 shadow-lg"
-                />
-                <div className="absolute -top-4 -left-4 w-24 h-24 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full opacity-20"></div>
-                <div className="absolute -bottom-4 -right-4 w-14 h-14 bg-gradient-to-br from-pink-400 to-purple-400 rounded-full opacity-20"></div>
-              </div>
-            </div>
-
-            <div className="lg:w-1/2">
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-blue-100 to-purple-100 text-purple-800 text-sm font-medium mb-6">
-                <div className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse"></div>
-                Community Driven
-              </div>
-              <p className="main-text text-xl leading-relaxed text-gray-700 font-medium">
-                Join our community of{" "}
-                <span className="text-purple-600 font-semibold">
-                  brilliant minds
-                </span>{" "}
-                where creativity meets technology. From{" "}
-                <span className="text-blue-600 font-semibold">hackathons</span>{" "}
-                to
-                <span className="text-green-600 font-semibold"> workshops</span>
-                , from networking events to collaborative projects - we're
-                building the future one byte at a time.
-                <span className="font-bold text-purple-800">
-                  {" "}
-                  Your journey in tech starts here.
-                </span>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Join Us Section */}
-      <section ref={joinSectionRef} className="py-20 px-6 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-12">
-            {/* Left Side - Text */}
-            <div className="flex-1">
-              <h2 className="join-title text-4xl md:text-5xl font-bold text-primary-500 mb-4 md:text-start text-center ">
-                JOINS US NOW AND BE ONE
-                <br />
-                OF OUR BRILLIANT BYTES
-              </h2>
-
-              <div className="join-subtitle border-2 border-dashed border-primary-400 p-4 rounded-lg inline-block">
-                <p className="text-yellow font-medium">
-                  Scan the code and fill out the registration form !
+              <div className="lg:w-1/2">
+                <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-purple-100 to-pink-100 text-purple-800 text-sm font-medium mb-6">
+                  <div className="w-2 h-2 bg-purple-500 rounded-full mr-2 animate-pulse"></div>
+                  Innovation Hub
+                </div>
+                {/* <p className="main-text text-xl leading-relaxed text-gray-700 font-medium">
+                  Whether you're passionate about{" "}
+                  <span className="text-purple-600 font-semibold">coding</span>,
+                  <span className="text-pink-600 font-semibold">
+                    {" "}
+                    designing
+                  </span>
+                  ,
+                  <span className="text-yellow-600 font-semibold">
+                    {" "}
+                    photography
+                  </span>
+                  , or any tech frontier,
+                  <span className="font-bold text-purple-800"> UniByte</span> is
+                  your launchpad for ideas, innovation, and impact! We bring
+                  together creative minds to explore the endless possibilities
+                  of technology and digital innovation.
+                </p> */}
+                <p className="main-text text-xl leading-relaxed text-gray-700 font-medium">
+                  <span className="font-bold text-purple-800">UniByte</span> is
+                  a student-led tech club at Ammar Telidji University. Whether
+                  you're passionate about{" "}
+                  <span className="text-purple-600 font-semibold">coding</span>,
+                  <span className="text-pink-600 font-semibold">
+                    {" "}
+                    designing
+                  </span>
+                  ,
+                  <span className="text-yellow-600 font-semibold">
+                    {" "}
+                    photography
+                  </span>
+                  , or any tech frontier, UniByte is your launchpad for personal
+                  growth, meaningful collaboration, and real-world impact.
                 </p>
               </div>
             </div>
 
-            {/* Center - Arrows */}
-            <div className="arrow-container flex items-center">
-              <div className="flex space-x-2 md:space-x-0">
-                <div
-                  className="w-0 h-0 
-  border-l-[15px] border-l-transparent 
-  border-r-[15px] border-r-transparent 
-  border-t-[30px] border-t-primary-400/95 
-  md:border-t-0 md:border-b-[15px] md:border-b-transparent 
-  md:border-t-[15px] md:border-t-transparent 
-  md:border-l-[30px] md:border-l-primary-400/95"
-                ></div>
-                <div
-                  className="w-0 h-0 
-  border-l-[15px] border-l-transparent 
-  border-r-[15px] border-r-transparent 
-  border-t-[30px] border-t-primary-400/95 
-  md:border-t-0 md:border-b-[15px] md:border-b-transparent 
-  md:border-t-[15px] md:border-t-transparent 
-  md:border-l-[30px] md:border-l-primary-400/95"
-                ></div>
-                <div
-                  className="w-0 h-0 
-  border-l-[15px] border-l-transparent 
-  border-r-[15px] border-r-transparent 
-  border-t-[30px] border-t-primary-400/95 
-  md:border-t-0 md:border-b-[15px] md:border-b-transparent 
-  md:border-t-[15px] md:border-t-transparent 
-  md:border-l-[30px] md:border-l-primary-400/95"
-                ></div>{" "}
+            {/* Second Image and Text Section */}
+            <div className="flex flex-col lg:flex-row-reverse items-center gap-12">
+              <div className="image-2 lg:w-1/2">
+                <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-blue-100 to-purple-100 p-6 shadow-2xl">
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-3xl"></div>
+                  <Image
+                    src="/images/about-1.png"
+                    alt="UniByte Team Collaboration"
+                    width={500}
+                    height={400}
+                    className="w-full h-80 object-cover rounded-2xl relative z-10 shadow-lg"
+                  />
+                  <div className="absolute -top-4 -left-4 w-24 h-24 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full opacity-20"></div>
+                  <div className="absolute -bottom-4 -right-4 w-14 h-14 bg-gradient-to-br from-pink-400 to-purple-400 rounded-full opacity-20"></div>
+                </div>
               </div>
-            </div>
 
-            {/* Right Side - QR Code */}
-            <div className="qr-container">
-              <div className="w-48 h-48 bg-yellow/75 rounded-3xl p-4">
-                <Image
-                  src="/images/QR code.png"
-                  alt="UniByte QR Code"
-                  width={500}
-                  height={400}
-                />
+              <div className="lg:w-1/2">
+                <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-blue-100 to-purple-100 text-purple-800 text-sm font-medium mb-6">
+                  <div className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse"></div>
+                  Community Driven
+                </div>
+                <p className="main-text text-xl leading-relaxed text-gray-700 font-medium">
+                  Join our community of{" "}
+                  <span className="text-purple-600 font-semibold">
+                    brilliant minds
+                  </span>{" "}
+                  where creativity meets technology. From{" "}
+                  <span className="text-blue-600 font-semibold">
+                    hackathons
+                  </span>{" "}
+                  to
+                  <span className="text-green-600 font-semibold">
+                    {" "}
+                    workshops
+                  </span>
+                  , from networking events to collaborative projects - we're
+                  building the future one byte at a time.
+                  <span className="font-bold text-purple-800">
+                    {" "}
+                    Your journey in tech starts here.
+                  </span>
+                </p>
               </div>
             </div>
           </div>
-        </div>
+        </div>{" "}
+        <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-200 via-yellow to-primary-400 opacity-60"></div>
       </section>
-    </section>
+    </div>
   );
 };
 

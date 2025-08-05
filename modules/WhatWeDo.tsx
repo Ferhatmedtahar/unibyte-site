@@ -17,7 +17,7 @@ export default function WhatWeDo() {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
-        start: "top 80%",
+        start: "top 70%",
         end: "bottom 20%",
         toggleActions: "play none none reverse",
       },
@@ -32,7 +32,7 @@ export default function WhatWeDo() {
     tl.from(".paragraph", {
       y: 60,
       opacity: 0,
-      duration: 1.2,
+      duration: 0.8,
       ease: "power3.out",
     });
 
@@ -54,7 +54,7 @@ export default function WhatWeDo() {
     <div
       id="activities"
       ref={containerRef}
-      className="max-w-6xl mx-auto px-8 py-20"
+      className="max-w-6xl mx-auto px-8 py-20 relative"
     >
       <div className="text-center mb-8">
         <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-primary-100/80 to-primary-200/80 text-primary-800 text-sm font-medium mb-6">

@@ -24,36 +24,18 @@
   --font-roboto: "Roboto", sans-serif;
   --font-spacegrotest: "Space Grotesk", sans-serif;
   --font-serif: "DM Serif Text", serif;
-  --color-primary-50: hsl(
-    285,
-    40%,
-    75%
-  ); /* A muted, yet clearly purple start */
+  --color-primary-50: hsl(285, 40%, 75%);
   --color-primary-100: hsl(285, 45%, 65%);
   --color-primary-200: hsl(285, 50%, 55%);
   --color-primary-300: hsl(285, 60%, 45%);
-  --color-primary-400: hsl(285, 70%, 35%); /* Already quite deep and rich */
-  --color-primary-500: #580454; /* Your chosen primary, now fitting perfectly */
-  --color-primary-600: hsl(285, 95%, 25%); /* Slightly lighter than before */
-  --color-primary-700: hsl(285, 95%, 20%); /* Noticeably lighter */
+  --color-primary-400: hsl(285, 70%, 35%);
+  --color-primary-500: #580454;
+  --color-primary-600: hsl(285, 95%, 25%);
+  --color-primary-700: hsl(285, 95%, 20%);
   --color-primary-800: hsl(285, 95%, 15%);
-  --color-primary-900: hsl(
-    285,
-    95%,
-    10%
-  ); /* Almost black, but with purple undertones */
-  /* --color-primary-50: hsl(314, 92%, 95%);
-  --color-primary-100: #f86df2;
-  --color-primary-200: #f759f0;
-  --color-primary-300: #f40be9;
-  --color-primary-400: #cd09c4;
-  --color-primary-500: #a6089f;
-  --color-primary-600: #7f0679;
-  --color-primary-700: #580454;
-  --color-primary-800: hsl(314, 92%, 20%);
-  --color-primary-900: hsl(314, 92%, 15%);
-   */
+  --color-primary-900: hsl(285, 95%, 10%);
 }
+
 html,
 body {
   width: 100%;
@@ -87,18 +69,6 @@ body {
   background-clip: text;
   color: transparent;
 }
-
-/* @utility text-gradient {
-  background: linear-gradient(
-    to bottom,
-    hsl(314, 92%, 55%) 0%,
-   #c740b5 35%,
-  #71046a 100% 
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-} */
 
 @utility radial-gradient {
   background: radial-gradient(
@@ -251,93 +221,7 @@ body {
     }
   }
   #about {
-    @apply min-h-screen py-28 2xl:px-0 px-5 container mx-auto;
-
-    .content {
-      @apply grid grid-cols-1 lg:grid-cols-12 gap-5;
-
-      h2 {
-        @apply text-5xl md:text-6xl font-inter max-w-lg;
-      }
-
-      .sub-content {
-        @apply md:col-span-4 space-y-5 flex flex-col justify-between;
-
-        p {
-          @apply text-lg;
-        }
-
-        div {
-          @apply flex flex-col justify-between md:gap-2 gap-5;
-
-          span {
-            @apply text-purple font-bold text-5xl;
-          }
-        }
-      }
-    }
-
-    .badge {
-      @apply inline-block rounded-full bg-white text-black px-4 py-2 text-sm font-medium mb-8;
-    }
-
-    .top-grid {
-      @apply grid grid-cols-1 xl:grid-cols-12 gap-5 mb-5 md:px-0 px-5;
-
-      > div {
-        @apply rounded-3xl overflow-hidden h-72 relative;
-      }
-
-      img {
-        @apply object-cover w-full h-full;
-      }
-    }
-
-    .bottom-grid {
-      @apply grid grid-cols-1 md:grid-cols-12 gap-5 md:px-0 px-5;
-
-      > div {
-        @apply rounded-3xl overflow-hidden h-72 relative;
-      }
-
-      img {
-        @apply object-cover w-full h-full;
-      }
-    }
-  }
-
-  #art {
-    @apply flex-center flex-col min-h-dvh p-5 mt-20 relative radial-gradient;
-
-    h2 {
-      @apply relative md:text-[20vw] text-8xl text-nowrap leading-none font-inter text-center text-[#505050] mb-8;
-    }
-
-    .content {
-      @apply flex md:flex-row flex-col justify-between md:mb-16 md:mt-0 mt-40 gap-10;
-    }
-
-    .showcase-img {
-      @apply md:w-[60vw] w-full h-[50vh] md:h-[70vh] rounded-4xl overflow-hidden absolute top-0 md:top-1/2 md:-translate-y-1/2 left-1/2 -translate-x-1/2;
-    }
-
-    .masked-container {
-      h2 {
-        @apply text-4xl md:text-5xl font-inter text-center mb-10 text-white mt-32;
-      }
-
-      div {
-        @apply opacity-0 md:px-0 px-5 space-y-5 absolute md:bottom-5 bottom-52 left-1/2 -translate-x-1/2;
-
-        h3 {
-          @apply md:text-5xl text-2xl text-center font-serif md:w-full w-80 text-white;
-        }
-
-        p {
-          @apply text-lg text-center;
-        }
-      }
-    }
+    @apply min-h-screen py-18 2xl:px-0 px-5 container mx-auto;
   }
 }
 @layer base {

@@ -1,15 +1,15 @@
 "use client";
-import { NAVBAR_ITEMS } from "@/utils/constants";
+import { clubInfo, NAVBAR_ITEMS } from "@/utils/constants";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
+import { Facebook, Instagram, Mail } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import Button from "../Button";
-
+import { useEffect, useRef } from "react";
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
-
+  const menuRef = useRef<HTMLDivElement>(null);
   useGSAP(() => {
     // Initial navbar animation
     gsap.fromTo(
@@ -43,7 +43,22 @@ export default function NavBar() {
       );
     }
   }, [isOpen]);
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        isOpen &&
+        menuRef.current &&
+        !menuRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+      }
+    };
 
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isOpen]);
   const handleMenuToggle = () => {
     setIsOpen(!isOpen);
   };
@@ -94,6 +109,7 @@ export default function NavBar() {
         </div>
       </nav>
       <div
+        ref={menuRef}
         className={`fixed top-0 left-[0%] md:left-[55%] lg:left-[58%] xl:left-[65%] 2xl:left-[70%] right-0 bottom-0 bg-primary-800/85 z-40 transition-all duration-500 ease-out ${
           isOpen ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
@@ -117,8 +133,28 @@ export default function NavBar() {
           <div className="menu-footer">
             {/*REVIEW here goes the links not the join us */}
             <div className="flex gap-4 mb-6">
-              <Button variant="primary">Join Us</Button>
-              <Button variant="ghost">Learn More</Button>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link
+                  className="flex items-center gap-2 hover:text-red-300 transition-all duration-200"
+                  href={`mailto:${clubInfo.contact.email}`}
+                >
+                  <Mail className="h-6 w-6 text-red-500" />
+                </Link>
+                <Link
+                  className="flex items-center gap-2 hover:text-blue-300 transition-all duration-200"
+                  href={clubInfo.contact.facebook}
+                  target="_blank"
+                >
+                  <Facebook className="h-6 w-6 text-blue-500" />
+                </Link>
+                <Link
+                  className="flex items-center gap-2 hover:text-pink-200 transition-all duration-200"
+                  href={clubInfo.contact.instagram}
+                  target="_blank"
+                >
+                  <Instagram className="h-6 w-6 text-pink-500" />
+                </Link>
+              </div>
             </div>
             <p className="text-yellow text-sm font-inter">
               Where the power of 0s and 1s unite

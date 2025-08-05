@@ -1,9 +1,28 @@
 "use client";
 import { faqData } from "@/utils/constants";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
 import { ChevronDownIcon } from "lucide-react";
 import { useState } from "react";
-
+gsap.registerPlugin(ScrollTrigger);
 function Faq() {
+  useGSAP(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#team",
+        start: "top 80%",
+        end: "bottom 20%",
+        toggleActions: "play none none reverse",
+      },
+    });
+    tl.from("#faq", {
+      y: 60,
+      opacity: 0,
+      duration: 1.2,
+      ease: "power3.out",
+    });
+  }, []);
   const [openIndex, setOpenIndex] = useState<number | null>(null); // initially no item is open
 
   const toggleQuestion = (index: number) => {

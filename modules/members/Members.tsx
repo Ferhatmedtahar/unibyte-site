@@ -1,92 +1,29 @@
 "use client";
 
+import { teamMembers } from "@/utils/constants";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
 import MarqueeRow from "./components/MarqueeRow";
 
-// Your team members data
-export const teamMembers = [
-  {
-    name: "Sarah Johnson",
-    role: "Lead Developer",
-  },
-  {
-    name: "Michael Chen",
-    role: "UI/UX Designer",
-  },
-  {
-    name: "Emily Davis",
-    role: "Product Manager",
-  },
-  {
-    name: "James Wilson",
-    role: "Data Scientist",
-  },
-  {
-    name: "Lisa Rodriguez",
-    role: "Marketing Lead",
-  },
-  {
-    name: "Alex Thompson",
-    role: "DevOps Engineer",
-  },
-  {
-    name: "Maria Garcia",
-    role: "QA Specialist",
-  },
-  {
-    name: "David Kim",
-    role: "Frontend Developer",
-  },
-  {
-    name: "Rachel Brown",
-    role: "Backend Developer",
-  },
-  {
-    name: "Tom Anderson",
-    role: "Technical Lead",
-  },
-  {
-    name: "Jessica Lee",
-    role: "Business Analyst",
-  },
-  {
-    name: "Mark Taylor",
-    role: "Software Architect",
-  },
-  {
-    name: "Amy White",
-    role: "Scrum Master",
-  },
-  {
-    name: "Chris Johnson",
-    role: "Security Expert",
-  },
-  {
-    name: "Nina Patel",
-    role: "Mobile Developer",
-  },
-  {
-    name: "Ryan Miller",
-    role: "Cloud Engineer",
-  },
-  {
-    name: "Sophie Turner",
-    role: "Content Strategist",
-  },
-  {
-    name: "Daniel Lee",
-    role: "AI Specialist",
-  },
-  {
-    name: "Kate Wilson",
-    role: "Project Coordinator",
-  },
-  {
-    name: "Ben Clarke",
-    role: "Full Stack Developer",
-  },
-];
-
+gsap.registerPlugin(ScrollTrigger);
 export default function TeamTestimonials() {
+  useGSAP(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#team",
+        start: "top 80%",
+        end: "bottom 20%",
+        toggleActions: "play none none reverse",
+      },
+    });
+    tl.from("#team", {
+      y: 60,
+      opacity: 0,
+      duration: 1.2,
+      ease: "power3.out",
+    });
+  }, []);
   // Split members into two groups of 10
   const firstRow = teamMembers.slice(0, 10);
   const secondRow = teamMembers.slice(10, 20);
@@ -118,7 +55,7 @@ export default function TeamTestimonials() {
         }
       `}</style>
 
-      <div className=" py-12 sm:py-24 px-4">
+      <div id="team" className="py-12 sm:py-24 px-4">
         <div className="mx-auto max-w-7xl">
           {/* Header */}
           <div className="text-center mb-12 sm:mb-10">

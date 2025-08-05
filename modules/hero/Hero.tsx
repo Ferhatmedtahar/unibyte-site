@@ -4,6 +4,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger, SplitText } from "gsap/all";
 import Image from "next/image";
+import Link from "next/link";
 import { useMediaQuery } from "react-responsive";
 
 gsap.registerPlugin(SplitText, ScrollTrigger);
@@ -148,7 +149,7 @@ function Hero() {
         />
 
         <div className="flex flex-col items-center gap-4 z-10 relative px-4 text-center max-w-4xl mx-auto w-full mb-32">
-          <h1 className="title  text-7xl md:text-[13vw] lg:text-[10vw]  font-bold">
+          <h1 className="title  text-primary-500 text-7xl md:text-[13vw] lg:text-[10vw]  font-bold">
             Unibyte
           </h1>
 
@@ -163,10 +164,14 @@ function Hero() {
 
           <div className="hero-buttons flex items-center gap-4 ">
             <div className="hero-button">
-              <Button variant="primary">Learn More</Button>
+              <Button variant="primary">
+                <Link href={`#about`}>Learn More</Link>
+              </Button>
             </div>
             <div className="hero-button">
-              <Button variant="secondary">Join Us</Button>
+              <Button variant="secondary">
+                <Link href={`#contact`}>Join Us</Link>
+              </Button>
             </div>
           </div>
         </div>

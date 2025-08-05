@@ -134,40 +134,40 @@ export const cards = [
 
 export const faqData = [
   {
-    question: "What is the Computer Science Club?",
+    question: "What is Unibyte?",
     answer:
-      "The Computer Science Club is a student organization at our university dedicated to bringing together students passionate about technology, programming, and computer science. We provide a platform for learning, collaboration, and professional development in the field of computer science.",
+      "Unibyte is a computer science club based at Ammar Telidji University, Laghouat. We unite passionate individuals from all fields who share a love for technology, innovation, and creativity. Whether you're into programming, design, AI, or photography, Unibyte is your launchpad for personal and professional growth.",
   },
   {
-    question: "What kind of workshops do you organize?",
+    question: "Who can join Unibyte?",
     answer:
-      "We organize a variety of hands-on workshops covering topics like web development, mobile app development, data science, machine learning, cybersecurity, game development, and emerging technologies. Our workshops are designed for all skill levels, from beginners to advanced programmers.",
+      "Unibyte is open to all university students, regardless of major. While many members are computer science students, we welcome artists, designers, engineers, and anyone curious about tech and eager to collaborate, learn, and build amazing things.",
   },
   {
-    question: "What events does the club participate in or organize?",
+    question: "What kinds of workshops and events do you offer?",
     answer:
-      "We organize hackathons, coding competitions, tech talks with industry professionals, career fairs, project showcases, and networking events. We also participate in inter-university competitions and collaborate with tech companies for guest lectures and internship opportunities.",
+      "We host hands-on workshops in web development, UI/UX design, programming, data structures, and more. We also organize hackathons, community challenges, tech talks, and large-scale events like the NVIDIA.",
   },
   {
-    question: "Do I need to be a Computer Science major to join?",
+    question: "Do I need experience to join?",
     answer:
-      "Not at all! While we focus on computer science topics, we welcome students from all majors who have an interest in technology and programming. Whether you're studying engineering, business, design, or any other field, you're welcome to join and learn with us.",
+      "Not at all! While we focus on computer science topics, there's a place for you at Unibyte. Our events are designed to cater to all levels, and our team is always here to guide and support you.",
   },
   {
-    question: "What skills will I gain by joining the club?",
+    question: "What will I gain by being part of Unibyte?",
     answer:
-      "You'll develop technical skills through our workshops and projects, gain leadership experience by organizing events, improve your teamwork and communication skills, build a professional network, and enhance your resume with practical experience that employers value.",
+      "You'll gain technical and creative skills, meet inspiring peers, and build lasting connections. You'll also develop soft skills like leadership, teamwork, and public speaking, all while having fun and making an impact.",
   },
   {
-    question: "How can I join the Computer Science Club?",
+    question: "How can I join Unibyte?",
     answer:
-      "Joining is easy! Simply visit our contact page at /contact and fill out the membership form. We welcome new members throughout the academic year, and there are no prerequisites or fees required to join.",
+      "To join, meet us during the university Open Day or scan the QR code to fill out the registration form. We'll send you a Discord invite where you'll become part of our growing family of brilliant minds.",
   },
 ];
 
 export const clubInfo = {
-  heading: "Where to Find Us",
   address: "Ammar Telidji University, Laghouat, Algeria",
+  locationLink: "https://maps.app.goo.gl/GQgHz1jv8QYsLDGw6",
   contact: {
     facebook: "https://www.facebook.com/unibyte.cs",
     instagram: "https://www.instagram.com/unibyte.cs",
@@ -176,84 +176,24 @@ export const clubInfo = {
 };
 
 export const teamMembers = [
-  {
-    name: "Sarah Johnson",
-    role: "Lead Developer",
-  },
-  {
-    name: "Michael Chen",
-    role: "UI/UX Designer",
-  },
-  {
-    name: "Emily Davis",
-    role: "Product Manager",
-  },
-  {
-    name: "James Wilson",
-    role: "Data Scientist",
-  },
-  {
-    name: "Lisa Rodriguez",
-    role: "Marketing Lead",
-  },
-  {
-    name: "Alex Thompson",
-    role: "DevOps Engineer",
-  },
-  {
-    name: "Maria Garcia",
-    role: "QA Specialist",
-  },
-  {
-    name: "David Kim",
-    role: "Frontend Developer",
-  },
-  {
-    name: "Rachel Brown",
-    role: "Backend Developer",
-  },
-  {
-    name: "Tom Anderson",
-    role: "Technical Lead",
-  },
-  {
-    name: "Jessica Lee",
-    role: "Business Analyst",
-  },
-  {
-    name: "Mark Taylor",
-    role: "Software Architect",
-  },
-  {
-    name: "Amy White",
-    role: "Scrum Master",
-  },
-  {
-    name: "Chris Johnson",
-    role: "Security Expert",
-  },
-  {
-    name: "Nina Patel",
-    role: "Mobile Developer",
-  },
-  {
-    name: "Ryan Miller",
-    role: "Cloud Engineer",
-  },
-  {
-    name: "Sophie Turner",
-    role: "Content Strategist",
-  },
-  {
-    name: "Daniel Lee",
-    role: "AI Specialist",
-  },
-  {
-    name: "Kate Wilson",
-    role: "Project Coordinator",
-  },
-  {
-    name: "Ben Clarke",
-    role: "Full Stack Developer",
-  },
+  { name: "Kourichi Soundes Hiba", role: "Leader" },
+  { name: "Mohammed Abbou", role: "Vice Leader" },
+  { name: "Bouhdiba Naserdine", role: "Relationship Manager" },
+  { name: "Benaumeur Rahim", role: "Relationship Manager" },
+  { name: "Zernoh Lakhdar", role: "Activities Manager" },
+  { name: "Ferhat Mohamed Tahar", role: "Webmaster" },
+  { name: "Yamina Rebiai", role: "Organizer" },
+  { name: "Khelloufi Nour Imane ", role: "Organizer" },
+  { name: "Boucherit Meriem ", role: "Social Media manager" },
+  { name: "Benyammi Mohammed", role: "UI/UX Designer" },
+  { name: "Aidi Youcef", role: "Organizer" },
+  { name: "Safa Tiachtine", role: "Organizer" },
+  { name: "Arif Houssam", role: "Ai Engineer" },
+  { name: "Roukia Ben Aissa", role: "Organizer" },
+  { name: "Islam Mimouni", role: "Organizer" },
+  { name: "Youcef Dabouz", role: "Member" },
+  { name: "Youcef Dahmani", role: "Member" },
+  { name: "Bensaid Rayan", role: "Member" },
+  { name: "Ryad Benamara", role: "Member" },
+  { name: "Emur Khalid Riad", role: "Member" },
 ];
