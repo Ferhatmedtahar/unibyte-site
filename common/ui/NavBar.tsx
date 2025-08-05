@@ -135,7 +135,7 @@ export default function NavBar() {
         }`}
       >
         <div className="flex   flex-col justify-center items-center w-full md:items-start h-full px-6 lg:px-12 max-w-2xl">
-          <nav className="mb-16 mt-12 pt-8 md:pt-4">
+          <nav className="mb-16 mt-12 pt-9 md:pt-5">
             {NAVBAR_ITEMS.map((item, index) => (
               <div key={item.id} className="menu-item overflow-hidden ">
                 <Link

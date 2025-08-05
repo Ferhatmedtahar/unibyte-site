@@ -123,6 +123,17 @@ of HTML, CSS, JavaScript, Tailwind A11y and front-end devlopement in general.`,
     image: "/workshops/Nvidia.jpg",
     gradient: "from-green-400 to-lime-400",
   },
+  {
+    id: 7,
+    title: "Open Days",
+    date: "November 25, 2023",
+    participants: "20+",
+    duration: "3 hours",
+    location: "Library",
+    description: `Unibyte to be part of the opening day of Ammar Telidji University.`,
+    image: "/workshops/photography.jpg",
+    gradient: "from-yellow-400 to-lime-400",
+  },
 ];
 
 export const cards = [
