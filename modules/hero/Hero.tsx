@@ -134,17 +134,19 @@ function Hero() {
         />
 
         <Image
-          src={`/images/hand-hero.svg`}
+          src={`/images/hand-hero-2.png`}
           alt="hand-hero"
-          width={200}
-          height={200}
-          className={`left-image filter drop-shadow-lg select-none absolute left-0 hidden md:block lg:bottom-0 lg:left-0 md:h-[400px] lg:h-[500px] xl:h-auto  z-0`}
+          width={300}
+          height={300}
+          loading="eager"
+          className={`left-image filter drop-shadow-lg select-none absolute -left-18  hidden md:block lg:bottom-0 lg:-left-10 md:h-[400px] lg:h-[400px] xl:h-auto  z-0`}
         />
         <Image
           src={`/images/lamp-hero.png`}
           alt="lamp-hero"
           width={80}
           height={80}
+          loading="eager"
           className={`lamp-hero filter drop-shadow-md select-none absolute right-0 md:right-1 lg:right-8 top-20  lg:top-[15%]  z-0`}
         />
 
@@ -157,7 +159,7 @@ function Hero() {
             <p className=" max-w-sm sm:max-w-md md:max-w-lg lg:max-w-4xl yellow-subtitle font-inter text-lg sm:text-xl md:text-2xl lg:text-3xl text-primary-600  font-semibold tracking-tight">
               WHERE THE POWER OF 0s AND 1s UNITE !
             </p>
-            <p className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-3xl subtitle text-yellow font-inter text-base md:text-lg lg:text-xl  font-medium text-center leading-relaxed">
+            <p className="max-w-sm  md:max-w-md lg:max-w-3xl subtitle text-yellow font-inter text-base md:text-lg lg:text-xl  font-medium text-center leading-relaxed">
               To embrace the future with a community of thinkers and creators
             </p>
           </div>
