@@ -139,7 +139,7 @@ function Hero() {
           width={300}
           height={300}
           loading="eager"
-          className={`left-image filter drop-shadow-lg select-none absolute -left-18  hidden md:block lg:bottom-0 lg:-left-10 md:h-[400px] lg:h-[400px] xl:h-auto  z-0`}
+          className={`left-image filter drop-shadow-lg select-none absolute -left-18  hidden md:block lg:bottom-0 lg:-translate-x-[5%] md:h-[400px] lg:h-[400px] xl:h-auto  z-0`}
         />
         <Image
           src={`/images/lamp-hero.png`}

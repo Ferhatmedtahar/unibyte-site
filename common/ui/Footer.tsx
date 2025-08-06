@@ -10,10 +10,16 @@ function Footer() {
         {/* Left side - Logo and description */}
         <div className="flex flex-col gap-3">
           <div className="flex items-center gap-3">
-            <Image src="/logo.png" alt="Logo" width={36} height={36} />
+            <Image
+              src="/logo.svg"
+              alt="Logo"
+              width={36}
+              height={36}
+              // className="w-12 h-12"
+            />
             <span className="text-white text-xl font-semibold">Unibyte</span>
           </div>
-          <p className="text-sm max-w-xs">
+          <p className="text-sm max-w-xs text-yellow/75">
             WHERE THE POWER OF 0s AND 1s UNITE!
           </p>
         </div>
