@@ -15,6 +15,7 @@ gsap.registerPlugin(ScrollTrigger);
 export default function JoinUs() {
   const containerRef = useRef<HTMLElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
+  const registerRef = useRef<HTMLDivElement>(null);
   const badgeRef = useRef<HTMLParagraphElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const descriptionRef = useRef<HTMLParagraphElement>(null);
@@ -47,6 +48,26 @@ export default function JoinUs() {
           ease: "power2.out",
         }
       );
+
+      // Registration form container animation (match "Reach Us" style)
+      if (registerRef.current) {
+        tl.fromTo(
+          registerRef.current,
+          {
+            y: 50,
+            opacity: 0,
+            scale: 0.95,
+          },
+          {
+            y: 0,
+            opacity: 1,
+            scale: 1,
+            duration: 0.8,
+            ease: "power2.out",
+          },
+          "-=0.4"
+        );
+      }
 
       // Card container animation
       if (containerRef.current) {
@@ -192,7 +213,7 @@ export default function JoinUs() {
         </div>
 
         {/* Registration Form Section - Primary */}
-        <div className="mb-12">
+        <div className="mb-12" ref={registerRef}>
           <div className="text-center mb-6">
             <h2 className="text-center text-4xl md:text-6xl pb-2 text-gradient font-bold bg-gradient-to-r from-primary-600 via-primary-400 to-primary-500 bg-clip-text text-transparent">
               Register to Join UniByte
