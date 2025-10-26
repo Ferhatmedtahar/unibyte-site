@@ -193,7 +193,7 @@ export const teamMembers = [
   { name: "Korichi Soundes Hiba", role: "General secretary" },
   { name: "Meriem Ledhem Wafa ", role: "Organizers team Lead" },
   { name: "Ryad Benamara ", role: "Technical team lead:" },
-  { name: "Arif Houssam ", role: "Technical team lead:" },
+  { name: "Arif Houssam ", role: "Technical team Co lead:" },
   { name: "Djamate Hadia ", role: "Event coordinator" },
   { name: "Elaguab Faouzi Saber", role: "Equipment and Supplies Officer" },
   { name: "SIRADJ", role: "Design & Social Media Manager" },
