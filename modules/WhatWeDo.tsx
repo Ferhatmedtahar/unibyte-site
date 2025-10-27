@@ -1,5 +1,9 @@
 "use client";
+<<<<<<< HEAD
 import { HoverEffect } from "@/common/card-hover-effect";
+=======
+import { HoverEffect } from "@/common/ui/card-hover-effect";
+>>>>>>> origin/main
 import { activities } from "@/utils/constants";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";

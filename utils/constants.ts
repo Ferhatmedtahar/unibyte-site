@@ -187,6 +187,7 @@ export const clubInfo = {
 };
 
 export const teamMembers = [
+<<<<<<< HEAD
   { name: "Bouhadaiba Nasroddin", role: "Leader" },
   { name: "Bouakkaz Abdel karim", role: "Vice Leader" },
   { name: "Yacine Abano", role: "Public Relations officer" },
@@ -198,4 +199,26 @@ export const teamMembers = [
   { name: "Elaguab Faouzi Saber", role: "Equipment and Supplies Officer" },
   { name: "SIRADJ", role: "Design & Social Media Manager" },
 
+=======
+  { name: "Kourichi Soundes Hiba", role: "Leader" },
+  { name: "Mohammed Abbou", role: "Vice Leader" },
+  { name: "Bouhdiba Naserdine", role: "Relationship Manager" },
+  { name: "Benaumeur Rahim", role: "Relationship Manager" },
+  { name: "Zernoh Lakhdar", role: "Activities Manager" },
+  { name: "Ferhat Mohamed Tahar", role: "Webmaster" },
+  { name: "Yamina Rebiai", role: "Organizer" },
+  { name: "Khelloufi Nour Imane ", role: "Organizer" },
+  { name: "Boucherit Meriem ", role: "Social Media manager" },
+  { name: "Benyammi Mohammed", role: "UI/UX Designer" },
+  { name: "Aidi Youcef", role: "Organizer" },
+  { name: "Safa Tiachtine", role: "Organizer" },
+  { name: "Arif Houssam", role: "Ai Engineer" },
+  { name: "Roukia Ben Aissa", role: "Organizer" },
+  { name: "Islam Mimouni", role: "Organizer" },
+  { name: "Youcef Dabouz", role: "Member" },
+  { name: "Youcef Dahmani", role: "Member" },
+  { name: "Bensaid Rayan", role: "Member" },
+  { name: "Ryad Benamara", role: "Member" },
+  { name: "Emur Khalid Riad", role: "Member" },
+>>>>>>> origin/main
 ];

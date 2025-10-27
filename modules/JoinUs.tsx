@@ -1,6 +1,9 @@
 "use client";
 
+<<<<<<< HEAD
 import RegistrationForm from "@/common/form/RegistrationForm";
+=======
+>>>>>>> origin/main
 import { clubInfo } from "@/utils/constants";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -15,7 +18,10 @@ gsap.registerPlugin(ScrollTrigger);
 export default function JoinUs() {
   const containerRef = useRef<HTMLElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
+<<<<<<< HEAD
   const registerRef = useRef<HTMLDivElement>(null);
+=======
+>>>>>>> origin/main
   const badgeRef = useRef<HTMLParagraphElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const descriptionRef = useRef<HTMLParagraphElement>(null);
@@ -49,6 +55,7 @@ export default function JoinUs() {
         }
       );
 
+<<<<<<< HEAD
       // Registration form container animation (match "Reach Us" style)
       if (registerRef.current) {
         tl.fromTo(
@@ -69,6 +76,8 @@ export default function JoinUs() {
         );
       }
 
+=======
+>>>>>>> origin/main
       // Card container animation
       if (containerRef.current) {
         const cardContainer =
@@ -205,6 +214,7 @@ export default function JoinUs() {
       <section className="mx-auto max-w-7xl px-4 py-6 lg:px-8 lg:py-20">
         <div className="space-y-2 mb-4" ref={headerRef}>
           <h2 className="text-center text-4xl md:text-6xl pb-4 text-gradient font-bold bg-gradient-to-r from-primary-600 via-primary-400 to-primary-500 bg-clip-text text-transparent">
+<<<<<<< HEAD
             Join UniByte
           </h2>
           <p className="paragraph text-primary-600/80 text-lg max-w-2xl mx-auto text-center">
@@ -218,6 +228,16 @@ export default function JoinUs() {
           <RegistrationForm />
         </div>
 
+=======
+            Ready to Join?
+          </h2>
+          <p className="paragraph text-primary-600/80 text-lg max-w-2xl mx-auto text-center">
+            We are always looking for talented individuals to join our team. If
+            you are interested in working with us, please contact us.
+          </p>
+        </div>
+
+>>>>>>> origin/main
         <div
           className="card-container relative isolate w-full overflow-hidden rounded-2xl cursor-default"
           style={{
@@ -228,8 +248,13 @@ export default function JoinUs() {
           <Image
             alt="bg"
             loading="lazy"
+<<<<<<< HEAD
             width={1840}
             height={694}
+=======
+            width="1840"
+            height="694"
+>>>>>>> origin/main
             className="absolute top-0"
             src="https://blocks.mvp-subha.me/assets/cta/grid.svg"
           />
@@ -305,9 +330,21 @@ export default function JoinUs() {
               className="mt-8 ml-4 list-disc text-sm text-gray-300 md:text-base"
             >
               <li className="hover:text-gray-200 transition-colors duration-300 cursor-default">
+<<<<<<< HEAD
                 once u register in the form , we will get u back with
                 confirmation email , once u accepted and u will get member role
                 in discord
+=======
+                Come meet us during the Open Day and register by providing your
+                full name and email.
+              </li>
+              <li className="hover:text-gray-200 transition-colors duration-300 cursor-default">
+                We&apos;ll send you an email with a Discord invite link.
+              </li>
+              <li className="hover:text-gray-200 transition-colors duration-300 cursor-default">
+                Join our Discord server to officially become a member of the
+                team.
+>>>>>>> origin/main
               </li>
             </ul>
           </div>

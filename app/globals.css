@@ -1,9 +1,12 @@
 /* @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap"); */
 /* @import url("https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap"); */
 @import "tailwindcss";
+<<<<<<< HEAD
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
+=======
+>>>>>>> origin/main
 
 @font-face {
   font-family: "Inter";

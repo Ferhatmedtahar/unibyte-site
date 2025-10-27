@@ -3,16 +3,23 @@ function Button({
   size = "medium",
   children,
   disabled = false,
+<<<<<<< HEAD
   type,
   className,
   ...rest
+=======
+  ...props
+>>>>>>> origin/main
 }: {
   readonly variant?: "primary" | "secondary" | "ghost";
   readonly size?: "small" | "medium" | "large";
   readonly children?: React.ReactNode;
   readonly disabled?: boolean;
+<<<<<<< HEAD
   readonly type?: "button" | "submit" | "reset";
   readonly className?: string;
+=======
+>>>>>>> origin/main
   [key: string]: any;
 }) {
   const baseStyles = `
@@ -71,10 +78,16 @@ function Button({
 
   return (
     <button
+<<<<<<< HEAD
       type={type ?? "button"}
       className={`${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${shimmerStyles} ${className ?? ""}`.trim()}
       disabled={disabled}
       {...rest}
+=======
+      className={`${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${shimmerStyles}`}
+      disabled={disabled}
+      {...props}
+>>>>>>> origin/main
     >
       {/* Animated background gradient */}
       <div className="absolute inset-0 bg-gradient-to-r from-primary-400/0 via-primary-300/30 to-primary-400/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl"></div>

@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 import Footer from "@/common/Footer";
 import NavBar from "@/common/NavBar";
+=======
+import Footer from "@/common/ui/Footer";
+import NavBar from "@/common/ui/NavBar";
+>>>>>>> origin/main
 import type { Metadata } from "next";
 import favIcon from "../public/favicon.ico";
 import ogImage from "../public/images/about-2.png";
