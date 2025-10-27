@@ -1,14 +1,18 @@
+import { twMerge } from "tailwind-merge"; // You already have this installed
+
 function Button({
   variant = "primary",
   size = "medium",
   children,
   disabled = false,
+  className = "", // Add className prop
   ...props
 }: {
   readonly variant?: "primary" | "secondary" | "ghost";
   readonly size?: "small" | "medium" | "large";
   readonly children?: React.ReactNode;
   readonly disabled?: boolean;
+  readonly className?: string; // Add to type
   [key: string]: any;
 }) {
   const baseStyles = `
@@ -67,7 +71,13 @@ function Button({
 
   return (
     <button
-      className={`${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${shimmerStyles}`}
+      className={twMerge(
+        baseStyles,
+        variantStyles[variant],
+        sizeStyles[size],
+        shimmerStyles,
+        className // Merge the passed className last
+      )}
       disabled={disabled}
       {...props}
     >
