@@ -1,5 +1,6 @@
 "use client";
 
+import RegistrationForm from "@/common/form/RegistrationForm";
 import { clubInfo } from "@/utils/constants";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -8,7 +9,6 @@ import { Facebook, Instagram, Mail, MapPin } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
-import RegistrationForm from "@/common/ui/RegistrationForm";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -208,20 +208,13 @@ export default function JoinUs() {
             Join UniByte
           </h2>
           <p className="paragraph text-primary-600/80 text-lg max-w-2xl mx-auto text-center">
-            Start by completing the registration form below. You can also reach us via the contact card afterwards.
+            Start by completing the registration form below. You can also reach
+            us via the contact card afterwards.
           </p>
         </div>
 
         {/* Registration Form Section - Primary */}
         <div className="mb-12" ref={registerRef}>
-          <div className="text-center mb-6">
-            <h2 className="text-center text-4xl md:text-6xl pb-2 text-gradient font-bold bg-gradient-to-r from-primary-600 via-primary-400 to-primary-500 bg-clip-text text-transparent">
-              Register to Join UniByte
-            </h2>
-            <p className="text-primary-600/80 text-lg max-w-2xl mx-auto">
-              Fill out the form to become part of our community
-            </p>
-          </div>
           <RegistrationForm />
         </div>
 
@@ -311,14 +304,14 @@ export default function JoinUs() {
               ref={listRef}
               className="mt-8 ml-4 list-disc text-sm text-gray-300 md:text-base"
             >
-              
               <li className="hover:text-gray-200 transition-colors duration-300 cursor-default">
-               once u register in the form , we will get u back with confirmation email , once u accepted and u will get member role in discord 
+                once u register in the form , we will get u back with
+                confirmation email , once u accepted and u will get member role
+                in discord
               </li>
             </ul>
           </div>
         </div>
-
       </section>
     </section>
   );

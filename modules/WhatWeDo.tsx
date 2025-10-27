@@ -1,5 +1,5 @@
 "use client";
-import { HoverEffect } from "@/common/ui/card-hover-effect";
+import { HoverEffect } from "@/common/card-hover-effect";
 import { activities } from "@/utils/constants";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
