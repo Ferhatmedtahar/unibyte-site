@@ -71,12 +71,11 @@ const canSubmit = () => {
 
   // Calculate remaining time
   const diffMs = expiresAt.getTime() - now.getTime();
-  const diffDays = Math.ceil(diffMs / (1000 * 60 * 60 * 24));
-  const diffHours = Math.ceil(diffMs / (1000 * 60 * 60));
+  const diffMinutes = Math.ceil(diffMs / (1000 * 60));
 
   return {
     canSubmit: false,
-    remainingTime: diffDays > 1 ? `${diffDays} days` : `${diffHours} hours`,
+    remainingTime: diffMinutes > 1 ? `${diffMinutes} minutes` : `${diffMinutes} minute`,
   };
 };
 
@@ -131,9 +130,9 @@ export default function RegistrationForm() {
       console.log("Submission result:", result);
 
       if (result.success) {
-        // Calculate expiration date (3 days from now)
+        // Calculate expiration date (1 minute from now)
         const expiresAt = new Date();
-        expiresAt.setDate(expiresAt.getDate() + 3);
+        expiresAt.setMinutes(expiresAt.getMinutes() + 1);
 
         // Store submission data
         setSubmissionData(expiresAt.toISOString());
