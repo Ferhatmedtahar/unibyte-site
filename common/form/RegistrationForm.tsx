@@ -186,7 +186,7 @@ export default function RegistrationForm() {
               {...register("name")}
               disabled={isBlocked}
               className="bg-white/80 border-primary-300/60 focus:border-primary-500 focus:ring-primary-500/20 text-primary-800 placeholder:text-primary-400/60 disabled:opacity-50 disabled:cursor-not-allowed"
-              placeholder="Farid Belkacem"
+              placeholder="your name here"
             />
             {errors.name && (
               <p className="text-sm text-red-600 mt-1">{errors.name.message}</p>
@@ -202,7 +202,7 @@ export default function RegistrationForm() {
               {...register("email")}
               disabled={isBlocked}
               className="bg-white/80 border-primary-300/60 focus:border-primary-500 focus:ring-primary-500/20 text-primary-800 placeholder:text-primary-400/60 disabled:opacity-50 disabled:cursor-not-allowed"
-              placeholder="farid@gmail.com"
+              placeholder="email@gmail.com"
             />
             {errors.email && (
               <p className="text-sm text-red-600 mt-1">
@@ -243,7 +243,7 @@ export default function RegistrationForm() {
               {...register("universityNumber")}
               disabled={isBlocked}
               className="bg-white/80 border-primary-300/60 focus:border-primary-500 focus:ring-primary-500/20 text-primary-800 placeholder:text-primary-400/60 disabled:opacity-50 disabled:cursor-not-allowed"
-              placeholder="e.g. 2023XXXX"
+              placeholder="e.g. 2424XXXX"
             />
             {errors.universityNumber && (
               <p className="text-sm text-red-600 mt-1">
@@ -254,28 +254,8 @@ export default function RegistrationForm() {
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="discord" className="text-primary-700">
-            Discord Username *
-          </Label>
-          <Input
-            id="discord"
-            type="text"
-            {...register("discord")}
-            disabled={isBlocked}
-            autoComplete="username"
-            className="bg-white/80 border-primary-300/60 focus:border-primary-500 focus:ring-primary-500/20 text-primary-800 placeholder:text-primary-400/60 disabled:opacity-50 disabled:cursor-not-allowed"
-            placeholder="username"
-          />
-          {errors.discord && (
-            <p className="text-sm text-red-600 mt-1">
-              {errors.discord.message}
-            </p>
-          )}
-        </div>
-
-        <div className="space-y-2">
           <Label htmlFor="whyJoin" className="text-primary-700">
-            Why do you want to join UniByte? *
+            Please tell us why you want to join , and if you would help us  , what u can do ? *
           </Label>
           <Textarea
             id="whyJoin"
@@ -353,25 +333,6 @@ export default function RegistrationForm() {
           {errors.hearAboutUs && (
             <p className="text-sm text-red-600 mt-1">
               {errors.hearAboutUs.message && "Please select an option"}
-            </p>
-          )}
-        </div>
-
-        <div className="space-y-2">
-          <Label htmlFor="canHelp" className="text-primary-700">
-            If you would help the club, what can you do?
-          </Label>
-          <Textarea
-            id="canHelp"
-            {...register("canHelp")}
-            disabled={isBlocked}
-            rows={3}
-            className="bg-white/80 border-primary-300/60 focus:border-primary-500 focus:ring-primary-500/20 text-primary-800 placeholder:text-primary-400/60 resize-none disabled:opacity-50 disabled:cursor-not-allowed"
-            placeholder="Tell us briefly what you could contribute..."
-          />
-          {errors.canHelp && (
-            <p className="text-sm text-red-600 mt-1">
-              {errors.canHelp.message}
             </p>
           )}
         </div>

@@ -172,7 +172,7 @@ export const faqData = [
   {
     question: "How can I join Unibyte?",
     answer:
-      "To join, meet us during the university Open Day or scan the QR code to fill out the registration form. We'll send you a Discord invite where you'll become part of our growing family of brilliant minds.",
+      "To join, meet us during the university Open Day or  fill out the registration form above. We'll send you a Discord invite where you'll become part of our growing family of brilliant minds.",
   },
 ];
 
@@ -195,18 +195,12 @@ export const teamMembers = [
   { name: "Ryad Benamara ", role: "Technical team lead" },
   { name: "Arif Houssam ", role: "Technical team Co lead" },
   { name: "Djamate Hadia ", role: "Event coordinator" },
+  { name: "Israa Ben Salem ", role: "Event coordinator" },
   { name: "Elaguab Faouzi Saber", role: "Equipment and Supplies Officer" },
+  { name: "Hadibi Ramy", role: "Deputy Equipment and Supplies Officer" },
   { name: "Siradj", role: "Design & Social Media Manager" },
-  { name: "Benaumeur Rahim", role: "Relationship Manager" },
-  { name: "Zernoh Lakhdar", role: "Activities Manager" },
   { name: "Ferhat Mohamed Tahar", role: "Webmaster" },
-  { name: "Yamina Rebiai", role: "Organizer" },
-  { name: "Khelloufi Nour Imane ", role: "Organizer" },
+  { name: "Khelloufi Nour Imane ", role: "Deputy General Secretary" },
   { name: "Boucherit Meriem ", role: "Social Media manager" },
-  { name: "Benyammi Mohammed", role: "UI/UX Designer" },
-  { name: "Youcef Dabouz", role: "Member" },
-  { name: "Youcef Dahmani", role: "Member" },
-  { name: "Bensaid Rayan", role: "Member" },
-  { name: "Ryad Benamara", role: "Member" },
-  { name: "Emur Khalid Riad", role: "Member" },
+
 ];
