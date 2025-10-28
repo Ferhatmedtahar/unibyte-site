@@ -30,31 +30,13 @@ export const registrationSchema = z.object({
       "University number must start with 4 digits (e.g., 2023XXXX)"
     ),
 
-  discord: z
-    .string()
-    .min(1, "Discord username is required")
-    .min(2, "Discord username must be at least 2 characters")
-    .max(32, "Discord username must be less than 32 characters")
-    .regex(
-      /^[a-z0-9._]+$/,
-      "Discord username can only contain lowercase letters, numbers, dots, and underscores"
-    ),
-
   whyJoin: z
     .string()
-    .min(1, "Please tell us why you want to join")
-    .min(20, "Please provide at least 20 characters")
-    .max(1000, "Response must be less than 1000 characters"),
+    .min(1, "Please tell us why you want to join ,"),
 
   interests: z.string().min(1, "Please select your interests"),
 
   hearAboutUs: z.string().min(1, "Please tell us how you heard about us"),
-
-  canHelp: z
-    .string()
-    .max(1000, "Response must be less than 1000 characters")
-    .optional()
-    .or(z.literal("")),
 });
 
 export type RegistrationFormData = z.infer<typeof registrationSchema>;
