@@ -195,7 +195,7 @@ export const teamMembers = [
   { name: "Ryad Benamara ", role: "Technical team lead" },
   { name: "Arif Houssam ", role: "Technical team Co lead" },
   { name: "Djamate Hadia ", role: "Event coordinator" },
-  { name: "Israa Ben Salem ", role: "Event coordinator" },
+  { name: "Israa Ben Salem ", role: "Co Event coordinator" },
   { name: "Elaguab Faouzi Saber", role: "Equipment and Supplies Officer" },
   { name: "Hadibi Ramy", role: "Deputy Equipment and Supplies Officer" },
   { name: "Siradj", role: "Design & Social Media Manager" },
