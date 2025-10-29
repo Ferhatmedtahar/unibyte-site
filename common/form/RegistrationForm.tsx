@@ -12,7 +12,7 @@ import {
 } from "@/common/ui/select";
 import { Textarea } from "@/common/ui/textarea";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Check, Loader2, X } from "lucide-react";
+import { Check, CheckCircle, Loader2, Mail, MessageCircle, X, Star, Trophy, Users } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 // import Button from "../Button";
@@ -84,6 +84,8 @@ export default function RegistrationForm() {
     type: "idle" | "success" | "error" | "blocked";
     message?: string;
   }>({ type: "idle" });
+  
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
 
   const {
     register,
@@ -141,8 +143,8 @@ export default function RegistrationForm() {
           type: "success",
           message: result.message,
         });
+        setShowSuccessModal(true);
         reset();
-        setTimeout(() => setSubmitStatus({ type: "idle" }), 5000);
       } else {
         setSubmitStatus({
           type: "error",
@@ -355,12 +357,6 @@ export default function RegistrationForm() {
           </Button>
         </div>
 
-        {submitStatus.type === "success" && (
-          <div className="mt-4 p-4 bg-primary-50 border border-primary-200 rounded-xl text-primary-800 flex items-center justify-center">
-            <Check className="mr-2 h-5 w-5 flex-shrink-0" />
-            <p>{submitStatus.message}</p>
-          </div>
-        )}
         {submitStatus.type === "error" && (
           <div className="mt-4 p-4 bg-red-50 border border-red-300 rounded-xl text-red-800 flex items-center justify-center">
             <X className="mr-2 h-5 w-5 flex-shrink-0" />
@@ -368,6 +364,81 @@ export default function RegistrationForm() {
           </div>
         )}
       </form>
+
+      {/* Success Modal */}
+      {showSuccessModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          {/* Modal Content */}
+          <div className="relative w-full max-w-md transform overflow-hidden rounded-3xl bg-gradient-to-br from-white via-primary-50 to-white p-8 shadow-2xl transition-all duration-300 ease-out animate-in fade-in zoom-in-95 border border-primary-200/50">
+            {/* Close Button */}
+            <button
+              onClick={() => setShowSuccessModal(false)}
+              className="absolute right-4 top-4 rounded-full p-1 text-gray-400 transition-colors hover:bg-gray-100 hover:text-gray-600"
+            >
+              <X className="h-5 w-5" />
+            </button>
+            
+            {/* Success Icon with Animation */}
+            <div className="mx-auto mb-6 flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-br from-green-400 via-green-500 to-green-600 shadow-xl">
+              <CheckCircle className="h-12 w-12 text-white animate-pulse" />
+            </div>
+            
+            {/* Decorative Icons */}
+            <div className="absolute -top-3 -left-3">
+              <Star className="h-6 w-6 text-yellow-400 opacity-60" />
+            </div>
+            <div className="absolute -top-3 -right-3">
+              <Trophy className="h-6 w-6 text-yellow-500 opacity-60" />
+            </div>
+            <div className="absolute -bottom-3 -left-3">
+              <Users className="h-6 w-6 text-primary-400 opacity-60" />
+            </div>
+            <div className="absolute -bottom-3 -right-3">
+              <Star className="h-6 w-6 text-yellow-400 opacity-60" />
+            </div>
+            
+            {/* Success Message */}
+            <div className="text-center">
+              <h3 className="mb-3 text-3xl font-bold bg-gradient-to-r from-primary-600 to-primary-800 bg-clip-text text-transparent">
+                Welcome to UniByte! 🎉
+              </h3>
+              <p className="mb-6 text-gray-600 leading-relaxed">
+                Your registration has been successfully submitted! We're excited to have you join our community.
+              </p>
+              
+              {/* Next Steps */}
+              <div className="mb-6 space-y-4 rounded-2xl bg-white/70 p-5 backdrop-blur-sm shadow-inner border border-primary-100/50">
+                <div className="flex items-center space-x-4">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-100">
+                    <Mail className="h-5 w-5 text-primary-600" />
+                  </div>
+                  <div className="text-left">
+                    <p className="font-medium text-gray-800">Email Confirmation</p>
+                    <p className="text-sm text-gray-600">Check your inbox for confirmation</p>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-4">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-100">
+                    <MessageCircle className="h-5 w-5 text-primary-600" />
+                  </div>
+                  <div className="text-left">
+                    <p className="font-medium text-gray-800">Join Community</p>
+                    <p className="text-sm text-gray-600">Connect with us on Discord</p>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Action Button */}
+              <button
+                onClick={() => setShowSuccessModal(false)}
+                className="w-full rounded-2xl bg-gradient-to-r from-primary-500 to-primary-600 px-6 py-4 font-semibold text-white shadow-lg transition-all duration-200 hover:from-primary-600 hover:to-primary-700 hover:shadow-xl transform hover:scale-105"
+              >
+                Awesome! Let's Go 🚀
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
