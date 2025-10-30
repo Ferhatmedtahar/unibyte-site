@@ -182,6 +182,8 @@ export const clubInfo = {
   contact: {
     facebook: "https://www.facebook.com/unibyte.cs",
     instagram: "https://www.instagram.com/unibyte.cs",
+    linkedin: "https://www.linkedin.com/company/unibyte-cs/",
+    tiktok: "https://www.tiktok.com/@unibyte.cs",
     email: "unibyte@lagh-univ.dz",
   },
 };

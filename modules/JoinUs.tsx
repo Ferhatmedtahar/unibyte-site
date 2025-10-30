@@ -5,7 +5,9 @@ import { clubInfo } from "@/utils/constants";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Facebook, Instagram, Mail, MapPin } from "lucide-react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebook, faInstagram, faLinkedin, faTiktok } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope, faMapPin } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
@@ -262,7 +264,7 @@ export default function JoinUs() {
               ref={locationRef}
               className="cursor-default mt-6 flex items-center gap-2 hover:text-pink-500 text-white transition-colors duration-200"
             >
-              <MapPin className="h-6 w-6 text-green-500" />
+              <FontAwesomeIcon icon={faMapPin} className="h-6 w-6 text-green-500" />
               <span className="text-lg font-medium">Visit Us:</span>
               <Link
                 href={`${clubInfo.locationLink}`}
@@ -274,13 +276,13 @@ export default function JoinUs() {
 
             <div
               ref={contactLinksRef}
-              className="mt-8 flex w-full flex-col justify-between gap-4 text-lg md:flex-row"
+              className="mt-8 flex w-full flex-col justify-between gap-4 text-lg md:flex-row md:flex-wrap"
             >
               <Link
                 className="flex items-center gap-2 text-white hover:text-red-300 transition-all duration-200 transform hover:translate-x-1"
                 href={`mailto:${clubInfo.contact.email}`}
               >
-                <Mail className="h-7 w-7 text-red-500 hover:text-red-400 transition-colors duration-200" />
+                <FontAwesomeIcon icon={faEnvelope} className="h-7 w-7 text-red-500 hover:text-red-400 transition-colors duration-200" />
                 <span className="hover:underline">
                   {clubInfo.contact.email}
                 </span>
@@ -288,16 +290,34 @@ export default function JoinUs() {
               <Link
                 className="flex items-center gap-2 text-white hover:text-blue-300 transition-all duration-200 transform hover:translate-x-1"
                 href={`${clubInfo.contact.facebook}`}
+                target="_blank"
               >
-                <Facebook className="h-7 w-7 text-blue-500 hover:text-blue-400 transition-colors duration-200" />
+                <FontAwesomeIcon icon={faFacebook} className="h-7 w-7 text-blue-500 hover:text-blue-400 transition-colors duration-200" />
                 <span className="hover:underline">unibyte.cs</span>
               </Link>
               <Link
                 className="flex items-center gap-2 text-white hover:text-pink-200 transition-all duration-200 transform hover:translate-x-1"
                 href={`${clubInfo.contact.instagram}`}
+                target="_blank"
               >
-                <Instagram className="h-7 w-7 text-pink-500 hover:text-pink-400 transition-colors duration-200" />
+                <FontAwesomeIcon icon={faInstagram} className="h-7 w-7 text-pink-500 hover:text-pink-400 transition-colors duration-200" />
                 <span className="hover:underline">unibyte.cs</span>
+              </Link>
+              <Link
+                className="flex items-center gap-2 text-white hover:text-blue-200 transition-all duration-200 transform hover:translate-x-1"
+                href={`${clubInfo.contact.linkedin}`}
+                target="_blank"
+              >
+                <FontAwesomeIcon icon={faLinkedin} className="h-7 w-7 text-blue-600 hover:text-blue-500 transition-colors duration-200" />
+                <span className="hover:underline">unibyte-cs</span>
+              </Link>
+              <Link
+                className="flex items-center gap-2 text-white hover:text-gray-200 transition-all duration-200 transform hover:translate-x-1"
+                href={`${clubInfo.contact.tiktok}`}
+                target="_blank"
+              >
+                <FontAwesomeIcon icon={faTiktok} className="h-7 w-7 text-gray-500" />
+                <span className="hover:underline">@unibyte.cs</span>
               </Link>
             </div>
             <ul

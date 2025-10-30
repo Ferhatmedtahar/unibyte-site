@@ -1,5 +1,7 @@
 import { clubInfo } from "@/utils/constants";
-import { Facebook, Instagram, Mail } from "lucide-react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebook, faInstagram, faLinkedin, faTiktok } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -27,7 +29,7 @@ function Footer() {
         {/* Right side - Navigation */}
         <nav>
           <ul className="flex flex-wrap gap-6">
-            <li>
+            <li key="about">
               <Link
                 href="#about"
                 className="hover:text-white text-sm font-medium transition-colors duration-200"
@@ -35,7 +37,7 @@ function Footer() {
                 About
               </Link>
             </li>
-            <li>
+            <li key="events">
               <Link
                 href="#events"
                 className="hover:text-white text-sm font-medium transition-colors duration-200"
@@ -43,7 +45,7 @@ function Footer() {
                 Events
               </Link>
             </li>
-            <li>
+            <li key="community">
               <Link
                 href="#community"
                 className="hover:text-white text-sm font-medium transition-colors duration-200"
@@ -51,7 +53,7 @@ function Footer() {
                 Community
               </Link>
             </li>
-            <li>
+            <li key="contact">
               <Link
                 href="#contact"
                 className="hover:text-white text-sm font-medium transition-colors duration-200"
@@ -64,26 +66,40 @@ function Footer() {
       </div>
 
       <div className="mt-6 flex flex-col md:flex-row gap-4 justify-between items-start md:items-center">
-        <div className="flex flex-row gap-4">
+        <div className="flex flex-row gap-4 flex-wrap">
           <Link
             className="flex items-center gap-2 hover:text-red-300 transition-all duration-200"
             href={`mailto:${clubInfo.contact.email}`}
           >
-            <Mail className="h-6 w-6 text-red-500" />
+            <FontAwesomeIcon icon={faEnvelope} className="h-6 w-6 text-red-500" />
           </Link>
           <Link
             className="flex items-center gap-2 hover:text-blue-300 transition-all duration-200"
             href={clubInfo.contact.facebook}
             target="_blank"
           >
-            <Facebook className="h-6 w-6 text-blue-500" />
+            <FontAwesomeIcon icon={faFacebook} className="h-6 w-6 text-blue-500" />
           </Link>
           <Link
             className="flex items-center gap-2 hover:text-pink-200 transition-all duration-200"
             href={clubInfo.contact.instagram}
             target="_blank"
           >
-            <Instagram className="h-6 w-6 text-pink-500" />
+            <FontAwesomeIcon icon={faInstagram} className="h-6 w-6 text-pink-500" />
+          </Link>
+          <Link
+            className="flex items-center gap-2 hover:text-blue-200 transition-all duration-200"
+            href={clubInfo.contact.linkedin}
+            target="_blank"
+          >
+            <FontAwesomeIcon icon={faLinkedin} className="h-6 w-6 text-blue-600" />
+          </Link>
+          <Link
+            className="flex items-center gap-2 hover:text-gray-200 transition-all duration-200"
+            href={clubInfo.contact.tiktok}
+            target="_blank"
+          >
+            <FontAwesomeIcon icon={faTiktok} className="h-6 w-6 text-gray-500" />
           </Link>
         </div>
 
