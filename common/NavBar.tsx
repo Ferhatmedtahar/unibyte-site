@@ -2,9 +2,7 @@
 import { clubInfo, NAVBAR_ITEMS } from "@/utils/constants";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebook, faInstagram, faLinkedin, faTiktok } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { Facebook, Instagram, Linkedin, Mail } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
@@ -159,35 +157,37 @@ export default function NavBar() {
                   className="flex items-center gap-2 hover:text-red-300 transition-all duration-200"
                   href={`mailto:${clubInfo.contact.email}`}
                 >
-                  <FontAwesomeIcon icon={faEnvelope} className="h-6 w-6 text-red-500" />
+                  <Mail className="h-6 w-6 text-red-500" />
                 </Link>
                 <Link
                   className="flex items-center gap-2 hover:text-blue-300 transition-all duration-200"
                   href={clubInfo.contact.facebook}
                   target="_blank"
                 >
-                  <FontAwesomeIcon icon={faFacebook} className="h-6 w-6 text-blue-500" />
+                  <Facebook className="h-6 w-6 text-blue-500" />
                 </Link>
                 <Link
                   className="flex items-center gap-2 hover:text-pink-200 transition-all duration-200"
                   href={clubInfo.contact.instagram}
                   target="_blank"
                 >
-                  <FontAwesomeIcon icon={faInstagram} className="h-6 w-6 text-pink-500" />
+                  <Instagram className="h-6 w-6 text-pink-500" />
                 </Link>
                 <Link
                   className="flex items-center gap-2 hover:text-blue-200 transition-all duration-200"
                   href={clubInfo.contact.linkedin}
                   target="_blank"
                 >
-                  <FontAwesomeIcon icon={faLinkedin} className="h-6 w-6 text-blue-600" />
+                  <Linkedin className="h-6 w-6 text-blue-600" />
                 </Link>
                 <Link
                   className="flex items-center gap-2 hover:text-gray-200 transition-all duration-200"
                   href={clubInfo.contact.tiktok}
                   target="_blank"
                 >
-                  <FontAwesomeIcon icon={faTiktok} className="h-6 w-6 text-gray-500" />
+                  <svg className="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12.525.02C2.438 2.02 2 4.808 2 7.398v.016c0 2.67 2.174 4.815 4.88 4.815s4.88-2.145 4.88-4.815v-.016C17.76 2.02 15.394 2 12.525 2 9.658c0-2.736 2.167-4.815 4.88-4.815zm4.885 16.41c0 2.267-1.73 4.115-4.12 4.115v-.016c0-2.39-1.848-4.115-4.115-4.115zm-4.88 6.815v1.039c0 2.267 1.73 4.115 4.12 4.115s4.12-1.848 4.12-4.115v-1.039c-2.735 0-4.88-2.167-4.88-4.815z"/>
+                  </svg>
                 </Link>
               </div>
             </div>
