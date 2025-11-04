@@ -17,7 +17,7 @@ export default function WhatWeDo() {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
-        start: "top 70%",
+        start: "top 85%",
         end: "bottom 20%",
         toggleActions: "play none none reverse",
       },
@@ -46,7 +46,7 @@ export default function WhatWeDo() {
         ease: "power2.out",
         stagger: 0.15,
       },
-      "-=0.8"
+      "-=0.5"
     );
   });
 

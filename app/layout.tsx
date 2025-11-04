@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import favIcon from "../public/favicon.ico";
 import ogImage from "../public/images/about-2.png";
 import "./globals.css";
+import SmoothScrolling from "@/providers/smoothScrolling";
 export const metadata: Metadata = {
   title: "UniByte | Ammar Telidji University",
   metadataBase: new URL("https://unibyte-site.vercel.app/"),
@@ -82,7 +83,8 @@ export default function RootLayout({
         className={` antialiased selection:bg-primary-800 selection:text-primary-50`}
       >
         <NavBar />
-        {children}
+        <SmoothScrolling>{children}</SmoothScrolling>
+        {/* {children} */}
         <Footer />
       </body>
     </html>
