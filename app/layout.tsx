@@ -1,10 +1,11 @@
-import Footer from "@/common/ui/Footer";
-import NavBar from "@/common/ui/NavBar";
+import Footer from "@/common/Footer";
+import NavBar from "@/common/NavBar";
 import type { Metadata } from "next";
 import favIcon from "../public/favicon.ico";
 import ogImage from "../public/images/about-2.png";
-import "./globals.css";
+
 import SmoothScrolling from "@/providers/smoothScrolling";
+import "./globals.css";
 export const metadata: Metadata = {
   title: "UniByte | Ammar Telidji University",
   metadataBase: new URL("https://unibyte-site.vercel.app/"),
