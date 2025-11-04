@@ -265,6 +265,7 @@ export default function JoinUs() {
               <MapPin className="h-6 w-6 text-green-500" />
               <span className="text-lg font-medium">Visit Us:</span>
               <Link
+                target="_blank"
                 href={`${clubInfo.locationLink}`}
                 className="hover:text-pink-500 text-white transition-colors duration-300 hover:underline"
               >
@@ -277,6 +278,7 @@ export default function JoinUs() {
               className="mt-8 flex w-full flex-col justify-between gap-4 text-lg md:flex-row"
             >
               <Link
+                target="_blank"
                 className="flex items-center gap-2 text-white hover:text-red-300 transition-all duration-200 transform hover:translate-x-1"
                 href={`mailto:${clubInfo.contact.email}`}
               >
@@ -292,6 +294,7 @@ export default function JoinUs() {
                 </span>
               </Link>
               <Link
+                target="_blank"
                 className="flex items-center gap-2 text-white hover:text-blue-300 transition-all duration-200 transform hover:translate-x-1"
                 href={`${clubInfo.contact.facebook}`}
               >
@@ -305,6 +308,7 @@ export default function JoinUs() {
                 <span className="hover:underline">unibyte.cs</span>
               </Link>
               <Link
+                target="_blank"
                 className="flex items-center gap-2 text-white hover:text-pink-200 transition-all duration-200 transform hover:translate-x-1"
                 href={`${clubInfo.contact.instagram}`}
               >
