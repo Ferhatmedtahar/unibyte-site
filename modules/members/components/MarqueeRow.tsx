@@ -22,7 +22,7 @@ const MarqueeRow = ({
         {[...Array(4)].map((_, setIndex) =>
           members.map((member, i) => (
             <MemberCard key={`${setIndex}-${i}`} member={member} index={i} />
-          ))
+          )),
         )}
       </div>
       {/* Gradient overlays */}

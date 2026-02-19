@@ -28,8 +28,14 @@ function Hero() {
       char.classList.add("text-gradient");
     });
 
+    gsap.set(
+      ".title, .subtitle, .yellow-subtitle, .left-image, .lamp-hero, .hero-buttons",
+      { autoAlpha: 1 },
+    );
+
     gsap.from(heroSplit.chars, {
       y: 130,
+      autoAlpha: 0,
       duration: 1.5,
       ease: "expo.out",
       stagger: 0.05,
@@ -37,7 +43,7 @@ function Hero() {
 
     gsap.from(yellowSubtitle.words, {
       y: 100,
-      opacity: 0,
+      autoAlpha: 0,
       duration: 1.5,
       ease: "expo.out",
       stagger: 0.05,
@@ -46,7 +52,7 @@ function Hero() {
 
     gsap.from(paragraphSplit.lines, {
       y: 100,
-      opacity: 0,
+      autoAlpha: 0,
       duration: 1.5,
       ease: "expo.out",
       stagger: 0.05,
@@ -55,7 +61,7 @@ function Hero() {
 
     gsap.from(".left-image ,.lamp-hero", {
       y: 100,
-      opacity: 0,
+      autoAlpha: 0,
       duration: 1.5,
       ease: "expo.out",
       delay: 1.5,
@@ -64,7 +70,7 @@ function Hero() {
     // Button animations
     gsap.from(".hero-buttons", {
       y: 50,
-      opacity: 0,
+      autoAlpha: 0,
       duration: 1.2,
       ease: "expo.out",
       delay: 1.8,
@@ -139,7 +145,7 @@ function Hero() {
           width={300}
           height={300}
           loading="eager"
-          className={`left-image filter drop-shadow-lg select-none absolute -left-18  hidden md:block lg:bottom-0 lg:-translate-x-[5%] md:h-[400px] lg:h-[400px] xl:h-auto  z-0`}
+          className={`left-image invisible filter drop-shadow-lg select-none absolute -left-18  hidden md:block lg:bottom-0 lg:-translate-x-[5%] md:h-[400px] lg:h-[400px] xl:h-auto  z-0`}
         />
         <Image
           src={`/images/lamp-hero.png`}
@@ -147,24 +153,24 @@ function Hero() {
           width={80}
           height={80}
           loading="eager"
-          className={`lamp-hero filter drop-shadow-md select-none absolute right-0 md:right-1 lg:right-8 top-20  lg:top-[15%]  z-0`}
+          className={`lamp-hero invisible filter drop-shadow-md select-none absolute right-0 md:right-1 lg:right-8 top-20  lg:top-[15%]  z-0`}
         />
 
         <div className="flex flex-col items-center gap-4 z-10 relative px-4 text-center max-w-4xl mx-auto w-full mb-32">
-          <h1 className="title  text-primary-500 text-7xl md:text-[13vw] lg:text-[10vw]  font-bold">
+          <h1 className="title invisible text-primary-500 text-7xl md:text-[13vw] lg:text-[10vw]  font-bold">
             Unibyte
           </h1>
 
           <div className="flex flex-col items-center gap-2 -mt-4">
-            <p className=" max-w-sm sm:max-w-md md:max-w-lg lg:max-w-4xl yellow-subtitle font-inter text-lg sm:text-xl md:text-2xl lg:text-3xl text-primary-600  font-semibold tracking-tight">
+            <p className=" max-w-sm sm:max-w-md md:max-w-lg lg:max-w-4xl yellow-subtitle invisible font-inter text-lg sm:text-xl md:text-2xl lg:text-3xl text-primary-600  font-semibold tracking-tight">
               WHERE THE POWER OF 0s AND 1s UNITE !
             </p>
-            <p className="max-w-sm  md:max-w-md lg:max-w-3xl subtitle text-yellow font-inter text-base md:text-lg lg:text-xl  font-medium text-center leading-relaxed">
+            <p className="max-w-sm  md:max-w-md lg:max-w-3xl subtitle invisible text-yellow font-inter text-base md:text-lg lg:text-xl  font-medium text-center leading-relaxed">
               To embrace the future with a community of thinkers and creators
             </p>
           </div>
 
-          <div className="hero-buttons flex items-center gap-4 ">
+          <div className="hero-buttons invisible flex items-center gap-4 ">
             <div className="hero-button">
               <Button variant="primary">
                 <Link href={`#about`}>Learn More</Link>
