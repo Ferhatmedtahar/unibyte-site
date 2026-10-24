@@ -10,7 +10,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/common/ui/select";
-import { Textarea } from "@/common/ui/textarea";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Check, CheckCircle, Loader2, Mail, MessageCircle, X, Star, Trophy, Users } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -100,6 +99,7 @@ export default function RegistrationForm() {
 
   const interests = watch("interests");
   const hearAboutUs = watch("hearAboutUs");
+  const studyYear = watch("studyYear");
 
   // Check submission eligibility on mount
   useEffect(() => {
@@ -213,62 +213,41 @@ export default function RegistrationForm() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div className="space-y-2">
-            <Label htmlFor="phone" className="text-primary-700">
-              Phone Number *
-            </Label>
-            <Input
-              id="phone"
-              type="tel"
-              {...register("phone")}
-              disabled={isBlocked}
-              inputMode="tel"
-              autoComplete="tel"
-              className="bg-white/80 border-primary-300/60 focus:border-primary-500 focus:ring-primary-500/20 text-primary-800 placeholder:text-primary-400/60 disabled:opacity-50 disabled:cursor-not-allowed"
-              placeholder="+213 123 456 789"
-            />
-            {errors.phone && (
-              <p className="text-sm text-red-600 mt-1">
-                {errors.phone.message}
-              </p>
-            )}
-          </div>
-          <div className="space-y-2">
-            <Label htmlFor="universityNumber" className="text-primary-700">
-              University Number *
-            </Label>
-            <Input
-              id="universityNumber"
-              type="text"
-              {...register("universityNumber")}
-              disabled={isBlocked}
-              className="bg-white/80 border-primary-300/60 focus:border-primary-500 focus:ring-primary-500/20 text-primary-800 placeholder:text-primary-400/60 disabled:opacity-50 disabled:cursor-not-allowed"
-              placeholder="e.g. 2424XXXX"
-            />
-            {errors.universityNumber && (
-              <p className="text-sm text-red-600 mt-1">
-                {errors.universityNumber.message}
-              </p>
-            )}
-          </div>
-        </div>
-
         <div className="space-y-2">
-          <Label htmlFor="whyJoin" className="text-primary-700">
-            Please tell us why you want to join , and if you would help us  , what u can do ? *
+          <Label htmlFor="studyYear" className="text-primary-700">
+            Study Year *
           </Label>
-          <Textarea
-            id="whyJoin"
-            {...register("whyJoin")}
+          <Select
+            value={studyYear}
+            onValueChange={(value) =>
+              setValue("studyYear", value as RegistrationFormData["studyYear"], {
+                shouldValidate: true,
+              })
+            }
             disabled={isBlocked}
-            rows={3}
-            className="bg-white/80 border-primary-300/60 focus:border-primary-500 focus:ring-primary-500/20 text-primary-800 placeholder:text-primary-400/60 resize-none disabled:opacity-50 disabled:cursor-not-allowed"
-            placeholder="Tell us about your motivation to join our community..."
-          />
-          {errors.whyJoin && (
+          >
+            <SelectTrigger
+              id="studyYear"
+              className="bg-white/80 border-primary-300/60 focus:border-primary-500 focus:ring-primary-500/20 text-primary-800 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              <SelectValue placeholder="Select your study year" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="engineering-1">Engineering — Year 1</SelectItem>
+              <SelectItem value="engineering-2">Engineering — Year 2</SelectItem>
+              <SelectItem value="engineering-3">Engineering — Year 3</SelectItem>
+              <SelectItem value="engineering-4">Engineering — Year 4</SelectItem>
+              <SelectItem value="engineering-5">Engineering — Year 5</SelectItem>
+              <SelectItem value="lmd-1">LMD — Year 1</SelectItem>
+              <SelectItem value="lmd-2">LMD — Year 2</SelectItem>
+              <SelectItem value="lmd-3">LMD — Year 3</SelectItem>
+              <SelectItem value="lmd-4">LMD — Year 4</SelectItem>
+              <SelectItem value="lmd-5">LMD — Year 5</SelectItem>
+            </SelectContent>
+          </Select>
+          {errors.studyYear && (
             <p className="text-sm text-red-600 mt-1">
-              {errors.whyJoin.message}
+              {errors.studyYear.message}
             </p>
           )}
         </div>

@@ -14,25 +14,21 @@ export const registrationSchema = z.object({
     .email("Please enter a valid email address")
     .toLowerCase(),
 
-  phone: z
-    .string()
-    .min(1, "Phone number is required")
-    .regex(
-      /^[\+]?[(]?[0-9]{1,4}[)]?[-\s\.]?[(]?[0-9]{1,4}[)]?[-\s\.]?[0-9]{1,9}$/,
-      "Please enter a valid phone number"
-    ),
-
-  universityNumber: z
-    .string()
-    .min(1, "University number is required")
-    .regex(
-      /^[0-9]{4}[A-Za-z0-9]+$/,
-      "University number must start with 4 digits (e.g., 2023XXXX)"
-    ),
-
-  whyJoin: z
-    .string()
-    .min(1, "Please tell us why you want to join ,"),
+  studyYear: z.enum(
+    [
+      "engineering-1",
+      "engineering-2",
+      "engineering-3",
+      "engineering-4",
+      "engineering-5",
+      "lmd-1",
+      "lmd-2",
+      "lmd-3",
+      "lmd-4",
+      "lmd-5",
+    ],
+    "Please select your study year"
+  ),
 
   interests: z.string().min(1, "Please select your interests"),
 

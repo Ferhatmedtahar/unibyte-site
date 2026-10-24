@@ -41,9 +41,7 @@ export async function submitRegistration(
       };
     }
 
-    // Reorder fields to ensure whyJoin is the last column in Google Sheets
-    const { whyJoin, ...otherFields } = validatedData;
-    const payload = { ...otherFields, whyJoin, _secret: SECRET };
+    const payload = { ...validatedData, _secret: SECRET };
     console.log("Payload to be sent:", payload);
     const response = await fetch(APPS_SCRIPT_ENDPOINT, {
       method: "POST",
