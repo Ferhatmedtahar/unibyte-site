@@ -30,27 +30,42 @@ function Faq() {
   };
 
   return (
-    <section id="faq" className="container mx-auto max-w-5xl px-4 mt-20">
+    <section
+      id="faq"
+      className="container mx-auto max-w-4xl px-4 pt-8 pb-20 md:pt-12 md:pb-28"
+    >
       <div className="space-y-6">
-        <h2 className="text-center text-4xl md:text-6xl pb-4 text-gradient font-bold bg-gradient-to-r from-primary-600 via-primary-400 to-primary-500 bg-clip-text text-transparent mb-4">
+        <h2 className="section-title text-center mb-10">
           Frequently Asked Questions
         </h2>
 
-        <div className="divide-y divide-primary-200 px-4">
+        <div className="space-y-3">
           {faqData.map((item, index) => (
-            <div key={index} className="py-2 ">
+            <div
+              key={index}
+              className="rounded-2xl bg-primary-50/70 px-4 md:px-6 transition-colors duration-300 hover:bg-primary-100"
+            >
               <button
                 onClick={() => toggleQuestion(index)}
-                className="w-full py-4 text-left flex items-start justify-between gap-4 hover:bg-gray-50 transition-colors duration-200 focus:outline-none focus:bg-gray-50"
+                aria-expanded={openIndex === index}
+                className="group w-full py-6 px-2 text-left flex items-center justify-between gap-6 hover:cursor-pointer focus-visible:rounded-2xl"
               >
-                <span className="text-[15px] leading-6 font-medium text-primary-600 flex-1 hover:no-underline">
+                <span className="text-lg md:text-[1.375rem] leading-snug font-medium tracking-[-0.015em] text-primary-700 group-hover:text-primary-500 transition-colors duration-300 flex-1">
                   {item.question}
                 </span>
-                <ChevronDownIcon
-                  className={`w-4 h-4 text-primary-500 shrink-0 mt-0.5 transition-transform duration-300 ease-in-out ${
-                    openIndex === index ? "rotate-180" : "rotate-0"
+                <span
+                  className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl transition-colors duration-300 ${
+                    openIndex === index
+                      ? "bg-primary-500 text-white"
+                      : "bg-white text-primary-500"
                   }`}
-                />
+                >
+                  <ChevronDownIcon
+                    className={`w-4 h-4 transition-transform duration-500 ease-premium ${
+                      openIndex === index ? "rotate-180" : "rotate-0"
+                    }`}
+                  />
+                </span>
               </button>
 
               <div
@@ -60,11 +75,9 @@ function Faq() {
                     : "max-h-0 opacity-0"
                 }`}
               >
-                <div className="pb-4 pt-0">
+                <div className="pb-6 px-2 pr-16">
                   <div
-                    className={`text-primary-400 leading-relaxed transform transition-transform duration-300 ease-in-out ${
-                      openIndex === index ? "translate-y-0" : "-translate-y-2"
-                    }`}
+                    className={`text-primary-700/70 text-base md:text-lg leading-relaxed`}
                   >
                     {item.answer}
                   </div>

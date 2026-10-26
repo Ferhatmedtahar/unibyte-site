@@ -118,7 +118,7 @@ export default function AirpodsScrollCanvas() {
           y: 50,
           duration: 0.2,
         },
-        0.1
+        0.1,
       ).to(
         ".airpods-title",
         {
@@ -126,7 +126,7 @@ export default function AirpodsScrollCanvas() {
           y: -50,
           duration: 0.2,
         },
-        0.7
+        0.7,
       );
 
       tl.from(
@@ -136,7 +136,7 @@ export default function AirpodsScrollCanvas() {
           y: 50,
           duration: 0.2,
         },
-        0.3
+        0.3,
       ).to(
         ".airpods-subtitle",
         {
@@ -144,7 +144,7 @@ export default function AirpodsScrollCanvas() {
           y: -50,
           duration: 0.2,
         },
-        0.8
+        0.8,
       );
     };
 

@@ -1,11 +1,24 @@
 import Footer from "@/common/Footer";
 import NavBar from "@/common/NavBar";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
+import { Outfit } from "next/font/google";
 import favIcon from "../public/favicon.ico";
 import ogImage from "../public/images/about-2.png";
 
 import SmoothScrolling from "@/providers/smoothScrolling";
 import "./globals.css";
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  display: "swap",
+  variable: "--font-outfit",
+});
+
+export const viewport: Viewport = {
+  themeColor: "#580454",
+};
+
 export const metadata: Metadata = {
   title: "UniByte | Ammar Telidji University",
   metadataBase: new URL("https://unibyte-site.vercel.app/"),
@@ -79,13 +92,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={` antialiased selection:bg-primary-800 selection:text-primary-50`}
-      >
+    <html lang="en" className={outfit.variable}>
+      <body className="font-sans antialiased">
         <NavBar />
         <SmoothScrolling>{children}</SmoothScrolling>
-        {/* {children} */}
         <Footer />
       </body>
     </html>

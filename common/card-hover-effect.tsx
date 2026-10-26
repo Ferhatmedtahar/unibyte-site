@@ -21,7 +21,7 @@ export const HoverEffect = ({
     <div
       className={cn(
         "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  py-4 ",
-        className
+        className,
       )}
     >
       {items.map((item, idx) => (
@@ -90,7 +90,7 @@ export const Card = ({
     <div
       className={cn(
         "rounded-3xl h-full w-full p-6 overflow-hidden bg-[#fafafacc] backdrop-blur-sm border-2 border-primary-400/60 group-hover:border-primary-400/80 relative z-20 shadow-lg group-hover:shadow-xl transition-all duration-300 min-h-[260px]",
-        className
+        className,
       )}
     >
       <div className="relative z-50 h-full flex flex-col">{children}</div>
@@ -119,7 +119,7 @@ export const CardTitle = ({
     <h4
       className={cn(
         "text-primary-800 group-hover:text-primary-400 font-bold text-xl tracking-wide mb-4 transition-colors duration-300",
-        className
+        className,
       )}
     >
       {children}
@@ -138,7 +138,7 @@ export const CardDescription = ({
     <p
       className={cn(
         "text-primary-600/90 group-hover:text-primary-300/90 tracking-wide leading-relaxed text-sm flex-grow transition-colors duration-300",
-        className
+        className,
       )}
     >
       {children}

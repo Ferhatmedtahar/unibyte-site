@@ -46,7 +46,7 @@ export default function WhatWeDo() {
         ease: "power2.out",
         stagger: 0.15,
       },
-      "-=0.5"
+      "-=0.5",
     );
   });
 
@@ -54,20 +54,17 @@ export default function WhatWeDo() {
     <div
       id="activities"
       ref={containerRef}
-      className="max-w-6xl mx-auto px-8 py-20 relative"
+      className="max-w-6xl mx-auto px-6 md:px-8 py-24 md:py-32 relative"
     >
-      <div className="text-center mb-8">
-        <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-primary-100/80 to-primary-200/80 text-primary-800 text-sm font-medium mb-6">
-          <div className="w-2 h-2 bg-primary-500 rounded-full mr-2 animate-pulse"></div>
+      <div className="text-center mb-12">
+        <div className="pill-tag mb-6">
+          <span className="w-2 h-2 bg-gold-400 rounded-full" />
           Our Activities
         </div>
-        <h2
-          ref={titleRef}
-          className="text-4xl md:text-6xl pb-4 text-gradient font-bold bg-gradient-to-r from-primary-600 via-primary-400 to-primary-500 bg-clip-text text-transparent mb-4"
-        >
+        <h2 ref={titleRef} className="section-title mb-5">
           What We Do
         </h2>
-        <p className=" paragraph text-primary-600/80 text-lg max-w-2xl mx-auto">
+        <p className="paragraph section-lead mx-auto">
           Discover the exciting activities and opportunities that make UniByte a
           thriving tech community
         </p>
