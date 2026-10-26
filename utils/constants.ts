@@ -64,7 +64,7 @@ export const pastEvents = [
     description: `The Linux Worrkshop was specifically presented to the first year computer science engineering students 
 to help them set up the system and slove the problems they encoutred.`,
     image: "/workshops/linux.jpg",
-    gradient: "from-blue-400 to-cyan-400",
+    gradient: "from-primary-900 via-primary-700/80 to-primary-500/40",
   },
   {
     id: 2,
@@ -76,7 +76,7 @@ to help them set up the system and slove the problems they encoutred.`,
     description: `A workshop where students learn the basics of software devlopement 
 starting from the front-end to everything related to the back-end .`,
     image: "/workshops/SoftwareWorkshop.jpg",
-    gradient: "from-emerald-400 to-teal-400",
+    gradient: "from-primary-900 via-primary-700/80 to-primary-500/40",
   },
   {
     id: 3,
@@ -88,7 +88,7 @@ starting from the front-end to everything related to the back-end .`,
     description: `Hands-on workshop on web development basics. presented for the discord commmunity to discover all the tips and tricks 
 of HTML, CSS, JavaScript, Tailwind A11y and front-end devlopement in general.`,
     image: "/workshops/basicweb.jpg",
-    gradient: "from-purple-400 to-pink-400",
+    gradient: "from-primary-900 via-primary-700/80 to-primary-500/40",
   },
   {
     id: 4,
@@ -99,7 +99,7 @@ of HTML, CSS, JavaScript, Tailwind A11y and front-end devlopement in general.`,
     location: "Conference Hall",
     description: `The club participated in organizing both the second and third editions of the Coding Master Competition both locally and nationally ,with a well-deserved fourth place.`,
     image: "/workshops/coding-master.jpg",
-    gradient: "from-indigo-400 to-blue-400",
+    gradient: "from-primary-900 via-primary-700/80 to-primary-500/40",
   },
   {
     id: 5,
@@ -110,7 +110,7 @@ of HTML, CSS, JavaScript, Tailwind A11y and front-end devlopement in general.`,
     location: "Conference Hall",
     description: `Unibyte helped in organizing The 7th IEEE I nternational Conference on Pattern Analysis and Intelligent Systems with the presence of expert lecturers.`,
     image: "/workshops/IMG_20250423_234016_581.png",
-    gradient: "from-red-400 to-orange-400",
+    gradient: "from-primary-900 via-primary-700/80 to-primary-500/40",
   },
   {
     id: 6,
@@ -121,7 +121,7 @@ of HTML, CSS, JavaScript, Tailwind A11y and front-end devlopement in general.`,
     location: "Entrepreneurship Center",
     description: `Unibyte was honered to help organize this wondeful event presented by expert trainers  exclusively to the verifiable academic sttudents.`,
     image: "/workshops/Nvidia.jpg",
-    gradient: "from-green-400 to-lime-400",
+    gradient: "from-primary-900 via-primary-700/80 to-primary-500/40",
   },
   {
     id: 7,
@@ -132,7 +132,7 @@ of HTML, CSS, JavaScript, Tailwind A11y and front-end devlopement in general.`,
     location: "Library",
     description: `Unibyte to be part of the opening day of Ammar Telidji University.`,
     image: "/workshops/photography.jpg",
-    gradient: "from-yellow-400 to-lime-400",
+    gradient: "from-primary-900 via-primary-700/80 to-primary-500/40",
   },
 ];
 
@@ -206,3 +206,5 @@ export const teamMembers = [
   { name: "Boucherit Meriem ", role: "Social Media manager" },
 
 ];
+
+export const SITE_URL = "https://www.unibyteclub.tech";

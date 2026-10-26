@@ -2,190 +2,76 @@
 import Button from "@/common/Button";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { ScrollTrigger, SplitText } from "gsap/all";
-import Image from "next/image";
-import Link from "next/link";
-import { useMediaQuery } from "react-responsive";
+import { SplitText } from "gsap/all";
+import { useRef } from "react";
+import BitWordmark from "./components/BitWordmark";
 
-gsap.registerPlugin(SplitText, ScrollTrigger);
+gsap.registerPlugin(SplitText);
+
+const REVEAL = [".hero-tagline", ".hero-subtitle", ".hero-buttons"];
+const MOBILE_LINES = ["Uni", "byte"];
 
 function Hero() {
-  const isMobile = useMediaQuery({ maxWidth: 767 });
-
-  useGSAP(() => {
-    const heroSplit = new SplitText(".title", {
-      type: "chars, words",
-    });
-    const paragraphSplit = new SplitText(".subtitle", {
-      type: "lines",
-    });
-
-    const yellowSubtitle = new SplitText(".yellow-subtitle", {
+  const sectionRef = useRef<HTMLElement>(null);
+  const { contextSafe } = useGSAP({ scope: sectionRef });
+  const playCopy = contextSafe(() => {
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      gsap.set(REVEAL, { autoAlpha: 1 });
+      return;
+    }
+    const tagline = new SplitText(".hero-tagline", {
       type: "words",
+      mask: "words",
     });
-
-    heroSplit.chars.forEach((char, i) => {
-      char.classList.add("text-gradient");
-    });
-
-    gsap.set(
-      ".title, .subtitle, .yellow-subtitle, .left-image, .lamp-hero, .hero-buttons",
-      { autoAlpha: 1 },
-    );
-
-    gsap.from(heroSplit.chars, {
-      y: 130,
-      autoAlpha: 0,
-      duration: 1.5,
-      ease: "expo.out",
-      stagger: 0.05,
-    });
-
-    gsap.from(yellowSubtitle.words, {
-      y: 100,
-      autoAlpha: 0,
-      duration: 1.5,
-      ease: "expo.out",
-      stagger: 0.05,
-      delay: 0.8,
-    });
-
-    gsap.from(paragraphSplit.lines, {
-      y: 100,
-      autoAlpha: 0,
-      duration: 1.5,
-      ease: "expo.out",
-      stagger: 0.05,
-      delay: 1,
-    });
-
-    gsap.from(".left-image ,.lamp-hero", {
-      y: 100,
-      autoAlpha: 0,
-      duration: 1.5,
-      ease: "expo.out",
-      delay: 1.5,
-    });
-
-    // Button animations
-    gsap.from(".hero-buttons", {
-      y: 50,
-      autoAlpha: 0,
-      duration: 1.2,
-      ease: "expo.out",
-      delay: 1.8,
-    });
-
-    gsap.to(".hero-button", {
-      // boxShadow: "0 0 20px rgba(127, 6, 121, 0.3)",
-      duration: 2,
-      repeat: -1,
-      yoyo: true,
-      ease: "sine.inOut",
-      stagger: 0.2,
-    });
-
-    // Alternative: Animate transform and opacity for floating effect
-    gsap.to(".blob-bg", {
-      x: 10,
-      y: 10,
-      rotation: 0.5,
-      duration: 20,
-      repeat: -1,
-      yoyo: true,
-      ease: "sine.inOut",
-    });
-
-    // Add subtle scale animation
-    gsap.to(".blob-bg", {
-      scale: 1.02,
-      duration: 15,
-      repeat: -1,
-      yoyo: true,
-      ease: "power1.inOut",
-    });
-
+    gsap.set(REVEAL, { autoAlpha: 1 });
     gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: "#hero",
-          start: "top top",
-          end: "bottom top",
-          scrub: true,
-        },
-      })
-      .to(".lamp-hero", { y: 200 }, 0)
-      .to(".left-image", { y: -200 }, 0);
-  }, [isMobile]);
+      .timeline({ defaults: { ease: "expo.out" }, delay: 0.9 })
+      .from(tagline.words, { yPercent: 110, duration: 1.1, stagger: 0.04 })
+      .from(".hero-subtitle", { y: 16, autoAlpha: 0, duration: 1 }, 0.25)
+      .from(
+        ".hero-buttons > *",
+        { y: 16, autoAlpha: 0, duration: 0.9, stagger: 0.08 },
+        0.4,
+      );
+  });
 
   return (
-    <section id="hero" className="relative">
-      <div className="min-h-screen  w-full bg-gradient-to-br from-primary-50/50 via-white to-white  overflow-hidden flex items-center justify-center">
-        {/* Enhanced Gradient Overlay with Animated Blobs */}
-        <div
-          className="absolute inset-0 z-0 blob-bg"
-          style={
-            {
-              backgroundImage: `
-              linear-gradient(to right, rgba(127, 6, 121, 0.09) 1px, transparent 1px),
-              linear-gradient(to bottom, rgba(127, 6, 121, 0.09) 1px, transparent 1px),
-              radial-gradient(circle 300px at 20% 20%, rgba(127, 6, 121, 0.15), transparent),
-              radial-gradient(circle 500px at 80% 80%, rgba(127, 6, 121, 0.15), transparent),
-              radial-gradient(circle 400px at 100% 40%, rgba(248, 109, 242, 0.05), transparent)
-            `,
-              backgroundSize:
-                "60px 60px, 60px 60px, 100% 100%, 100% 100%, 100% 100%",
-            } as React.CSSProperties
-          }
+    <section
+      id="hero"
+      ref={sectionRef}
+      className="relative isolate flex min-h-dvh w-full flex-col overflow-hidden bg-paper"
+    >
+      <h1 className="sr-only">Unibyte</h1>
+      <div className="flex items-end pt-24 pb-4 sm:flex-1 sm:items-center sm:pb-0 md:pt-28">
+        <BitWordmark
+          word="Unibyte"
+          mobileLines={MOBILE_LINES}
+          onStart={playCopy}
+          className="w-full px-5 sm:px-4 md:px-8"
         />
+      </div>
+      <div className="mx-auto grid w-full max-w-[1480px] mt-auto gap-7 px-5 pb-10 sm:mt-0 sm:gap-8 sm:pb-12 md:grid-cols-12 md:items-end md:gap-10 md:px-10 md:pb-16">
+        <p className="hero-tagline invisible max-w-[20ch] text-[clamp(1.75rem,4vw,3.5rem)] font-semibold leading-[1.02] tracking-[-0.03em] text-primary-500 md:col-span-7">
+          WHERE THE POWER OF 0s AND 1s UNITE !
+        </p>
 
-        <Image
-          src={`/images/hand-hero-2.png`}
-          alt="hand-hero"
-          width={300}
-          height={300}
-          loading="eager"
-          className={`left-image invisible filter drop-shadow-lg select-none absolute -left-18  hidden md:block lg:bottom-0 lg:-translate-x-[5%] md:h-[400px] lg:h-[400px] xl:h-auto  z-0`}
-        />
-        <Image
-          src={`/images/lamp-hero.png`}
-          alt="lamp-hero"
-          width={80}
-          height={80}
-          loading="eager"
-          className={`lamp-hero invisible filter drop-shadow-md select-none absolute right-0 md:right-1 lg:right-8 top-20  lg:top-[15%]  z-0`}
-        />
-
-        <div className="flex flex-col items-center gap-4 z-10 relative px-4 text-center max-w-4xl mx-auto w-full mb-32">
-          <h1 className="title invisible text-primary-500 text-7xl md:text-[13vw] lg:text-[10vw]  font-bold">
-            Unibyte
-          </h1>
-
-          <div className="flex flex-col items-center gap-2 -mt-4">
-            <p className=" max-w-sm sm:max-w-md md:max-w-lg lg:max-w-4xl yellow-subtitle invisible font-inter text-lg sm:text-xl md:text-2xl lg:text-3xl text-primary-600  font-semibold tracking-tight">
-              WHERE THE POWER OF 0s AND 1s UNITE !
-            </p>
-            <p className="max-w-sm  md:max-w-md lg:max-w-3xl subtitle invisible text-yellow font-inter text-base md:text-lg lg:text-xl  font-medium text-center leading-relaxed">
-              To embrace the future with a community of thinkers and creators
-            </p>
-          </div>
-
-          <div className="hero-buttons invisible flex items-center gap-4 ">
-            <div className="hero-button">
-              <Button variant="primary">
-                <Link href={`#about`}>Learn More</Link>
+        <div className="flex flex-col items-start gap-7 md:col-span-5 md:col-start-8">
+          <p className="hero-subtitle invisible max-w-[34ch] text-[clamp(1.0625rem,1.3vw,1.25rem)] font-light leading-relaxed text-primary-700/75">
+            To embrace the future with a community of thinkers and creators
+          </p>
+          <div className="hero-buttons invisible flex flex-wrap items-center gap-3">
+            <div>
+              <Button href="#contact" size="large">
+                Join Us
               </Button>
             </div>
-            <div className="hero-button">
-              <Button variant="secondary">
-                <Link href={`#contact`}>Join Us</Link>
+            <div>
+              <Button href="#about" variant="secondary" size="large">
+                Learn More
               </Button>
             </div>
           </div>
         </div>
-
-        {/* Bottom Accent */}
-        <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-200 via-yellow to-primary-400 opacity-60"></div>
       </div>
     </section>
   );

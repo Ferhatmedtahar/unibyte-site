@@ -1,14 +1,32 @@
 import Footer from "@/common/Footer";
 import NavBar from "@/common/NavBar";
-import type { Metadata } from "next";
+import EasterEggs from "@/common/EasterEggs";
+import type { Metadata, Viewport } from "next";
+import { Outfit } from "next/font/google";
 import favIcon from "../public/favicon.ico";
 import ogImage from "../public/images/about-2.png";
 
 import SmoothScrolling from "@/providers/smoothScrolling";
+import { SITE_URL } from "@/utils/constants";
 import "./globals.css";
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  display: "swap",
+  variable: "--font-outfit",
+});
+
+export const viewport: Viewport = {
+  themeColor: "#580454",
+};
+
 export const metadata: Metadata = {
   title: "UniByte | Ammar Telidji University",
-  metadataBase: new URL("https://unibyte-site.vercel.app/"),
+  metadataBase: new URL(SITE_URL),
+  alternates: {
+    canonical: "/",
+  },
   description: `UniByte is a student-led tech club at Ammar Telidji University. 
 Whether you're passionate about coding, design, photography, or any tech frontier, 
 UniByte is your launchpad for personal growth, meaningful collaboration, and real-world impact.`,
@@ -25,12 +43,14 @@ UniByte is your launchpad for personal growth, meaningful collaboration, and rea
     "hackathons",
     "photography",
     "workshops",
+    "unibyteclub",
+    "Laghouat",
   ],
   openGraph: {
     title: "UniByte | Where the Power of 0s and 1s Unite!",
     description:
       "Join UniByte — the student-led tech community at Ammar Telidji University. Explore coding, design, workshops, and more.",
-    url: "https://unibyte-site.vercel.app/",
+    url: SITE_URL,
     siteName: "UniByte",
     images: [
       {
@@ -79,14 +99,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={` antialiased selection:bg-primary-800 selection:text-primary-50`}
-      >
+    <html lang="en" className={`${outfit.variable} scroll-smooth`}>
+      <body className="font-sans antialiased">
+        <SmoothScrolling>
+          <EasterEggs />
         <NavBar />
-        <SmoothScrolling>{children}</SmoothScrolling>
-        {/* {children} */}
-        <Footer />
+          {children}
+          <Footer />
+        </SmoothScrolling>
       </body>
     </html>
   );

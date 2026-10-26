@@ -55,18 +55,18 @@ export default function TeamTestimonials() {
         }
       `}</style>
 
-      <div id="team" className="py-12 sm:py-24 px-4 w-screen">
-        <div className="mx-auto max-w-7xl">
+      <div id="team" className="w-full py-20 sm:py-32">
+        <div className="mx-auto max-w-7xl px-4 lg:px-8">
           {/* Header */}
           <div className="text-center mb-12 sm:mb-10">
-            <h2 className="text-center text-4xl md:text-6xl pb-4 text-gradient font-bold bg-gradient-to-r from-primary-600 via-primary-400 to-primary-500 bg-clip-text text-transparent mb-2">
+            <h2 className="section-title text-center mb-5">
               Meet Our Amazing Team
             </h2>
-            <p className="text-lg md:text-xl text-primary-400/85 max-w-3xl mx-auto px-4">
+            <p className="section-lead mx-auto px-4">
               Discover the talented individuals who make our success possible
             </p>
           </div>
-          <div className="space-y-2 sm:space-y-4 ">
+          <div className="space-y-3">
             <MarqueeRow members={firstRow} direction="left" />
             <MarqueeRow members={secondRow} direction="right" />
           </div>

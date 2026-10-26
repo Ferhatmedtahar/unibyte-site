@@ -2,6 +2,7 @@
 import { clubInfo, NAVBAR_ITEMS } from "@/utils/constants";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
+import { useLenis } from "lenis/react";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -12,39 +13,41 @@ export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
+  const lenis = useLenis();
 
   useGSAP(() => {
     // Initial navbar animation
     gsap.fromTo(
       ".navbar",
-      { y: -100, opacity: 0 },
-      { y: 0, opacity: 1, duration: 1, ease: "power3.inOut", delay: 0.2 }
+      { yPercent: -100, opacity: 0 },
+      { yPercent: 0, opacity: 1, duration: 1.2, ease: "expo.out", delay: 1.1 },
     );
   }, []);
-
-  // Menu animations
   useGSAP(() => {
-    if (isOpen) {
-      const tl = gsap.timeline();
+    if (!isOpen) return;
+    const tl = gsap.timeline({ delay: 0.15 });
+    tl.fromTo(
+      ".menu-link",
+      { yPercent: 110 },
+      {
+        yPercent: 0,
+        duration: 0.9,
+        stagger: 0.06,
+        ease: "expo.out",
+      },
+    ).fromTo(
+      ".menu-footer",
+      { opacity: 0 },
+      { opacity: 1, duration: 0.6, ease: "power2.out" },
+      "-=0.5",
+    );
+  }, [isOpen]);
 
-      tl.from(".menu-item", {
-        x: 100,
-        opacity: 0,
-        duration: 0.6,
-        stagger: 0.1,
-        ease: "power3.out",
-        delay: 0.2,
-      }).from(
-        ".menu-footer",
-        {
-          y: 50,
-          opacity: 0,
-          duration: 0.5,
-          ease: "power2.out",
-        },
-        "-=0.3"
-      );
-    }
+  useEffect(() => {
+    if (!isOpen) return;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setIsOpen(false);
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
   }, [isOpen]);
 
   const isMobile = useMediaQuery({ maxWidth: 767 });
@@ -82,13 +85,28 @@ export default function NavBar() {
     setIsOpen(!isOpen);
   };
 
-  const handleLinkClick = () => {
+  const handleLinkClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    id: string,
+  ) => {
     setIsOpen(false);
+    if (typeof window !== "undefined" && window.location.pathname === "/") {
+      const element = document.getElementById(id);
+      if (element) {
+        e.preventDefault();
+        if (lenis) {
+          lenis.scrollTo(element, { offset: -20, duration: 1.2 });
+        } else {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+        window.history.pushState(null, "", `#${id}`);
+      }
+    }
   };
 
   return (
     <>
-      <nav className="navbar fixed top-0 left-0 right-0 z-50 px-6 lg:px-12 py-4">
+      <nav className="navbar fixed top-0 left-0 right-0 z-50 px-5 lg:px-12 py-3">
         <div className="flex justify-between items-center">
           <Link href="/" className="flex items-center gap-3 group">
             <Image
@@ -98,29 +116,31 @@ export default function NavBar() {
               src="/logo.png"
               className="w-10 h-10 rounded-full"
             />
-            <span className="text-xl font-bold text-primary-600 font-roboto">
+            <span className="text-[1.375rem] font-semibold tracking-[-0.03em] text-primary-500">
               Unibyte
             </span>
           </Link>
           <button
             ref={buttonRef}
             onClick={handleMenuToggle}
-            className="flex items-center gap-3 text-primary-600 hover:text-primary-500 transition-colors duration-300 font-medium hover:cursor-pointer"
+            aria-expanded={isOpen}
+            aria-label="Open menu"
+            className="relative flex h-11 items-center gap-3 rounded-xl bg-primary-100/60 pl-5 pr-4 text-primary-600 transition-colors duration-300 hover:bg-primary-100 font-medium hover:cursor-pointer"
           >
-            <span className="text-lg font-roboto">Menu</span>
-            <div className="w-6 h-6 flex flex-col justify-center items-center relative">
+            <span className="text-base tracking-[-0.01em]">Menu</span>
+            <div className="w-5 h-5 flex flex-col justify-center items-center relative">
               <div
-                className={`w-6 h-0.5 bg-primary-500 transform transition-all duration-300 absolute ${
+                className={`w-5 h-0.5 rounded-full bg-primary-500 transform transition-all duration-500 ease-premium absolute ${
                   isOpen ? "rotate-45" : "-translate-y-1.5"
                 }`}
               ></div>
               <div
-                className={`w-6 h-0.5 bg-primary-500 transform transition-all duration-300 absolute ${
+                className={`w-5 h-0.5 rounded-full bg-primary-500 transform transition-all duration-500 ease-premium absolute ${
                   isOpen ? "opacity-0" : "opacity-100"
                 }`}
               ></div>
               <div
-                className={`w-6 h-0.5 bg-primary-500 transform transition-all duration-300 absolute ${
+                className={`w-5 h-0.5 rounded-full bg-primary-500 transform transition-all duration-500 ease-premium absolute ${
                   isOpen ? "-rotate-45" : "translate-y-1.5"
                 }`}
               ></div>
@@ -130,22 +150,38 @@ export default function NavBar() {
       </nav>
       <div
         ref={menuRef}
-        className={` fixed top-0  left-[0%] md:left-[55%] lg:left-[58%] xl:left-[65%] 2xl:left-[70%] right-0 bottom-0 bg-primary-800/85 z-40 transition-all duration-500 ease-out ${
+        className={` fixed top-0  left-[0%] md:left-[55%] lg:left-[58%] xl:left-[65%] 2xl:left-[70%] right-0 bottom-0 bg-primary-900 z-[70] transition-[opacity,visibility] duration-500 ease-premium ${
           isOpen ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
       >
-        <div className="flex   flex-col justify-center items-center w-full md:items-start h-full px-6 lg:px-12 max-w-2xl">
+        <button
+          onClick={() => setIsOpen(false)}
+          aria-label="Close menu"
+          className="absolute top-3 right-5 lg:right-12 flex h-11 items-center gap-3 rounded-xl bg-white/10 pl-5 pr-4 text-white font-medium transition-colors duration-300 hover:bg-white/20 hover:cursor-pointer"
+        >
+          <span className="text-base tracking-[-0.01em]">Close</span>
+          <span className="relative w-5 h-5">
+            <span className="absolute left-0 top-1/2 w-5 h-0.5 rounded-full bg-gold-300 rotate-45" />
+            <span className="absolute left-0 top-1/2 w-5 h-0.5 rounded-full bg-gold-300 -rotate-45" />
+          </span>
+        </button>
+        <div className="flex flex-col justify-center items-center w-full md:items-start h-full px-6 lg:px-12 max-w-2xl">
           <nav className="mb-16 mt-12 pt-9 md:pt-5">
-            {NAVBAR_ITEMS.map((item, index) => (
-              <div key={item.id} className="menu-item overflow-hidden ">
+            {NAVBAR_ITEMS.map((item) => (
+              <div
+                key={item.id}
+                className="menu-item group relative overflow-hidden"
+              >
                 <Link
                   href={`/#${item.id}`}
-                  onClick={handleLinkClick}
-                  className="z-20  block text-white hover:text-[#8f109f]  transition-colors duration-300 py-3 text-5xl lg:text-7xl font-bold font-roboto leading-tight text-center md:text-start"
+                  onClick={(e) => handleLinkClick(e, item.id)}
+                  className="menu-link block py-3 pr-[0.1em] text-5xl lg:text-7xl font-semibold tracking-[-0.045em] leading-[1.1] text-center md:text-start bg-[linear-gradient(90deg,var(--color-gold-300)_0%,var(--color-gold-300)_50%,#fff_50%,#fff_100%)] bg-[length:201%_100%] bg-[position:100%_0] bg-clip-text text-transparent transition-[background-position] duration-700 ease-premium group-hover:bg-[position:0%_0] focus-visible:bg-[position:0%_0]"
                 >
                   {item.title}
                 </Link>
-                <div className="max-h-[1px]  h-[1px] bg-gradient-to-r from-transparent via-primary-200 to-transparent"></div>
+                <div className="relative h-px bg-white/10">
+                  <span className="absolute inset-y-0 left-0 w-0 bg-gold-300 transition-[width] duration-700 ease-premium group-hover:w-full" />
+                </div>
               </div>
             ))}
           </nav>
@@ -155,11 +191,11 @@ export default function NavBar() {
               <div className="flex flex-row gap-4">
                 <Link
                   target="_blank"
-                  className="flex items-center gap-2 hover:text-red-300 transition-all duration-200"
+                  className="flex items-center gap-2 text-white/70 hover:text-gold-300 transition-colors duration-300"
                   href={`mailto:${clubInfo.contact.email}`}
                 >
                   <svg
-                    className="h-6 w-6 text-red-500"
+                    className="h-6 w-6"
                     viewBox="0 0 24 24"
                     fill="currentColor"
                   >
@@ -167,12 +203,12 @@ export default function NavBar() {
                   </svg>
                 </Link>
                 <Link
-                  className="flex items-center gap-2 hover:text-blue-300 transition-all duration-200"
+                  className="flex items-center gap-2 text-white/70 hover:text-gold-300 transition-colors duration-300"
                   href={clubInfo.contact.facebook}
                   target="_blank"
                 >
                   <svg
-                    className="h-6 w-6 text-blue-500"
+                    className="h-6 w-6"
                     viewBox="0 0 24 24"
                     fill="currentColor"
                   >
@@ -180,12 +216,12 @@ export default function NavBar() {
                   </svg>
                 </Link>
                 <Link
-                  className="flex items-center gap-2 hover:text-pink-200 transition-all duration-200"
+                  className="flex items-center gap-2 text-white/70 hover:text-gold-300 transition-colors duration-300"
                   href={clubInfo.contact.instagram}
                   target="_blank"
                 >
                   <svg
-                    className="h-6 w-6 text-pink-500"
+                    className="h-6 w-6"
                     viewBox="0 0 24 24"
                     fill="currentColor"
                   >
@@ -193,7 +229,7 @@ export default function NavBar() {
                   </svg>
                 </Link>
                 <Link
-                  className="flex items-center gap-2 text-[#0077B6] transition-all duration-200"
+                  className="flex items-center gap-2 text-white/70 hover:text-gold-300 transition-colors duration-300"
                   href={clubInfo.contact.linkedin}
                   target="_blank"
                 >
@@ -206,7 +242,7 @@ export default function NavBar() {
                   </svg>
                 </Link>
                 <Link
-                  className="flex items-center gap-2 transition-all duration-200"
+                  className="flex items-center gap-2 text-white/70 hover:text-gold-300 transition-colors duration-300"
                   href={clubInfo.contact.tiktok}
                   target="_blank"
                 >
@@ -220,14 +256,15 @@ export default function NavBar() {
                 </Link>
               </div>
             </div>
-            <p className="text-yellow text-sm font-inter">
+            <p className="text-gold-300/80 text-sm tracking-wide">
               Where the power of 0s and 1s unite
             </p>
           </div>
         </div>
       </div>
       <div
-        className={`fixed inset-0 backdrop-blur-sm z-30 transition-all duration-300 ${
+        onClick={() => setIsOpen(false)}
+        className={`fixed inset-0 bg-primary-950/30 backdrop-blur-sm z-[60] transition-[opacity,visibility] duration-500 ${
           isOpen ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
       ></div>

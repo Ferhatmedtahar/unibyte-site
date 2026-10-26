@@ -42,37 +42,37 @@ function Community() {
               start: "top 80%",
               toggleActions: "play none none none",
             },
-          }
+          },
         );
       }
     });
   });
 
   return (
-    <section id="community" className=" w-full bg-gray-50 p-6">
+    <section id="community" className="w-full px-6 py-16 md:py-24">
       <div className="max-w-6xl mx-auto">
         {/* Masonry Layout using CSS Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-min mx-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 auto-rows-min mx-2">
           {/* Left Column - Stacked */}
-          <div className="space-y-4">
+          <div className="space-y-8 lg:space-y-10">
             {cards.slice(0, 2).map((card, index) => (
               <div
                 key={index}
                 ref={(el) => {
                   cardsRef.current[index] = el;
                 }}
-                className={`${card.height} bg-white rounded-3xl p-8 flex flex-col justify-center shadow-sm border border-primary-100 transition-all duration-500 ease-out hover:shadow-lg hover:shadow-primary-500/20 hover:bg-gradient-to-br hover:from-primary-50 hover:to-indigo-100 cursor-default group`}
+                className={`${card.height} bg-primary-50/70 transition-colors duration-300 hover:bg-primary-100 rounded-[2rem] p-8 flex flex-col justify-center cursor-default group`}
               >
                 <div className="text-center">
                   <div
                     ref={(el) => {
                       numbersRef.current[index] = el;
                     }}
-                    className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-500  mb-4 transition-colors duration-300 group-hover:text-primary-700"
+                    className="text-6xl md:text-7xl lg:text-8xl font-semibold tracking-[-0.06em] leading-none text-gradient mb-4 tabular-nums transition-colors duration-300 group-hover:text-primary-700"
                   >
                     +0
                   </div>
-                  <div className="text-xl md:text-2xl lg:text-3xl font-semibold text-primary-500/85 transition-colors duration-300 group-hover:text-primary-600">
+                  <div className="text-xl md:text-2xl font-medium tracking-[-0.02em] text-primary-700/70 transition-colors duration-300 group-hover:text-primary-600">
                     {card.title}
                   </div>
                 </div>
@@ -81,25 +81,25 @@ function Community() {
           </div>
 
           {/* Right Column - Stacked */}
-          <div className="space-y-4">
+          <div className="space-y-8 lg:space-y-10">
             {cards.slice(2, 4).map((card, index) => (
               <div
                 key={index + 2}
                 ref={(el) => {
                   cardsRef.current[index + 2] = el;
                 }}
-                className={`${card.height} bg-white rounded-3xl p-8 flex flex-col justify-center shadow-sm border border-primary-100 transition-all duration-500 ease-out hover:shadow-lg hover:shadow-primary-500/20 hover:bg-gradient-to-br hover:from-primary-50 hover:to-indigo-100 cursor-default group`}
+                className={`${card.height} bg-primary-50/70 transition-colors duration-300 hover:bg-primary-100 rounded-[2rem] p-8 flex flex-col justify-center cursor-default group`}
               >
                 <div className="text-center">
                   <div
                     ref={(el) => {
                       numbersRef.current[index + 2] = el;
                     }}
-                    className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-500 mb-4 transition-colors duration-300 group-hover:text-primary-700"
+                    className="text-6xl md:text-7xl lg:text-8xl font-semibold tracking-[-0.06em] leading-none text-gradient mb-4 tabular-nums transition-colors duration-300 group-hover:text-primary-700"
                   >
                     +0
                   </div>
-                  <div className="text-xl md:text-2xl lg:text-3xl font-semibold text-primary-500/85 transition-colors duration-300 group-hover:text-primary-600">
+                  <div className="text-xl md:text-2xl font-medium tracking-[-0.02em] text-primary-700/70 transition-colors duration-300 group-hover:text-primary-600">
                     {card.title}
                   </div>
                 </div>
@@ -108,23 +108,23 @@ function Community() {
           </div>
 
           {/* Third Column for larger screens - Optional */}
-          <div className="hidden lg:block space-y-4">
-            <div className="h-48 bg-white rounded-3xl p-8 flex flex-col justify-center shadow-sm border border-primary-100 transition-all duration-500 ease-out hover:shadow-lg hover:shadow-primary-500/20 hover:bg-gradient-to-br hover:from-purple-50 hover:to-pink-100 cursor-pointer group">
+          <div className="hidden lg:block space-y-8 lg:space-y-10">
+            <div className="h-48 bg-primary-50/70 transition-colors duration-300 hover:bg-primary-100 rounded-[2rem] p-8 flex flex-col justify-center cursor-pointer group">
               <Link href="#team" className="text-center">
-                <div className="text-3xl font-bold text-primary-500 mb-2 transition-colors duration-300 group-hover:text-primary-600">
+                <div className="text-4xl font-semibold tracking-[-0.04em] text-primary-500 mb-2 transition-colors duration-300 group-hover:text-primary-600">
                   Check Out
                 </div>
-                <div className="text-lg font-semibold text-primary-500/85 transition-colors duration-300 group-hover:text-primary-600/80">
+                <div className="text-lg font-medium text-primary-700/70 transition-colors duration-300 group-hover:text-primary-600/80">
                   Our Community
                 </div>
               </Link>
             </div>
-            <div className="h-64 bg-white rounded-3xl p-8 flex flex-col justify-center shadow-sm border border-primary-100 transition-all duration-500 ease-out hover:shadow-lg hover:shadow-yellow/40  hover:bg-gradient-to-br hover:from-yellow-100 hover:to-orange-200 cursor-pointer group">
+            <div className="h-64 bg-primary-800 rounded-[2rem] p-8 flex flex-col justify-center transition-colors duration-300 hover:bg-primary-900 cursor-pointer group">
               <Link href="#contact" className="text-center">
-                <div className="text-3xl font-bold text-primary-600 mb-2 transition-colors duration-200 group-hover:text-yellow">
+                <div className="text-4xl font-semibold tracking-[-0.04em] text-white mb-2 transition-colors duration-300 group-hover:text-gold-300">
                   Get Involved
                 </div>
-                <div className="text-lg font-semibold text-primary-600/85 transition-colors duration-200 group-hover:text-yellow">
+                <div className="text-lg font-medium text-primary-100/80 transition-colors duration-300 group-hover:text-gold-200">
                   Today
                 </div>
               </Link>

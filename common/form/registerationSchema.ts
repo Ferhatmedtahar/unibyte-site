@@ -27,7 +27,7 @@ export const registrationSchema = z.object({
       "lmd-4",
       "lmd-5",
     ],
-    "Please select your study year"
+    "Please select your study year",
   ),
 
   interests: z.string().min(1, "Please select your interests"),

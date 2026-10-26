@@ -46,7 +46,7 @@ export default function JoinUs() {
           opacity: 1,
           duration: 0.8,
           ease: "power2.out",
-        }
+        },
       );
 
       // Registration form container animation (match "Reach Us" style)
@@ -65,7 +65,7 @@ export default function JoinUs() {
             duration: 0.8,
             ease: "power2.out",
           },
-          "-=0.4"
+          "-=0.4",
         );
       }
 
@@ -88,7 +88,7 @@ export default function JoinUs() {
               duration: 0.8,
               ease: "power2.out",
             },
-            "-=0.4"
+            "-=0.4",
           );
         }
       }
@@ -106,7 +106,7 @@ export default function JoinUs() {
           duration: 0.6,
           ease: "back.out(1.7)",
         },
-        "-=0.3"
+        "-=0.3",
       );
 
       // Title animation
@@ -122,7 +122,7 @@ export default function JoinUs() {
           duration: 0.6,
           ease: "power2.out",
         },
-        "-=0.4"
+        "-=0.4",
       );
 
       // Description animation
@@ -138,7 +138,7 @@ export default function JoinUs() {
           duration: 0.5,
           ease: "power2.out",
         },
-        "-=0.3"
+        "-=0.3",
       );
 
       // Location animation
@@ -154,7 +154,7 @@ export default function JoinUs() {
           duration: 0.5,
           ease: "power2.out",
         },
-        "-=0.2"
+        "-=0.2",
       );
 
       // Contact links stagger animation
@@ -174,7 +174,7 @@ export default function JoinUs() {
             ease: "back.out(1.7)",
             stagger: 0.1,
           },
-          "-=0.3"
+          "-=0.3",
         );
       }
 
@@ -193,21 +193,19 @@ export default function JoinUs() {
             ease: "power2.out",
             stagger: 0.1,
           },
-          "-=0.2"
+          "-=0.2",
         );
       }
     },
-    { scope: containerRef }
+    { scope: containerRef },
   );
 
   return (
     <section id="contact" className="w-full" ref={containerRef}>
-      <section className="mx-auto max-w-7xl px-4 py-6 lg:px-8 lg:py-20">
-        <div className="space-y-2 mb-4" ref={headerRef}>
-          <h2 className="text-center text-4xl md:text-6xl pb-4 text-gradient font-bold bg-gradient-to-r from-primary-600 via-primary-400 to-primary-500 bg-clip-text text-transparent">
-            Join UniByte
-          </h2>
-          <p className="paragraph text-primary-600/80 text-lg max-w-2xl mx-auto text-center">
+      <div className="mx-auto max-w-7xl px-4 py-20 lg:px-8 lg:py-28">
+        <div className="space-y-2 mb-12" ref={headerRef}>
+          <h2 className="section-title text-center mb-3">Join UniByte</h2>
+          <p className="paragraph section-lead mx-auto text-center">
             Start by completing the registration form below. You can also reach
             us via the contact card afterwards.
           </p>
@@ -219,10 +217,10 @@ export default function JoinUs() {
         </div>
 
         <div
-          className="card-container relative isolate w-full overflow-hidden rounded-2xl cursor-default"
+          className="card-container relative isolate w-full overflow-hidden rounded-[2rem] lg:rounded-[2.5rem] cursor-default"
           style={{
             background:
-              "linear-gradient(100.5deg,hsl(285, 60%, 30%) 29.55%,hsl(285, 50%,28%) 93.8%),radial-gradient(38.35% 93.72% at 18.31% 6.28%,#280454 0,#180454 100%)",
+              "radial-gradient(60% 80% at 85% 110%, rgb(209 166 76 / 0.22) 0%, transparent 60%), radial-gradient(70% 90% at 10% -10%, rgb(143 61 155 / 0.6) 0%, transparent 60%), linear-gradient(135deg, #3b0439 0%, #2b032a 100%)",
           }}
         >
           <Image
@@ -236,23 +234,19 @@ export default function JoinUs() {
           <div className="relative isolate overflow-hidden px-4 py-12 sm:px-24">
             <p
               ref={badgeRef}
-              className="w-fit rounded-xl bg-white px-4 py-1 text-center text-base leading-7 font-semibold text-black uppercase lg:text-left hover:bg-primary-100 hover:text-primary-800 transition-all duration-300 cursor-default"
+              className="w-fit rounded-lg bg-gold-400 px-4 py-1 text-center text-sm leading-7 font-medium text-primary-900 uppercase tracking-[0.08em] lg:text-left cursor-default"
             >
               Get in touch
             </p>
             <h2
               ref={titleRef}
-              className="mt-3 max-w-md text-4xl font-semibold text-white md:text-6xl"
+              className="mt-5 max-w-xl text-5xl font-semibold tracking-[-0.045em] leading-[0.95] text-white md:text-7xl"
             >
-              How Can You{" "}
-              <span className="text-pink-500 hover:text-pink-600 transition-colors duration-300">
-                Reach Us
-              </span>
-              ?
+              How Can You <span className="text-gold-300">Reach Us</span>?
             </h2>
             <p
               ref={descriptionRef}
-              className="my-auto mt-3 max-w-2xl text-base text-gray-100 md:text-lg hover:text-white transition-colors duration-300"
+              className="my-auto mt-5 max-w-2xl text-lg text-primary-100/80 md:text-xl"
             >
               If you need to get in touch, there are several ways to contact us.
             </p>
@@ -260,14 +254,14 @@ export default function JoinUs() {
             {/* Location Section */}
             <div
               ref={locationRef}
-              className="cursor-default mt-6 flex items-center gap-2 hover:text-pink-500 text-white transition-colors duration-200"
+              className="cursor-default mt-8 flex flex-wrap items-center gap-2 text-white"
             >
-              <MapPin className="h-6 w-6 text-green-500" />
+              <MapPin className="h-6 w-6 text-gold-400" />
               <span className="text-lg font-medium">Visit Us:</span>
               <Link
                 target="_blank"
                 href={`${clubInfo.locationLink}`}
-                className="hover:text-pink-500 text-white transition-colors duration-300 hover:underline"
+                className="text-white underline decoration-white/30 underline-offset-4 hover:decoration-gold-400 hover:text-gold-300 transition-colors duration-300"
               >
                 {clubInfo.address}
               </Link>
@@ -279,11 +273,11 @@ export default function JoinUs() {
             >
               <Link
                 target="_blank"
-                className="flex items-center gap-2 text-white hover:text-red-300 transition-all duration-200 transform hover:translate-x-1"
+                className="flex items-center gap-2.5 text-white hover:text-gold-300 transition-colors duration-300"
                 href={`mailto:${clubInfo.contact.email}`}
               >
                 <svg
-                  className="h-7 w-7 text-red-500 hover:text-red-400 transition-colors duration-200"
+                  className="h-6 w-6 text-white/70"
                   viewBox="0 0 24 24"
                   fill="currentColor"
                 >
@@ -295,11 +289,11 @@ export default function JoinUs() {
               </Link>
               <Link
                 target="_blank"
-                className="flex items-center gap-2 text-white hover:text-blue-300 transition-all duration-200 transform hover:translate-x-1"
+                className="flex items-center gap-2.5 text-white hover:text-gold-300 transition-colors duration-300"
                 href={`${clubInfo.contact.facebook}`}
               >
                 <svg
-                  className="h-7 w-7 text-blue-500 hover:text-blue-400 transition-colors duration-200"
+                  className="h-6 w-6 text-white/70"
                   viewBox="0 0 24 24"
                   fill="currentColor"
                 >
@@ -309,11 +303,11 @@ export default function JoinUs() {
               </Link>
               <Link
                 target="_blank"
-                className="flex items-center gap-2 text-white hover:text-pink-200 transition-all duration-200 transform hover:translate-x-1"
+                className="flex items-center gap-2.5 text-white hover:text-gold-300 transition-colors duration-300"
                 href={`${clubInfo.contact.instagram}`}
               >
                 <svg
-                  className="h-7 w-7 text-pink-500 hover:text-pink-400 transition-colors duration-200"
+                  className="h-6 w-6 text-white/70"
                   viewBox="0 0 24 24"
                   fill="currentColor"
                 >
@@ -322,12 +316,12 @@ export default function JoinUs() {
                 <span className="hover:underline">unibyte.cs</span>
               </Link>
               <Link
-                className="flex items-center gap-2 text-white hover:text-blue-200 transition-all duration-200 transform hover:translate-x-1"
+                className="flex items-center gap-2.5 text-white hover:text-gold-300 transition-colors duration-300"
                 href={`${clubInfo.contact.linkedin}`}
                 target="_blank"
               >
                 <svg
-                  className="h-7 w-7"
+                  className="h-6 w-6 text-white/70"
                   viewBox="0 0 24 24"
                   fill="currentColor"
                 >
@@ -336,12 +330,12 @@ export default function JoinUs() {
                 <span className="hover:underline">unibyte-cs</span>
               </Link>
               <Link
-                className="flex items-center gap-2 text-white hover:text-gray-200 transition-all duration-200 transform hover:translate-x-1"
+                className="flex items-center gap-2.5 text-white hover:text-gold-300 transition-colors duration-300"
                 href={`${clubInfo.contact.tiktok}`}
                 target="_blank"
               >
                 <svg
-                  className="h-7 w-7"
+                  className="h-6 w-6 text-white/70"
                   viewBox="0 0 24 24"
                   fill="currentColor"
                 >
@@ -352,9 +346,9 @@ export default function JoinUs() {
             </div>
             <ul
               ref={listRef}
-              className="mt-8 ml-4 list-disc text-sm text-gray-300 md:text-base"
+              className="mt-10 ml-4 list-disc text-sm text-primary-100/70 md:text-base marker:text-gold-400"
             >
-              <li className="hover:text-gray-200 transition-colors duration-300 cursor-default">
+              <li className="cursor-default">
                 Once you complete the registration form, you&apos;ll receive an
                 approval email. After that, you&apos;ll be added to our Discord
                 server and granted the member role.
@@ -362,7 +356,7 @@ export default function JoinUs() {
             </ul>
           </div>
         </div>
-      </section>
+      </div>
     </section>
   );
 }
