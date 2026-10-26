@@ -4,6 +4,7 @@ import { activities } from "@/utils/constants";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
+import Image from "next/image";
 import { useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -70,9 +71,33 @@ export default function WhatWeDo() {
         </p>
       </div>
 
-      <div ref={cardsRef}>
+      <div ref={cardsRef} className="hidden md:block">
         <HoverEffect items={activities} />
       </div>
+
+      <ul className="flex flex-col gap-8 md:hidden">
+        {activities.map((item) => (
+          <li key={item.title} className="flex items-start gap-4">
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary-500">
+              <Image
+                src={item.link}
+                alt=""
+                width={24}
+                height={24}
+                className="h-6 w-6 object-contain"
+              />
+            </span>
+            <div className="flex flex-col gap-1">
+              <h3 className="text-lg font-semibold leading-snug tracking-[-0.015em] text-primary-800">
+                {item.title}
+              </h3>
+              <p className="text-[0.9375rem] leading-relaxed text-primary-700/75">
+                {item.description}
+              </p>
+            </div>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
