@@ -1,5 +1,6 @@
 import Footer from "@/common/Footer";
 import NavBar from "@/common/NavBar";
+import EasterEggs from "@/common/EasterEggs";
 import type { Metadata, Viewport } from "next";
 import { Outfit } from "next/font/google";
 import favIcon from "../public/favicon.ico";
@@ -95,7 +96,8 @@ export default function RootLayout({
     <html lang="en" className={`${outfit.variable} scroll-smooth`}>
       <body className="font-sans antialiased">
         <SmoothScrolling>
-          <NavBar />
+          <EasterEggs />
+        <NavBar />
           {children}
           <Footer />
         </SmoothScrolling>

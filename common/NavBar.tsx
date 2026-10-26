@@ -177,7 +177,7 @@ export default function NavBar() {
                 <Link
                   href={`/#${item.id}`}
                   onClick={(e) => handleLinkClick(e, item.id)}
-                  className="menu-link block py-3 text-5xl lg:text-7xl font-semibold tracking-[-0.045em] leading-[1.1] text-center md:text-start bg-[linear-gradient(90deg,var(--color-gold-300)_0%,var(--color-gold-300)_50%,#fff_50%,#fff_100%)] bg-[length:201%_100%] bg-[position:100%_0] bg-clip-text text-transparent transition-[background-position] duration-700 ease-premium group-hover:bg-[position:0%_0] focus-visible:bg-[position:0%_0]"
+                  className="menu-link block py-3 pr-[0.1em] text-5xl lg:text-7xl font-semibold tracking-[-0.045em] leading-[1.1] text-center md:text-start bg-[linear-gradient(90deg,var(--color-gold-300)_0%,var(--color-gold-300)_50%,#fff_50%,#fff_100%)] bg-[length:201%_100%] bg-[position:100%_0] bg-clip-text text-transparent transition-[background-position] duration-700 ease-premium group-hover:bg-[position:0%_0] focus-visible:bg-[position:0%_0]"
                 >
                   {item.title}
                 </Link>
