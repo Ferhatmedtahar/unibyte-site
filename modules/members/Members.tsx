@@ -55,8 +55,8 @@ export default function TeamTestimonials() {
         }
       `}</style>
 
-      <div id="team" className="py-20 sm:py-32 px-4 w-screen">
-        <div className="mx-auto max-w-7xl">
+      <div id="team" className="w-full py-20 sm:py-32">
+        <div className="mx-auto max-w-7xl px-4 lg:px-8">
           {/* Header */}
           <div className="text-center mb-12 sm:mb-10">
             <h2 className="section-title text-center mb-5">

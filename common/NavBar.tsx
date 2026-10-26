@@ -2,6 +2,7 @@
 import { clubInfo, NAVBAR_ITEMS } from "@/utils/constants";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
+import { useLenis } from "lenis/react";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -12,6 +13,7 @@ export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
+  const lenis = useLenis();
 
   useGSAP(() => {
     // Initial navbar animation
@@ -85,8 +87,23 @@ export default function NavBar() {
     setIsOpen(!isOpen);
   };
 
-  const handleLinkClick = () => {
+  const handleLinkClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    id: string,
+  ) => {
     setIsOpen(false);
+    if (typeof window !== "undefined" && window.location.pathname === "/") {
+      const element = document.getElementById(id);
+      if (element) {
+        e.preventDefault();
+        if (lenis) {
+          lenis.scrollTo(element, { offset: -20, duration: 1.2 });
+        } else {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+        window.history.pushState(null, "", `#${id}`);
+      }
+    }
   };
 
   return (
@@ -159,7 +176,7 @@ export default function NavBar() {
               >
                 <Link
                   href={`/#${item.id}`}
-                  onClick={handleLinkClick}
+                  onClick={(e) => handleLinkClick(e, item.id)}
                   className="menu-link block py-3 text-5xl lg:text-7xl font-semibold tracking-[-0.045em] leading-[1.1] text-center md:text-start bg-[linear-gradient(90deg,var(--color-gold-300)_0%,var(--color-gold-300)_50%,#fff_50%,#fff_100%)] bg-[length:201%_100%] bg-[position:100%_0] bg-clip-text text-transparent transition-[background-position] duration-700 ease-premium group-hover:bg-[position:0%_0] focus-visible:bg-[position:0%_0]"
                 >
                   {item.title}

@@ -202,7 +202,7 @@ export default function JoinUs() {
 
   return (
     <section id="contact" className="w-full" ref={containerRef}>
-      <section className="mx-auto max-w-7xl px-4 py-20 lg:px-8 lg:py-28">
+      <div className="mx-auto max-w-7xl px-4 py-20 lg:px-8 lg:py-28">
         <div className="space-y-2 mb-12" ref={headerRef}>
           <h2 className="section-title text-center mb-3">Join UniByte</h2>
           <p className="paragraph section-lead mx-auto text-center">
@@ -356,7 +356,7 @@ export default function JoinUs() {
             </ul>
           </div>
         </div>
-      </section>
+      </div>
     </section>
   );
 }

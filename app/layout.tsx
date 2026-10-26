@@ -92,11 +92,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={outfit.variable}>
+    <html lang="en" className={`${outfit.variable} scroll-smooth`}>
       <body className="font-sans antialiased">
-        <NavBar />
-        <SmoothScrolling>{children}</SmoothScrolling>
-        <Footer />
+        <SmoothScrolling>
+          <NavBar />
+          {children}
+          <Footer />
+        </SmoothScrolling>
       </body>
     </html>
   );

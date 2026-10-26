@@ -10,13 +10,13 @@ function Faq() {
   useGSAP(() => {
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: "#team",
+        trigger: "#faq",
         start: "top 80%",
         end: "bottom 20%",
         toggleActions: "play none none reverse",
       },
     });
-    tl.from("#faq", {
+    tl.from("#faq-content", {
       y: 60,
       opacity: 0,
       duration: 1.2,
@@ -30,14 +30,15 @@ function Faq() {
   };
 
   return (
-    <section
-      id="faq"
-      className="container mx-auto max-w-4xl px-4 pt-8 pb-20 md:pt-12 md:pb-28"
-    >
-      <div className="space-y-6">
-        <h2 className="section-title text-center mb-10">
-          Frequently Asked Questions
-        </h2>
+    <section id="faq" className="w-full">
+      <div
+        id="faq-content"
+        className="mx-auto max-w-7xl px-4 py-20 lg:px-8 lg:py-28"
+      >
+        <div className="space-y-6">
+          <h2 className="section-title text-center mb-10">
+            Frequently Asked Questions
+          </h2>
 
         <div className="space-y-3">
           {faqData.map((item, index) => (
@@ -87,8 +88,9 @@ function Faq() {
           ))}
         </div>
       </div>
-    </section>
-  );
+    </div>
+  </section>
+);
 }
 
 export default Faq;
