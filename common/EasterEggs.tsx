@@ -23,7 +23,6 @@ const BANNER = `
 `;
 
 export default function EasterEggs() {
-  // ── Console signature + window.unibyte commands ─────────────
   useEffect(() => {
     const label = `color: ${PLUM}; font-size: 13px; font-family: monospace;`;
     const value = `color: ${GOLD}; font-size: 13px; font-family: monospace;`;
@@ -40,9 +39,17 @@ export default function EasterEggs() {
     const unibyte = {
       help: () => {
         console.log("%c Available commands:", label);
-        console.log("%c   unibyte.join()    %c→ How to become a member", value, label);
+        console.log(
+          "%c   unibyte.join()    %c→ How to become a member",
+          value,
+          label,
+        );
         console.log("%c   unibyte.contact() %c→ Find us online", value, label);
-        console.log("%c   unibyte.binary()  %c→ A message in 0s and 1s", value, label);
+        console.log(
+          "%c   unibyte.binary()  %c→ A message in 0s and 1s",
+          value,
+          label,
+        );
         return "Try one of the commands above!";
       },
       join: () => {
@@ -50,8 +57,13 @@ export default function EasterEggs() {
           "%c🚀 Found the secret door!",
           `color: ${GOLD}; font-size: 16px; font-weight: bold;`,
         );
-        console.log("%cFill in the form at #contact — we'll email you back.", label);
-        document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+        console.log(
+          "%cFill in the form at #contact — we'll email you back.",
+          label,
+        );
+        document
+          .getElementById("contact")
+          ?.scrollIntoView({ behavior: "smooth" });
         return "See you inside UniByte 💜";
       },
       contact: () => {
@@ -86,8 +98,6 @@ export default function EasterEggs() {
       delete (window as unknown as Record<string, unknown>).unibyte;
     };
   }, []);
-
-  // ── Tab title calls visitors back when they switch away ─────
   useEffect(() => {
     let original = document.title;
     let cycle: ReturnType<typeof setInterval> | undefined;

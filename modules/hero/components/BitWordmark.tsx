@@ -4,22 +4,15 @@ import { useEffect, useRef } from "react";
 const INK = "#580454";
 const GOLD = "#d1a64c";
 const FIELD_ALPHA = 0.08;
-const SETTLE = 0.55; // seconds a bit spends decoding before it locks in
+const SETTLE = 0.55;
 
 type Props = {
   readonly word: string;
-  /** Optional line split used on narrow screens, e.g. ["Uni", "byte"] */
   readonly mobileLines?: readonly string[];
   readonly className?: string;
-  /** Fired once the word starts assembling — used to sync the rest of the hero */
   readonly onStart?: () => void;
 };
 
-/**
- * Draws `word` as a bitmap where every pixel is a real 0 or 1.
- * Loose bits decode (gold) and unite into the word, then settle to plum.
- * The cursor flips nearby bits and leaves a short gold trail.
- */
 export default function BitWordmark({
   word,
   mobileLines,
@@ -37,7 +30,10 @@ export default function BitWordmark({
     const wrap = wrapRef.current;
     const canvas = canvasRef.current;
     const ctx = canvas?.getContext("2d");
-    if (!wrap || !canvas || !ctx) return;
+    if (!wrap || !canvas || !ctx) {
+      onStartRef.current?.();
+      return;
+    }
 
     const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
     const finePointer = matchMedia("(pointer: fine)").matches;
@@ -75,21 +71,15 @@ export default function BitWordmark({
     const build = (animate: boolean) => {
       const width = wrap.clientWidth;
       if (!width) return;
-
-      // Narrow screens stack the word so it fills the height instead of
-      // shrinking to a thin strip
       const stacked = width < 640 && !!mobileLines?.length;
       const lines = stacked ? mobileLines! : [word];
 
       cell = width < 420 ? 7 : width < 768 ? 8 : width < 1280 ? 10 : 11;
       cols = Math.floor(width / cell);
       dpr = Math.min(window.devicePixelRatio || 1, 2);
-
-      // Lay each line out glyph by glyph with a small gap, so letters
-      // never touch at bitmap resolution (the y/t pair especially)
       const m = document.createElement("canvas").getContext("2d")!;
       m.font = `700 100px ${family}`;
-      const gap = 6; // in units of the 100px probe font
+      const gap = 6;
       const laid = lines.map((line) => {
         const chars = [...line];
         const advances = chars.map((ch) => m.measureText(ch).width);
@@ -104,7 +94,7 @@ export default function BitWordmark({
         m.measureText(lines.join("")).actualBoundingBoxAscent * scale;
       const descent =
         m.measureText(lines[lines.length - 1]).actualBoundingBoxDescent * scale;
-      const leading = fontSize * 0.9; // tight, the lines read as one mark
+      const leading = fontSize * 0.9;
       const pad = 3;
       rows =
         Math.ceil(ascent + leading * (lines.length - 1) + descent) + pad * 2;
@@ -116,7 +106,6 @@ export default function BitWordmark({
       mc.font = `700 ${fontSize}px ${family}`;
       mc.fillStyle = "#000";
       mc.textBaseline = "alphabetic";
-      // One shared left edge: stacked lines align left, like the copy below
       const left = stacked ? 0 : (cols - probeWidth * scale) / 2;
       laid.forEach(({ chars, advances }, li) => {
         let x = left;
@@ -139,9 +128,7 @@ export default function BitWordmark({
         bits[i] = Math.random() > 0.5 ? 1 : 0;
         const cx = (i % cols) / cols - 0.5;
         const cy = Math.floor(i / cols) / rows - 0.5;
-        // Field fades toward the edges so the bitmap has no hard frame
         vignette[i] = Math.max(0, 1 - Math.hypot(cx * 1.3, cy * 1.6) * 1.5);
-        // Bits nearer the middle lock in a beat later: the word gathers inward
         delay[i] = Math.random() * 0.75 + (0.5 - Math.abs(cx)) * 0.5;
       }
 
@@ -192,7 +179,6 @@ export default function BitWordmark({
           if (p < 1) {
             decoding = true;
             if (Math.random() < 0.35) bits[i] ^= 1;
-            // gold while decoding, easing back to plum as the bit locks in
             gold = Math.max(gold, p > 0 ? 1 - p * p : 0);
           }
           const e = 1 - Math.pow(1 - p, 3);
@@ -267,7 +253,6 @@ export default function BitWordmark({
     document.fonts.ready
       .then(() => {
         family = getComputedStyle(wrap).fontFamily || family;
-        // Canvas only sees faces the browser has actually loaded
         return Promise.all([
           document.fonts.load(`700 100px ${family}`),
           document.fonts.load(`600 16px ${family}`),

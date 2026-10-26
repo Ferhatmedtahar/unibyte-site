@@ -206,3 +206,5 @@ export const teamMembers = [
   { name: "Boucherit Meriem ", role: "Social Media manager" },
 
 ];
+
+export const SITE_URL = "https://www.unibyteclub.tech";

@@ -14,8 +14,6 @@ const MOBILE_LINES = ["Uni", "byte"];
 function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
   const { contextSafe } = useGSAP({ scope: sectionRef });
-
-  // Copy arrives while the bits are still uniting into the word
   const playCopy = contextSafe(() => {
     if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
       gsap.set(REVEAL, { autoAlpha: 1 });
@@ -44,8 +42,6 @@ function Hero() {
       className="relative isolate flex min-h-dvh w-full flex-col overflow-hidden bg-paper"
     >
       <h1 className="sr-only">Unibyte</h1>
-
-      {/* The word, built from real 0s and 1s — the one loud element */}
       <div className="flex items-end pt-24 pb-4 sm:flex-1 sm:items-center sm:pb-0 md:pt-28">
         <BitWordmark
           word="Unibyte"
@@ -54,8 +50,6 @@ function Hero() {
           className="w-full px-5 sm:px-4 md:px-8"
         />
       </div>
-
-      {/* Copy — left aligned, two columns on desktop */}
       <div className="mx-auto grid w-full max-w-[1480px] mt-auto gap-7 px-5 pb-10 sm:mt-0 sm:gap-8 sm:pb-12 md:grid-cols-12 md:items-end md:gap-10 md:px-10 md:pb-16">
         <p className="hero-tagline invisible max-w-[20ch] text-[clamp(1.75rem,4vw,3.5rem)] font-semibold leading-[1.02] tracking-[-0.03em] text-primary-500 md:col-span-7">
           WHERE THE POWER OF 0s AND 1s UNITE !

@@ -1,11 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  /* Typography — Outfit everywhere, loaded through next/font in layout.tsx */
   --font-sans: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
-
-  /* Brand plum scale, built around #580454 */
   --color-primary-50: #f8f0f9;
   --color-primary-100: #efdff1;
   --color-primary-200: #ddbde2;
@@ -17,8 +14,6 @@
   --color-primary-800: #2b032a;
   --color-primary-900: #1a0219;
   --color-primary-950: #10010f;
-
-  /* Accent — antique gold (replaces the old yellow) */
   --color-gold-100: #faf3e1;
   --color-gold-200: #f2e2b6;
   --color-gold-300: #e4c57c;
@@ -71,7 +66,6 @@ body {
   color: transparent;
 }
 
-/* Large, tight section headings shared by every module */
 @utility section-title {
   font-family: var(--font-display);
   font-weight: 700;
@@ -97,7 +91,6 @@ body {
   max-width: 38rem;
 }
 
-/* Soft badge: tinted fill, gold dot, no outline */
 @utility pill-tag {
   @apply inline-flex items-center gap-2 rounded-lg px-3.5 py-1.5 text-sm font-medium;
   background: color-mix(in oklab, var(--color-primary-100) 70%, white);
@@ -176,7 +169,6 @@ body {
   scrollbar-width: none;
 }
 
-/* Select dropdown: grows from the trigger, fades out on close */
 .select-content {
   transform-origin: var(--radix-select-content-transform-origin);
 }

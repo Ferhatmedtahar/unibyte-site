@@ -1,5 +1,4 @@
 export const generateAvatar = (name: string, index: number) => {
-  // Plum & gold only — soft same-hue gradients, text picked for contrast
   const styles = [
     "from-primary-400 to-primary-600 text-white",
     "from-primary-600 to-primary-800 text-gold-200",

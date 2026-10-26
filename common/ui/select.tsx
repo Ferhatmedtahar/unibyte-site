@@ -7,12 +7,12 @@ import * as React from "react";
 
 import { cn } from "@/lib/utils";
 
-// Pause Lenis while a list is open so the wheel scrolls the options, not the page
 function Select({
   onOpenChange,
   ...props
 }: React.ComponentProps<typeof SelectPrimitive.Root>) {
   const lenis = useLenis();
+  React.useEffect(() => () => lenis?.start(), [lenis]);
   return (
     <SelectPrimitive.Root
       onOpenChange={(open) => {
@@ -94,34 +94,39 @@ SelectScrollDownButton.displayName =
 const SelectContent = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof SelectPrimitive.Content>
->(({ className, children, position = "popper", sideOffset = 6, ...props }, ref) => (
-  <SelectPrimitive.Portal>
-    <SelectPrimitive.Content
-      ref={ref}
-      className={cn(
-        "select-content relative z-50 max-h-[min(24rem,var(--radix-select-content-available-height))] min-w-[8rem] overflow-hidden rounded-xl bg-white shadow-[0_20px_40px_-20px_rgb(88_4_84/0.35)] text-primary-800",
-        className,
-      )}
-      position={position}
-      sideOffset={position === "popper" ? sideOffset : undefined}
-      data-lenis-prevent
-      {...props}
-    >
-      <SelectScrollUpButton />
-      <SelectPrimitive.Viewport
-        data-lenis-prevent
+>(
+  (
+    { className, children, position = "popper", sideOffset = 6, ...props },
+    ref,
+  ) => (
+    <SelectPrimitive.Portal>
+      <SelectPrimitive.Content
+        ref={ref}
         className={cn(
-          "p-1.5 overscroll-contain",
-          position === "popper" &&
-            "h-[var(--radix-select-trigger-height)] w-full min-w-[var(--radix-select-trigger-width)]",
+          "select-content relative z-50 max-h-[min(24rem,var(--radix-select-content-available-height))] min-w-[8rem] overflow-hidden rounded-xl bg-white shadow-[0_20px_40px_-20px_rgb(88_4_84/0.35)] text-primary-800",
+          className,
         )}
+        position={position}
+        sideOffset={position === "popper" ? sideOffset : undefined}
+        data-lenis-prevent
+        {...props}
       >
-        {children}
-      </SelectPrimitive.Viewport>
-      <SelectScrollDownButton />
-    </SelectPrimitive.Content>
-  </SelectPrimitive.Portal>
-));
+        <SelectScrollUpButton />
+        <SelectPrimitive.Viewport
+          data-lenis-prevent
+          className={cn(
+            "p-1.5 overscroll-contain",
+            position === "popper" &&
+              "h-[var(--radix-select-trigger-height)] w-full min-w-[var(--radix-select-trigger-width)]",
+          )}
+        >
+          {children}
+        </SelectPrimitive.Viewport>
+        <SelectScrollDownButton />
+      </SelectPrimitive.Content>
+    </SelectPrimitive.Portal>
+  ),
+);
 SelectContent.displayName = SelectPrimitive.Content.displayName;
 
 const SelectLabel = React.forwardRef<

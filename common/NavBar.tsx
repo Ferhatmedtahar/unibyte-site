@@ -23,8 +23,6 @@ export default function NavBar() {
       { yPercent: 0, opacity: 1, duration: 1.2, ease: "expo.out", delay: 1.1 },
     );
   }, []);
-
-  // Menu animations: links rise out of their masks, footer fades in
   useGSAP(() => {
     if (!isOpen) return;
     const tl = gsap.timeline({ delay: 0.15 });
@@ -169,7 +167,7 @@ export default function NavBar() {
         </button>
         <div className="flex flex-col justify-center items-center w-full md:items-start h-full px-6 lg:px-12 max-w-2xl">
           <nav className="mb-16 mt-12 pt-9 md:pt-5">
-            {NAVBAR_ITEMS.map((item, index) => (
+            {NAVBAR_ITEMS.map((item) => (
               <div
                 key={item.id}
                 className="menu-item group relative overflow-hidden"
