@@ -176,6 +176,37 @@ body {
   scrollbar-width: none;
 }
 
+/* Select dropdown: grows from the trigger, fades out on close */
+.select-content {
+  transform-origin: var(--radix-select-content-transform-origin);
+}
+.select-content[data-state="open"] {
+  animation: select-in 220ms var(--ease-premium);
+}
+.select-content[data-state="closed"] {
+  animation: select-out 140ms ease-in forwards;
+}
+@keyframes select-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes select-out {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+}
+
 /* Modal Animations */
 @keyframes fadeIn {
   from {

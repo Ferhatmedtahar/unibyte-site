@@ -66,7 +66,7 @@ function Footer() {
       <div className="mt-6 flex flex-col md:flex-row gap-4 justify-between items-start md:items-center">
         <div className="flex flex-row gap-4">
           <Link
-            className="flex items-center gap-2 text-white/60 hover:text-gold-300 transition-colors duration-300"
+            className="flex items-center gap-2 text-white/70 hover:text-gold-300 transition-colors duration-300"
             href={`mailto:${clubInfo.contact.email}`}
           >
             <svg className="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
@@ -74,7 +74,7 @@ function Footer() {
             </svg>
           </Link>
           <Link
-            className="flex items-center gap-2 text-white/60 hover:text-gold-300 transition-colors duration-300"
+            className="flex items-center gap-2 text-white/70 hover:text-gold-300 transition-colors duration-300"
             href={clubInfo.contact.facebook}
             target="_blank"
           >
@@ -83,7 +83,7 @@ function Footer() {
             </svg>
           </Link>
           <Link
-            className="flex items-center gap-2 text-white/60 hover:text-gold-300 transition-colors duration-300"
+            className="flex items-center gap-2 text-white/70 hover:text-gold-300 transition-colors duration-300"
             href={clubInfo.contact.instagram}
             target="_blank"
           >
@@ -92,7 +92,7 @@ function Footer() {
             </svg>
           </Link>
           <Link
-            className="flex items-center gap-2  text-[#0077B9] transition-all duration-200"
+            className="flex items-center gap-2 text-white/70 hover:text-gold-300 transition-colors duration-300"
             href={clubInfo.contact.linkedin}
             target="_blank"
           >
@@ -101,7 +101,7 @@ function Footer() {
             </svg>
           </Link>
           <Link
-            className="flex items-center gap-2 text-neutral-900  transition-all duration-200"
+            className="flex items-center gap-2 text-white/70 hover:text-gold-300 transition-colors duration-300"
             href={clubInfo.contact.tiktok}
             target="_blank"
           >

@@ -66,7 +66,7 @@ export default function TeamTestimonials() {
               Discover the talented individuals who make our success possible
             </p>
           </div>
-          <div className="space-y-2 sm:space-y-4 ">
+          <div className="space-y-3">
             <MarqueeRow members={firstRow} direction="left" />
             <MarqueeRow members={secondRow} direction="right" />
           </div>
